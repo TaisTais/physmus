@@ -1,25 +1,4 @@
-type ImageT = {
-  data: {
-    attributes: {
-      url: string
-    }
-  } | null
-}
-
-type ImagesArrayT = {
-  data: Array<{
-    attributes: {
-      url: string
-    }
-  }>
-}
-
-type MainDescriptionT ={
-  description: string,
-  icons: {
-    "data": ImagesArrayT
-  }
-}
+import { MainDescriptionT } from "../types/main"
 
 export async function getMainDescription(): Promise<MainDescriptionT> {
   const headers = {
@@ -64,21 +43,13 @@ export async function getMainDescription(): Promise<MainDescriptionT> {
     data: {
       mainDescription: {
         data: {
-          attributes: {
-            description: {
-              icons: {
-                data: {
-                  attributes: {
-                    url: string
-                  }
-                }
-              }
-            }
-          }
-        }
+          attributes: MainDescriptionT
+        } | null
       }
     }
   }
 
+  const data = MainDescriptionT.parse(json.data.mainDescription.data?.attributes);
 
+  return data
 }
