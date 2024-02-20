@@ -38,6 +38,7 @@ const config = {
   ignorePatterns: [
     "**/*.config.js",
     "**/*.config.cjs",
+    "**/*.config.mjs",
     ".eslintrc.cjs",
     '.eslintrc.js',
     "packages/config/**",

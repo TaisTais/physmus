@@ -4,7 +4,7 @@ export async function getMainDescription(): Promise<MainDescriptionT> {
   const headers = {
     "Content-Type": "application/json"
   }
-  const query = `
+  const query = /* GraphGL */ `
   query GetMainDesc {
     mainDescription {
       data {
@@ -22,7 +22,7 @@ export async function getMainDescription(): Promise<MainDescriptionT> {
     }
   }
   `
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/qraphql`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
     headers,
     method: "POST",
     body: JSON.stringify({

@@ -20,8 +20,6 @@ export type ImagesArrayT = z.infer<typeof ImagesArrayT>
 
 export const MainDescriptionT = z.object({
   description: z.string(),
-  icons: z.object({
-    data: ImagesArrayT
-  })
+  icons: ImagesArrayT
 })
 export type MainDescriptionT = z.infer<typeof MainDescriptionT> 
