@@ -17,6 +17,7 @@ export default async function Home() {
   return (
     <main className="">
       <div className="max-w-screen-2xl mx-auto">
+        <Hero />
         {mainDescription.value.description}
         <div className="grid gap-6">
           {mainDescription.value.icons.data.map((icon, index) => (
