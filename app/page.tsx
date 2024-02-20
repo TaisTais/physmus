@@ -1,6 +1,7 @@
 import ErrorHandler from "@/components/errors/ErrorHandler";
 import { getMainDescription } from "@/lib/queries/main";
 import Image from "next/image";
+import Hero from "./hero/page";
 
 export default async function Home() {
 
