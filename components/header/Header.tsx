@@ -1,44 +1,38 @@
 "use client"
 import React from 'react';
 import Image from 'next/image';
-import { NavigationMenuList, NavigationMenu, NavigationMenuItem, NavigationMenuLink, navigationMenuTriggerStyle } from './navigation-menu'
+import { NavigationMenuList, NavigationMenu, NavigationMenuLink, navigationMenuTriggerStyle } from './navigation-menu'
 
 export default function Header() {
 
   return (
-    <div className="bg-primary">
-      <NavigationMenu>
-        <NavigationMenuList>
-              <NavigationMenuItem>
+    <div className="bg-primary ">
+      <NavigationMenu className=''>
+        <NavigationMenuList className='flex-1 flex-row items-stretch'>
+          <div>
                 <NavigationMenuLink href='/' className={`${navigationMenuTriggerStyle()} px-0 py-0`} active>
                   <Image 
-                    src="/logos/logo-ifksit-header.svg" 
+                    src='/logo-ifksit-header.svg'
                     alt='logo' 
-                    width={40} 
-                    height={40} 
+                    width={25} 
+                    height={25} 
                   />
                 </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
+            </div>
+            <div className='flex flex-row gap-x-12'>
                 <NavigationMenuLink href='/' className={navigationMenuTriggerStyle()} active>
                   Главная
                 </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
                 <NavigationMenuLink href='/universiade2019'className={navigationMenuTriggerStyle()} active>
                   Универсиада
                 </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
                 <NavigationMenuLink href='/sports'className={navigationMenuTriggerStyle()} active>
                   Виды спорта
                 </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
                 <NavigationMenuLink href='/gto'className={navigationMenuTriggerStyle()} active>
                   ГТО
                 </NavigationMenuLink>
-              </NavigationMenuItem>
+            </div>
         </NavigationMenuList>
      </NavigationMenu>
     </div>
