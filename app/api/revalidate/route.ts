@@ -1,6 +1,8 @@
 import { revalidateTag } from "next/cache";
-import { NextRequest, NextResponse } from "next/server";
+import type { NextRequest} from "next/server";
+import { NextResponse } from "next/server";
 
+// eslint-disable-next-line @typescript-eslint/require-await
 export async function POST(request: NextRequest) {
   const tag = request.nextUrl.searchParams.get("tag")
 
