@@ -1,12 +1,9 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import Hero from "./hero/page";
 
 export default function Home() {
   return (
-    <main className="">
-      <div className="max-w-screen-2xl mx-auto">
-       
-      </div>
-    </main>
+    <div>
+      <Hero/>
+    </div>
   );
 }
