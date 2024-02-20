@@ -42,7 +42,7 @@ export default function ErrorToast({
           В {place}: {getShortDescription(messageError)}
         </p>
       ),
-      className: "font-Raleway",
+      className: "font-Inter",
       action: (
         <ToastAction
           className="px-2 py-6 text-sm"

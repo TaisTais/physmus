@@ -8,9 +8,8 @@ export default async function Home() {
   if (mainDescription.status === "rejected") return (
     <ErrorHandler
       error={mainDescription.reason as unknown}
-      place="Last Content"
-      notFound
-      goBack={false}
+      place="Описание"
+      notFound={false}
     />
   )
 
@@ -18,6 +17,17 @@ export default async function Home() {
     <main className="">
       <div className="max-w-screen-2xl mx-auto">
         {mainDescription.value.description}
+        <div className="grid gap-6">
+          {mainDescription.value.icons.data.map((icon, index) => (
+            <Image 
+              key={index}
+              src={icon.attributes.url}
+              width={300}
+              height={300}
+              alt="Icon"
+            />
+          ))}
+        </div>
       </div>
     </main>
   );
