@@ -1,8 +1,7 @@
 "use client"
 import React from 'react';
 import Image from 'next/image';
-import logo from "../../public/images/logo-ifksit.svg";
-import { NavigationMenuList, NavigationMenu, NavigationMenuItem, NavigationMenuLink, navigationMenuTriggerStyle } from '../ui/navigation-menu'
+import { NavigationMenuList, NavigationMenu, NavigationMenuItem, NavigationMenuLink, navigationMenuTriggerStyle } from './navigation-menu'
 
 export default function Header() {
 
@@ -11,12 +10,17 @@ export default function Header() {
       <NavigationMenu>
         <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuLink href='/'className={`${navigationMenuTriggerStyle()} mr-96 px-0 py-0`} active>
-                  <Image src={logo} alt='logo'/>
+                <NavigationMenuLink href='/' className={`${navigationMenuTriggerStyle()} px-0 py-0`} active>
+                  <Image 
+                    src="/logos/logo-ifksit-header.svg" 
+                    alt='logo' 
+                    width={40} 
+                    height={40} 
+                  />
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href='/'className={navigationMenuTriggerStyle()} active>
+                <NavigationMenuLink href='/' className={navigationMenuTriggerStyle()} active>
                   Главная
                 </NavigationMenuLink>
               </NavigationMenuItem>
