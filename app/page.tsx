@@ -15,7 +15,7 @@ export default async function Home() {
 
   return (
     <main className="">
-      <div className="bg-gradient-to-br from-light-yellow from-15% via-light-green to-light-sky bg-opacity-0">
+      <div className="bg-gradient-to-tl from-light-yellow via-light-green via-25% to-light-blue to-80%">
         <div className=" w-4/5 mx-auto ">
           <Hero />
         </div>

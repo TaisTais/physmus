@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getMainDescription } from "@/lib/queries/main";
 import ErrorHandler from "@/components/errors/ErrorHandler";
+import { Button } from "@/components/ui/button";
 
 export default async function Hero() {
   
@@ -16,11 +17,12 @@ export default async function Hero() {
   return (
     <div className="justify-center items-center flex flex-row pt-10">
         <div className=" "> 
-          <div className="flex flex-col gap-8 mr-8">
-            <h1 className="text title">Виртуальный музей спорта СФУ</h1>
-            <div className="text sub-title ">
+          <div className="flex flex-col gap-8 mr-8 ">
+            <h1 className="text title text-primary-foreground">Виртуальный музей спорта СФУ</h1>
+            <div className="text sub-title text-primary">
               {mainDescription.value.description}
             </div>
+            <Button className="">Подробнее</Button>
             <div className="flex flex-row gap-6">
               <Image src={"/logos/logo-sfu.svg"} alt="logo-sfu" width={100} height={100}/>
               <Image src={"/logos/logo-ifksit-old.svg"} alt="logo-ifksit" width={120} height={120}/>

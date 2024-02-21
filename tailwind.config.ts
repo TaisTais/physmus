@@ -45,6 +45,7 @@ const config = {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
           focus: "hsl(var(--accent-focus))",
+          sfu: "hsl(var(--accent-sfu))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -57,7 +58,7 @@ const config = {
         'light-yellow':"#FFEBA2",
         'light-orange':"#FFC69C",
         'light-green':"#D9F59F",
-        'light-blue':"#BEE8FF",
+        'light-blue':"#8FD0F4",
         'light-sky':"#BEE8FF",
       },
       borderRadius: {
