@@ -6,19 +6,23 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
+
     --primary: 230, 50%, 93%;
     --primary-foreground: 245, 25%, 53%;
 
     --gradient: ;
 
+    --accent-focus: 0 0% 100%;
 
-
-    --secondary: 60 4.8% 95.9%;
+    --secondary: 230, 47%, 75%;
     --secondary-foreground: 24 9.8% 10%;
+
     --muted: 60 4.8% 95.9%;
     --muted-foreground: 25 5.3% 44.7%;
-    --accent: 245, 35%, 74%;
+
+    --accent: 229, 69%, 89%;
     --accent-foreground: 245, 25%, 53%;
+    
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 60 9.1% 97.8%;
     --border: 20 5.9% 90%;
@@ -71,15 +75,19 @@
 .sub-title {
   font-weight: 500;
   font-size: 1rem;
+  line-height: 1.7;
 }
 
 .title {
   font-weight: 800;
   font-size: 2.5rem;
-  color: #F04B22
+  color: #F04B22;
+  line-height: 1.35;
 }
 
 .category-header {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
+  line-height: normal;
 }
+

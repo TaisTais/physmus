@@ -11,7 +11,7 @@ const NavigationMenu = React.forwardRef<
   <NavigationMenuPrimitive.Root
     ref={ref}
     className={cn(
-      "relative z-10 flex justify-center w-4/5",
+      "z-10 flex w-4/5 mx-auto",
       className
     )}
     {...props}
@@ -29,7 +29,7 @@ const NavigationMenuList = React.forwardRef<
   <NavigationMenuPrimitive.List
     ref={ref}
     className={cn(
-      "group flex flex-row items-stretch my-1",
+      "group flex justify-between my-1",
       className
     )}
     {...props}
@@ -40,7 +40,10 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex w-max items-center justify-center rounded-md px-4 py-1 text-sm font-medium hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none text category-header text-accent-foreground"
+  "group inline-flex items-center justify-center rounded-full px-5 py-0 hover:bg-accent hover:text-accent-foreground focus:bg-accent-focus focus:text-accent-foreground focus:outline-none disabled:pointer-events-none text category-header text-accent-foreground"
+)
+const navigationMenuLOGOTriggerStyle = cva(
+  "group inline-flex items-center justify-center rounded-full px-0 py-0 -mb-1 mt-1 hover:bg-accent hover:text-accent-foreground focus:bg-accent-focus focus:text-accent-foreground focus:outline-none disabled:pointer-events-none text category-header text-accent-foreground"
 )
 
 const NavigationMenuTrigger = React.forwardRef<
@@ -116,6 +119,7 @@ NavigationMenuIndicator.displayName =
 
 export {
   navigationMenuTriggerStyle,
+  navigationMenuLOGOTriggerStyle,
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,

@@ -16,7 +16,7 @@ export default async function Hero() {
   return (
     <div className="justify-center items-center flex flex-row pt-10">
         <div className=" "> 
-          <div className="flex flex-col gap-6 mr-8">
+          <div className="flex flex-col gap-8 mr-8">
             <h1 className="text title">Виртуальный музей спорта СФУ</h1>
             <div className="text sub-title ">
               {mainDescription.value.description}
