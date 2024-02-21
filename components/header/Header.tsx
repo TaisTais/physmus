@@ -6,15 +6,15 @@ import { NavigationMenuList, NavigationMenu, NavigationMenuLink, navigationMenuT
 export default function Header() {
 
   return (
-    <div className="bg-primary ">
+    <div className="bg-primary">
       <NavigationMenu className=''>
         <NavigationMenuList className='flex-1 flex-row items-stretch'>
           <div>
                 <NavigationMenuLink href='/' className={`${navigationMenuTriggerStyle()} px-0 py-0`} active>
                   <Image 
-                    src='/logo-ifksit-header.svg'
+                    src={"/logos/logo-ifksit-header.svg"}
                     alt='logo' 
-                    width={25} 
+                    width={35} 
                     height={25} 
                   />
                 </NavigationMenuLink>

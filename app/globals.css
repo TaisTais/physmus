@@ -11,18 +11,22 @@
 
     --gradient: ;
 
+
+
     --secondary: 60 4.8% 95.9%;
     --secondary-foreground: 24 9.8% 10%;
     --muted: 60 4.8% 95.9%;
     --muted-foreground: 25 5.3% 44.7%;
-    --accent: 60 4.8% 95.9%;
-    --accent-foreground: 24 9.8% 10%;
+    --accent: 245, 35%, 74%;
+    --accent-foreground: 245, 25%, 53%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 60 9.1% 97.8%;
     --border: 20 5.9% 90%;
     --input: 20 5.9% 90%;
     --ring: 24.6 95% 53.1%;
     --radius: 0.5rem;
+
+    
   }
 
   .dark {
@@ -48,11 +52,6 @@
   }
 }
 
-.gradient {
-  background: linear-gradient(225deg, rgb(109, 167, 254), rgb(144, 212, 249), rgb(179, 239, 100), rgb(250, 255, 112),  rgb(255, 174, 112));
-}
-
- 
 @layer base {
   * {
     @apply border-border;
@@ -60,4 +59,27 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.text {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 0.5rem;
+  font-weight: 400;
+  font-style: normal;
+}
+.sub-title {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: #F04B22
+}
+
+.category-header {
+  font-size: 1rem;
+  font-weight: 500;
 }

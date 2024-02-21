@@ -55,9 +55,9 @@ const config = {
         },
         'light-yellow':"#FFEBA2",
         'light-orange':"#FFC69C",
-        'light-green':"#b3ef64",
-        'light-blue':"#6da7fe",
-        'light-sky':"#90d4f9",
+        'light-green':"#D9F59F",
+        'light-blue':"#BEE8FF",
+        'light-sky':"#BEE8FF",
       },
       borderRadius: {
         lg: "var(--radius)",
