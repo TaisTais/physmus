@@ -19,19 +19,15 @@ const config = {
     },
     extend: {
       colors: {
-        test: "hsl(var(--border))",
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+        hover: {
+          DEFAULT: "hsl(var(--hover))",
+          foreground: "hsl(var(--hover-foreground))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -42,10 +38,22 @@ const config = {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-          focus: "hsl(var(--accent-focus))",
           sfu: "hsl(var(--accent-sfu))",
+          lime: "hsl(var(--accent-lime))",
+          blue: "hsl(var(--accent-blue))",
+          yellow: "hsl(var(--accent-yellow))",
+          green: "hsl(var(--accent-green))",
+          pink: "hsl(var(--accent-pink))",
+          sky: "hsl(var(--accent-sky))",
+        },
+        light: {
+          peach: "hsl(var(--light-peach))",
+          lime: "hsl(var(--light-lime))",
+          blue: "hsl(var(--light-blue))",
+          yellow: "hsl(var(--light-yellow))",
+          green: "hsl(var(--light-green))",
+          pink: "hsl(var(--light-pink))",
+          sky: "hsl(var(--light-sky))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -55,11 +63,6 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        'light-yellow':"#FFEBA2",
-        'light-orange':"#FFC69C",
-        'light-green':"#D9F59F",
-        'light-blue':"#8FD0F4",
-        'light-sky':"#BEE8FF",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -81,6 +84,9 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+    backgroundImage: {
+      'hero-bg': "url('/hero-bg1.svg')",
+    }
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config

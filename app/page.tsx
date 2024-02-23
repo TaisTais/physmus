@@ -14,10 +14,10 @@ export default async function Home() {
   )
 
   return (
-    <main className="">
-      <div className="bg-gradient-to-tl from-light-yellow via-light-green via-25% to-light-blue to-80%">
-        <div className=" w-4/5 mx-auto ">
-          <Hero />
+    <main className=" ">
+      <div className="">
+        <div className="">
+          <Hero/>
         </div>
       </div>
     </main>

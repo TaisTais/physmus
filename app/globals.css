@@ -7,28 +7,40 @@
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
 
+  /*header + footer*/
     --primary: 230, 50%, 93%;
+    --hover: 229, 69%, 89%;    
     --primary-foreground: 245, 25%, 53%;
+    --hover-foreground: 245, 36%, 35%;
 
-    --accent-focus: 0 0% 100%;
+  /*SFU colors from brandbook*/
+    --accent-sfu: 12, 87%, 54%;
+    --accent-lime: 72, 56%, 50%;
+    --accent-blue: 205, 63%, 62%;
+    --accent-yellow: 38, 96%, 58%;
+    --accent-green: 81, 42%, 38%;
 
-    --secondary: 230, 47%, 75%;
-    --secondary-foreground: 24 9.8% 10%;
+  /*SFU light colors*/
+    --light-yellow: 47, 100%, 82%;
+    --light-lime: 80, 81%, 79%;
+    --light-green: 81, 69%, 64%;
+    --light-blue: 201, 82%, 76%;
+    --light-peach: 25, 100%, 81%;
 
+  /*universiade colors*/
+    --light-pink: 322, 89%, 86%;
+    --light-sky: 201, 100%, 87%;
+    --accent-pink: 328, 78%, 50%;
+    --accent-sky: 196, 85%, 55%;
+
+
+    --focus: 0 0% 100%;
     --muted: 60 4.8% 95.9%;
     --muted-foreground: 25 5.3% 44.7%;
-
-    --accent: 229, 69%, 89%;
-    --accent-foreground: 245, 25%, 53%;
-    
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 60 9.1% 97.8%;
-    --border: 20 5.9% 90%;
-    --input: 20 5.9% 90%;
-    --ring: 24.6 95% 53.1%;
-    --radius: 0.5rem;
 
-    --accent-sfu: 12, 87%, 54%;
+    --border: 20 5.9% 90%;
   }
 
   .dark {
@@ -40,7 +52,7 @@
     --popover-foreground: 60 9.1% 97.8%;
     --primary: 230, 50%, 93%;
     --primary-foreground: 60 9.1% 97.8%;
-    --secondary: 12 6.5% 15.1%;
+    --primary-hover: 12 6.5% 15.1%;
     --secondary-foreground: 60 9.1% 97.8%;
     --muted: 12 6.5% 15.1%;
     --muted-foreground: 24 5.4% 63.9%;
@@ -55,9 +67,7 @@
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+  
   body {
     @apply bg-background text-foreground;
   }
@@ -88,3 +98,11 @@
   line-height: normal;
 }
 
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.page-block {
+  margin-bottom: 100vh;
+}
