@@ -11,7 +11,7 @@ const NavigationMenu = React.forwardRef<
   <NavigationMenuPrimitive.Root
     ref={ref}
     className={cn(
-      "z-10 w-4/5 mx-auto flex flex-row ",
+      "z-10 mx-auto flex-row flex",
       className
     )}
     {...props}
@@ -29,7 +29,7 @@ const NavigationMenuList = React.forwardRef<
   <NavigationMenuPrimitive.List
     ref={ref}
     className={cn(
-      "group flex justify-between my-1",
+      "group flex flex-row my-1 justify-between",
       className
     )}
     {...props}
@@ -40,10 +40,10 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex items-center justify-center rounded-full px-5 py-0 hover:hover hover:hover-foreground focus:focus focus:text-accent-foreground disabled:pointer-events-none text category-header text-primary-foreground"
+  "group inline-flex rounded-full px-5 py-2 hover:bg-hover hover:hover-foreground focus:focus focus:text-accent-foreground disabled:pointer-events-none text navmenu-header text-primary-foreground"
 )
 const navigationMenuLOGOTriggerStyle = cva(
-  "group inline-flex items-center justify-center rounded-full px-0 py-0 -mb-1 mt-1 hover:bg-hover hover:hover-foreground focus:focus focus:text-accent-foreground disabled:pointer-events-none text category-header text-primary-foreground"
+  "group inline-flex justify-start rounded-full px-0 py-0 -mb-1 mt-1 hover:bg-hover hover:hover-foreground focus:focus focus:text-accent-foreground disabled:pointer-events-none text navmenu-header text-primary-foreground"
 )
 
 const NavigationMenuTrigger = React.forwardRef<

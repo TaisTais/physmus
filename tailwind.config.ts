@@ -85,7 +85,10 @@ const config = {
       },
     },
     backgroundImage: {
-      'hero-bg': "url('/hero-bg1.svg')",
+      'hero': "url('/hero-bg.svg')",
+      'universiade-card': "url('/universiade-card-bg.svg')",
+      'sports-card': "url('/sports-card-bg.svg')",
+      'gto-card': "url('/gto-card-bg.svg')",
     }
   },
   plugins: [require("tailwindcss-animate")],

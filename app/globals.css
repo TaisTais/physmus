@@ -67,7 +67,6 @@
 }
 
 @layer base {
-  
   body {
     @apply bg-background text-foreground;
   }
@@ -75,14 +74,12 @@
 
 .text {
   font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
   font-size: 1rem;
   font-weight: 400;
   font-style: normal;
 }
 .sub-title {
   font-weight: 500;
-  font-size: 1rem;
   line-height: 1.7;
 }
 
@@ -93,6 +90,13 @@
 }
 
 .category-header {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #FFF;
+  letter-spacing: 0.5px;
+}
+
+.navmenu-header {
   font-size: 0.9rem;
   font-weight: 500;
   line-height: normal;
@@ -106,3 +110,9 @@
 .page-block {
   margin-bottom: 100vh;
 }
+
+.hero-card {
+  background-size: cover;
+  background-position: center center; 
+}
+

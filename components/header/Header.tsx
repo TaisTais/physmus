@@ -7,10 +7,10 @@ export default function Header() {
 
   return (
     <div className="bg-primary">
-      <NavigationMenu className=''>
-        <NavigationMenuList>
-          <div className=''>
-            <NavigationMenuLink href='/' className={navigationMenuLOGOTriggerStyle()} active>
+      <NavigationMenu className='container'>
+        <NavigationMenuList className='flex items-center justify-between'>
+          <div>
+            <NavigationMenuLink href='/' className={`${navigationMenuLOGOTriggerStyle()} mr-[30vw]`} active>
               <Image 
                 src={"/logos/logo-ifksit-header-small.svg"}
                 alt='logo' 
@@ -19,7 +19,7 @@ export default function Header() {
               />
             </NavigationMenuLink>
           </div>
-          <div className='flex flex-row gap-x-12 items-center justify-center'>
+          <div className='flex flex-row gap-x-12 float-right'>
             <NavigationMenuLink href='/' className={navigationMenuTriggerStyle()} active>
               Главная
             </NavigationMenuLink>
