@@ -89,6 +89,7 @@ const config = {
       'universiade-card': "url('/universiade-card-bg.svg')",
       'sports-card': "url('/sports-card-bg.svg')",
       'gto-card': "url('/gto-card-bg.svg')",
+      'universiade-map': "url('/universiade-map.svg')",
     }
   },
   plugins: [require("tailwindcss-animate")],

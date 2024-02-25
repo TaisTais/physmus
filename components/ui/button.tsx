@@ -11,15 +11,19 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-accent-sfu text-background hover:bg-primary/90 text",
+          "bg-accent-sfu text-background hover:bg-hover text",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+        ghost: 
+          "hover:bg-accent hover:text-accent-foreground",
+        link: 
+          "text-primary underline-offset-4 hover:underline",
+        universiade:
+          "universiade text-primary-foreground navmenu-header hover:bg-hover text",
       },
       size: {
         default: "h-10 w-40",
