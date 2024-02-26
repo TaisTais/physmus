@@ -16,7 +16,7 @@ export default async function Hero() {
 
   return (
     <>
-    <div className="bg-hero mb-32">
+    <div className="bg-hero mb-32 bg-no-repeat bg-cover bg-center">
       <div className="container justify-center items-center flex flex-row h-auto pt-10"> 
         <div className="flex flex-col gap-8 mr-8 ">
           <h1 className="text title text-primary-foreground">Виртуальный музей спорта СФУ</h1>
