@@ -1,17 +1,6 @@
-import ErrorHandler from "@/components/errors/ErrorHandler";
-import { getMainDescription } from "@/lib/queries/main";
-import Hero from "./hero/page";
+import Hero from "./Hero";
 
-export default async function Home() {
-
-  const [ mainDescription ] = await Promise.allSettled([ getMainDescription() ])
-  if (mainDescription.status === "rejected") return (
-    <ErrorHandler
-      error={mainDescription.reason as unknown}
-      place="Описание"
-      notFound={false}
-    />
-  )
+export default function Home() {
 
   return (
     <main className=" ">

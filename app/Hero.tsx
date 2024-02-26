@@ -24,8 +24,9 @@ export default async function Hero() {
             {mainDescription.value.description}
           </div>
           <div className="flex flex-row gap-6">
-            <Image src={"/logos/logo-sfu.svg"} alt="logo-sfu" width={100} height={100} />
-            <Image src={"/logos/logo-ifksit-old.svg"} alt="logo-ifksit" width={120} height={120} />
+            {mainDescription.value.icons.data.map((item, index) => (
+              <Image key={index} src={item.attributes.url} alt={""} width={100} height={100} />
+            ))}
           </div>
         </div>
         < Image src={"/sport-students.svg"} alt='students' width={750} height={100} />
