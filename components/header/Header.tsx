@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { NavigationMenuList, NavigationMenu, NavigationMenuLink, navigationMenuTriggerStyle, navigationMenuLOGOTriggerStyle } from './navigation-menu'
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
 
@@ -20,21 +21,31 @@ export default function Header() {
             </NavigationMenuLink>
           </div>
           <div className='flex flex-row gap-x-12 float-right'>
-            <NavigationMenuLink href='/' className={navigationMenuTriggerStyle()} active>
-              Главная
-            </NavigationMenuLink>
-            <NavigationMenuLink href='/universiade2019'className={navigationMenuTriggerStyle()} active>
-              Универсиада
-            </NavigationMenuLink>
-            <NavigationMenuLink href='/sports'className={navigationMenuTriggerStyle()} active>
-              Виды спорта
-            </NavigationMenuLink>
-            <NavigationMenuLink href='/gto'className={navigationMenuTriggerStyle()} active>
-              ГТО
-            </NavigationMenuLink>
+            <NavMenuItem name='Главная' href='/' />
+            <NavMenuItem name='Универсиада' href='/universiade2019' />
+            <NavMenuItem name='Виды спорта' href='/sports' />
+            <NavMenuItem name='ГТО' href='/gto' />
           </div>
         </NavigationMenuList>
      </NavigationMenu>
     </div>
   )
+}
+
+function NavMenuItem({
+  name,
+  href
+}: {
+  name: string,
+  href: string
+}) {
+
+  const pathname = usePathname()
+
+  return (
+    <NavigationMenuLink href={href} className={navigationMenuTriggerStyle()} active={pathname === href}>
+      {name}
+    </NavigationMenuLink>
+  )
+
 }
