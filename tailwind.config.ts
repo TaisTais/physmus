@@ -85,10 +85,10 @@ const config = {
       },
     },
     backgroundImage: {
-      'hero': "url('/hero-bg.svg')",
-      'universiade-card': "url('/universiade-card-bg.svg')",
-      'sports-card': "url('/sports-card-bg.svg')",
-      'gto-card': "url('/gto-card-bg.svg')",
+      'hero': "url('/hero-bg.png')",
+      'universiade-card': "url('/universiade-card-bg.png')",
+      'sports-card': "url('/sports-card-bg.png')",
+      'gto-card': "url('/gto-card-bg.png')",
       'universiade-map': "url('/universiade-map.svg')",
     }
   },
