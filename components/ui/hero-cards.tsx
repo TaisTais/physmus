@@ -1,7 +1,6 @@
 import * as React from "react"
-
 import { cn } from "@/lib/utils"
-import Link from "next/link"
+import { cva } from "class-variance-authority"
 
 const Card = React.forwardRef<
   HTMLDivElement,
@@ -67,44 +66,15 @@ const CardFooter = React.forwardRef<
 ))
 CardFooter.displayName = "CardFooter"
 
+const heroCardTriggerStyle = cva(
+  "flex flex-col gap-10 data-[active]:bg-hover data-[state=open]:bg-hover"
+)
 
-export function HeroCards() {
-  return (
-    <div className="flex flex-col gap-5 mb-32">
-      <Link href='/universiade2019'>
-        <Card className="hero-card bg-universiade-card">
-          <CardHeader>
-            <CardTitle>Зимняя универсиада 2019</CardTitle>
-            <CardDescription>XXIX Всемирная зимняя Универсиада в СФУ</CardDescription>
-          </CardHeader>
-          <CardFooter>
-          </CardFooter>
-        </Card>
-      </Link>
-
-      <Link href='/sports'>
-        <Card className="hero-card bg-sports-card">
-        <CardHeader>
-          <CardTitle>Виды спорта</CardTitle>
-          <CardDescription>Базовые виды спорта, реализуемые в СФУ</CardDescription>
-        </CardHeader>
-        <CardFooter>
-        </CardFooter>
-        </Card>
-      </Link>
-
-      <Link href='/gto'>
-        <Card className="hero-card bg-gto-card">
-        <CardHeader>
-          <CardTitle className="">ГТО</CardTitle>
-          <CardDescription>Участие университета в спортивной жизни студентов.</CardDescription>
-        </CardHeader>
-        <CardFooter>
-        </CardFooter>
-        </Card>
-      </Link>
-    </div>
-    
-
-  )
+export {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  heroCardTriggerStyle,
 }

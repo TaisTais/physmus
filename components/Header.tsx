@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import Image from 'next/image';
-import { NavigationMenuList, NavigationMenu, NavigationMenuLink, navigationMenuTriggerStyle, navigationMenuLOGOTriggerStyle } from './navigation-menu'
+import { NavigationMenuList, NavigationMenu, NavigationMenuLink, navigationMenuTriggerStyle, navigationMenuLOGOTriggerStyle } from './ui/navigation-menu'
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
