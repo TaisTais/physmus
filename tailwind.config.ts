@@ -86,7 +86,7 @@ const config = {
     },
     backgroundImage: {
       'hero': "url('/hero-bg.png')",
-      'universiade-card': "url('/universiade-card-bg.png')",
+      'universiade-card': "mainCategories.value.background.data?.attributes.url[0]",
       'sports-card': "url('/sports-card-bg.png')",
       'gto-card': "url('/gto-card-bg.png')",
       'universiade-map': "url('/universiade-map.svg')",

@@ -60,14 +60,14 @@ const CardFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex items-center pb-10 pl-9", className)}
+    className={cn("flex items-center pb-10 pl-9 ", className)}
     {...props}
   />
 ))
 CardFooter.displayName = "CardFooter"
 
 const heroCardTriggerStyle = cva(
-  "flex flex-col gap-10 data-[active]:bg-hover data-[state=open]:bg-hover"
+  "flex flex-col gap-10 w-full h-60 data-[active]:bg-hover data-[state=open]:bg-hover"
 )
 
 export {

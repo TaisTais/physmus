@@ -8,7 +8,7 @@ export default function Header() {
 
   return (
     <div className="bg-primary">
-      <NavigationMenu className='container'>
+      <NavigationMenu className='container w-4/5'>
         <NavigationMenuList className='flex items-center justify-between'>
           <div>
             <NavigationMenuLink href='/' className={`${navigationMenuLOGOTriggerStyle()} mr-[30vw]`} active>

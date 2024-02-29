@@ -1,10 +1,15 @@
 import Hero from "@/components/Hero";
+import MainCategories from "@/components/MainCategories";
 
 export default function Home() {
 
   return (
     <>
-    <Hero/>
+    <div className="flex flex-col gap-11">
+      <Hero/>
+      <MainCategories/>
+    </div>
+    
     </>
   );
 }
