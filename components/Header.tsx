@@ -20,7 +20,7 @@ export default function Header() {
               />
             </NavigationMenuLink>
           </div>
-          <div className='flex flex-row gap-x-12 float-right'>
+          <div className='flex flex-row gap-x-12'>
             <NavMenuItem name='Главная' href='/' />
             <NavMenuItem name='Универсиада' href='/universiade2019' />
             <NavMenuItem name='Виды спорта' href='/sports' />

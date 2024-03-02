@@ -51,6 +51,5 @@ export async function getMainCategories(): Promise<MainCategoryT> {
   }
 
   const data = MainCategoryT.parse(json.data.mainCategories.data?.attributes);
-
   return data
 }

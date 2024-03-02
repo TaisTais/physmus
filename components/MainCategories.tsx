@@ -1,5 +1,5 @@
 import { getMainCategories } from "@/lib/queries/main-categories";
-import { Card,CardDescription,CardFooter,CardHeader,CardTitle, heroCardTriggerStyle, } from "@/components/ui/hero-cards";
+import { Card,CardDescription,CardFooter,CardHeader,CardTitle, heroCardTriggerStyle } from "@/components/ui/hero-cards";
 import { Link } from "lucide-react";
 import ErrorHandler from "./errors/ErrorHandler";
 
@@ -15,14 +15,14 @@ export default async function MainCategories(){
   )
   
   return (
-    <>
-    <div className="w-4/5 container bg-orange-500">
+    <div>
+    <div className="w-4/5 container bg-orange-500 h-36">
         <div className="flex flex-col gap-5 mb-32">
           <Link href='/universiade2019'>
             <Card className={heroCardTriggerStyle()}>
               <CardHeader>
-                <CardTitle>{mainCategories.value.title[0]}</CardTitle>
-                <CardDescription>{mainCategories.value.description[0]}</CardDescription>
+                <CardTitle>{mainCategories.value?.title}</CardTitle>
+                <CardDescription>{mainCategories.value?.description}</CardDescription>
               </CardHeader>
               <CardFooter>
               </CardFooter>
@@ -32,8 +32,8 @@ export default async function MainCategories(){
           <Link href='/sports'>
             <Card className="hero-card bg-sports-card">
             <CardHeader>
-              <CardTitle>{mainCategories.value.title[1]}</CardTitle>
-              <CardDescription>{mainCategories.value.description[1]}</CardDescription>
+              <CardTitle>{mainCategories.value?.title}</CardTitle>
+              <CardDescription>{mainCategories.value?.description}</CardDescription>
             </CardHeader>
             <CardFooter>
             </CardFooter>
@@ -43,8 +43,8 @@ export default async function MainCategories(){
           <Link href='/gto'>
             <Card className="hero-card bg-gto-card">
             <CardHeader>
-              <CardTitle className="">{mainCategories.value.title[2]}</CardTitle>
-              <CardDescription>{mainCategories.value.description[2]}</CardDescription>
+              <CardTitle className="">{mainCategories.value?.title}</CardTitle>
+              <CardDescription>{mainCategories.value?.description}</CardDescription>
             </CardHeader>
             <CardFooter>
             </CardFooter>
@@ -52,6 +52,6 @@ export default async function MainCategories(){
           </Link>
         </div>
       </div>
-      </>
+      </div>
   );
 }

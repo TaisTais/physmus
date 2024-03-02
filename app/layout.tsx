@@ -26,7 +26,9 @@ export default function RootLayout({
     <html lang="ru">
       <body className={montserrat.className}>
       <Header/>
+      
       <main>{children}</main>
+
       <Toaster />
       <Footer/>
       </body>
