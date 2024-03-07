@@ -1,5 +1,3 @@
-"use client"
-
 import * as React from "react"
 import { ChevronDownIcon } from "@radix-ui/react-icons"
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
@@ -13,7 +11,7 @@ const NavigationMenu = React.forwardRef<
   <NavigationMenuPrimitive.Root
     ref={ref}
     className={cn(
-      "relative z-10 flex max-w-max flex-1 items-center justify-center bg--primary",
+      "z-10 mx-auto flex-row flex",
       className
     )}
     {...props}
@@ -31,7 +29,7 @@ const NavigationMenuList = React.forwardRef<
   <NavigationMenuPrimitive.List
     ref={ref}
     className={cn(
-      "group flex flex-1 list-none items-center justify-center space-x-1 my-3",
+      "group flex flex-row my-1 justify-between",
       className
     )}
     {...props}
@@ -42,7 +40,10 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex ml-7 mr-7 h-6 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none"
+  "group inline-flex rounded-full px-5 py-2 hover:bg-hover focus:text-accent-foreground disabled:pointer-events-none text-sm font-medium navmenu-header text-primary-foreground data-[active]:bg-hover data-[state=open]:bg-hover"
+)
+const navigationMenuLOGOTriggerStyle = cva(
+  "group inline-flex justify-start rounded-full px-0 py-0 -mb-1 mt-1 hover:bg-hover hover:hover-foreground focus:focus focus:text-accent-foreground disabled:pointer-events-none navmenu-header text-primary-foreground"
 )
 
 const NavigationMenuTrigger = React.forwardRef<
@@ -118,6 +119,7 @@ NavigationMenuIndicator.displayName =
 
 export {
   navigationMenuTriggerStyle,
+  navigationMenuLOGOTriggerStyle,
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
@@ -127,5 +129,3 @@ export {
   NavigationMenuIndicator,
   NavigationMenuViewport,
 }
-
-
