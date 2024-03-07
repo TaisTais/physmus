@@ -1,27 +1,39 @@
-import { MainCategoryT } from "../types/main-categories"
+import { MainCategoriesT } from "../types/main-categories"
 
-export async function getMainCategories(): Promise<MainCategoryT> {
+export async function getMainCategories(): Promise<MainCategoriesT> {
   const headers = {
     "Content-Type": "application/json"
   }
   const query = /* GraphGL */ `
-  query GetMainCategories {
-    mainCategories {
-      data {
-        attributes {
-          title
-          description
-          background {
-            data {
-              attributes {
-                url
+    query GetMainCategories {
+      mainCategory {
+        data {
+          attributes {
+            universiade {
+              title
+              description
+              image {
+                data { attributes { url } }
+              }
+            }
+            sports {
+              title
+              description
+              image {
+                data { attributes { url } }
+              }
+            }
+            gto {
+              title
+              description
+              image {
+                data { attributes { url } }
               }
             }
           }
         }
       }
     }
-  }
   `
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
     headers,
@@ -37,19 +49,19 @@ export async function getMainCategories(): Promise<MainCategoryT> {
   if (!res.ok) {
     const err = await res.text()
     console.log(err)
-    throw new Error('Failed to fetch data "Main Category"')
+    throw new Error('Failed to fetch data "Main Categories"')
   }
 
   const json = (await res.json()) as {
     data: {
-      mainCategories: {
+      mainCategory: {
         data: {
-          attributes: MainCategoryT
-        } | null
+          attributes: MainCategoriesT
+        }
       }
     }
   }
 
-  const data = MainCategoryT.parse(json.data.mainCategories.data?.attributes);
+  const data = MainCategoriesT.parse(json.data.mainCategory.data.attributes);
   return data
 }

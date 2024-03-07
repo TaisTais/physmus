@@ -40,10 +40,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex rounded-full px-5 py-2 hover:bg-hover focus:text-accent-foreground disabled:pointer-events-none text-sm font-medium navmenu-header text-primary-foreground data-[active]:bg-hover data-[state=open]:bg-hover"
-)
-const navigationMenuLOGOTriggerStyle = cva(
-  "group inline-flex justify-start rounded-full px-0 py-0 -mb-1 mt-1 hover:bg-hover hover:hover-foreground focus:focus focus:text-accent-foreground disabled:pointer-events-none navmenu-header text-primary-foreground"
+  "group inline-flex rounded-full px-5 py-2 hover:bg-hover focus:text-accent-foreground disabled:pointer-events-none text-sm font-medium navmenu-header text-primary-foreground data-[active]:bg-hover data-[state=open]:bg-hover transition-all"
 )
 
 const NavigationMenuTrigger = React.forwardRef<
@@ -119,7 +116,6 @@ NavigationMenuIndicator.displayName =
 
 export {
   navigationMenuTriggerStyle,
-  navigationMenuLOGOTriggerStyle,
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,

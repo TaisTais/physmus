@@ -1,6 +1,6 @@
 import * as React from "react"
+
 import { cn } from "@/lib/utils"
-import { cva } from "class-variance-authority"
 
 const Card = React.forwardRef<
   HTMLDivElement,
@@ -9,7 +9,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-3xl border text-card-foreground shadow h-32",
+      "rounded-xl border bg-card text-card-foreground shadow",
       className
     )}
     {...props}
@@ -23,7 +23,7 @@ const CardHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex flex-col space-y-1 pt-8 px-10 pb-6", className)}
+    className={cn("flex flex-col space-y-1.5 p-6", className)}
     {...props}
   />
 ))
@@ -35,7 +35,7 @@ const CardTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h3
     ref={ref}
-    className={cn("text category-header text-[#FFF] leading-none tracking-tight", className)}
+    className={cn("font-semibold leading-none tracking-tight", className)}
     {...props}
   />
 ))
@@ -47,12 +47,19 @@ const CardDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn("text text-background", className)}
+    className={cn("text-sm text-muted-foreground", className)}
     {...props}
   />
 ))
 CardDescription.displayName = "CardDescription"
 
+const CardContent = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+))
+CardContent.displayName = "CardContent"
 
 const CardFooter = React.forwardRef<
   HTMLDivElement,
@@ -60,21 +67,10 @@ const CardFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex items-center pb-10 pl-9 ", className)}
+    className={cn("flex items-center p-6 pt-0", className)}
     {...props}
   />
 ))
 CardFooter.displayName = "CardFooter"
 
-const heroCardTriggerStyle = cva(
-  "flex flex-col gap-10 w-full h-60 data-[active]:bg-hover data-[state=open]:bg-hover"
-)
-
-export {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-  heroCardTriggerStyle,
-}
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }

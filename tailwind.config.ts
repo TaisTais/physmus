@@ -84,13 +84,6 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
-    backgroundImage: {
-      'hero': "url('/hero-bg.png')",
-      'universiade-card': "mainCategories.value.background.data?.attributes.url[0]",
-      'sports-card': "url('/sports-card-bg.png')",
-      'gto-card': "url('/gto-card-bg.png')",
-      'universiade-map': "url('/universiade-map.svg')",
-    }
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config

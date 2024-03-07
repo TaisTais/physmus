@@ -5,8 +5,8 @@ import Image from 'next/image';
 export function Footer() {
   return (
     <div className='bg-primary'>
-      <div className='w-4/5 container pt-12 pb-20 flex flex-row items-center justify-between'>
-        <div className='flex flex-row gap-10 justify-center items-center w-1/2'>
+      <div className='w-4/5 container py-12 flex lg:flex-row flex-col items-center justify-between gap-6'>
+        <div className='flex flex-col gap-6 lg:w-1/3 lg:items-start items-center'>
           <Image 
             src='/logos/logo-sfu-footer.svg' 
             alt='logo' 
@@ -15,7 +15,7 @@ export function Footer() {
           />
           <h3 className='text-sm font-semibold text-primary-foreground'>Институт физической культуры, спорта и туризма</h3>
         </div>
-        <div className='text-sm text-right text-primary-foreground w-2/6'>
+        <div className='text-sm lg:text-right text-center text-primary-foreground w-2/6'>
           <p>Российская Федерация, 109028, Красноярский край, г.Красноярск, Свободный проспект, д.82, стр.А</p>
         </div>
       </div>

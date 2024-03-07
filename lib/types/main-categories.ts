@@ -9,10 +9,21 @@ export const ImageT = z.object({
 })
 export type ImageT = z.infer<typeof ImageT> 
 
-
-export const MainCategoryT = z.object({
-  title: z.string(),
-  description: z.string(),
-  background: ImageT
+export const MainCategoriesT = z.object({
+  universiade: z.object({
+    title: z.string(),
+    image: ImageT,
+    description: z.string().nullable()
+  }),
+  sports: z.object({
+    title: z.string(),
+    image: ImageT,
+    description: z.string().nullable()
+  }),
+  gto: z.object({
+    title: z.string(),
+    image: ImageT,
+    description: z.string().nullable()
+  })
 })
-export type MainCategoryT = z.infer<typeof MainCategoryT> 
+export type MainCategoriesT = z.infer<typeof MainCategoriesT> 
