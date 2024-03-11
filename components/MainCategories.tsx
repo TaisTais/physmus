@@ -28,7 +28,7 @@ export default async function MainCategories(){
     imageSrc: string | undefined
   }) {
     return (
-      <Link href={href} className="hover:scale-105 rounded-xl transition-all">
+      <Link href={href} className="hover:scale-105 rounded-xl transition-all duration-200">
         <Card className="flex items-center relative overflow-hidden min-h-40">
           <CardHeader className="lg:px-14 px-8">
             <CardTitle className="text-background lg:text-2xl sm:text-xl text-lg drop-shadow-md z-20">{title}</CardTitle>

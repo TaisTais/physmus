@@ -80,3 +80,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+.pink-gradient {
+  background: rgb(221,142,196);
+  background: linear-gradient(145deg, rgba(221,142,196,1) 10%, rgba(221,142,196,0.8) 30%, rgba(221,142,196,0.4) 50%, rgba(255,255,255,0) 100%);
+}

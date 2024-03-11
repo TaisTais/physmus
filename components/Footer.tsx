@@ -15,7 +15,7 @@ export function Footer() {
           />
           <h3 className='text-sm font-semibold text-primary-foreground'>Институт физической культуры, спорта и туризма</h3>
         </div>
-        <div className='text-sm lg:text-right text-center text-primary-foreground w-2/6'>
+        <div className='text-sm lg:text-right text-center text-primary-foreground lg:w-2/6 md:w-1/2'>
           <p>Российская Федерация, 109028, Красноярский край, г.Красноярск, Свободный проспект, д.82, стр.А</p>
         </div>
       </div>

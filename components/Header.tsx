@@ -10,7 +10,7 @@ import { Menu } from 'lucide-react';
 export default function Header() {
 
   return (
-    <div className="bg-primary py-2 fixed w-full z-[1000]">
+    <div className="bg-primary py-2 fixed w-full z-[1000] shadow">
       <div className='container w-4/5 flex justify-between items-center gap-12'>
         <Link 
           href='/' 
@@ -39,7 +39,7 @@ export default function Header() {
           <SheetTrigger className='lg:hidden block'>
             <Menu className="h-[2.5rem] w-[2.5rem] text-primary-foreground transition-all" />
           </SheetTrigger>
-          <SheetContent>
+          <SheetContent className='mt-14'>
             <NavigationMenu className='w-full mt-12'>
               <NavigationMenuList className='w-full flex flex-col gap-y-8'>
                 <NavMenuItem name='Главная' href='/' />
@@ -62,11 +62,22 @@ function NavMenuItem({
   name: string,
   href: string
 }) {
+  
+  const pathName = usePathname();
+  
+  // Remove query parameters
+  const pathWithoutQuery = pathName.split("?")[0];
 
-  const pathname = usePathname()
+  // Ex:"/my/nested/path" --> ["my", "nested", "path"]
+  const pathNestedRoutes = pathWithoutQuery
+    .split("/")
+    .filter((v) => v.length > 0);
+
+  const isMainPage = pathNestedRoutes[pathNestedRoutes.length  - 1] === undefined
+  const pathCurrentPage = isMainPage ? "/" : "/" + pathNestedRoutes[0];
 
   return (
-    <NavigationMenuLink href={href} className={navigationMenuTriggerStyle()} active={pathname === href}>
+    <NavigationMenuLink href={href} className={navigationMenuTriggerStyle()} active={pathCurrentPage === href}>
       {name}
     </NavigationMenuLink>
   )
