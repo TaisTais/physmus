@@ -18,3 +18,33 @@ export function getShortDescription(
     return array.slice(0, sliceLength).join(" ") + "...";
   } else return array.join(" ");
 }
+
+export function getIndex(num: number) {
+  if (num < 10) return num
+
+  const digits = num.toString().split('');
+
+  const last = digits[digits.length - 1]
+
+  return Number(last)
+}
+
+export function getColor(index: number) {
+
+  const colors = [
+    "--accent-sky",
+    "--accent-pink",
+    "--accent-blue",
+    "--accent-green",
+    "--accent-yellow",
+    "--accent-lime",
+    "--accent-sfu",
+    "--light-sky",
+    "--light-pink",
+    "--light-green"
+  ]
+
+  const className = colors[getIndex(index)]
+
+  return className
+}

@@ -22,18 +22,18 @@ export default function NotFound({
         <div className="flex flex-col items-center gap-4 text-center">
           <SearchX size={36} />
 
-          <h2 className="font-NotoSerif text-3xl font-bold uppercase">
+          <h2 className="text-3xl font-bold uppercase">
             Не найдено
           </h2>
 
-          <p className="font-Raleway text-sm font-normal">
+          <p className="text-sm font-normal">
             Не удалось найти запрошенный ресурс
           </p>
         </div>
 
         {goBack ? (
           <Button
-            className="font-Raleway w-full max-w-[240px] p-6 uppercase"
+            className="w-full max-w-[240px] p-6 uppercase bg-primary-foreground"
             onClick={() => router.back()}
           >
             Вернуться

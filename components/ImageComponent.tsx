@@ -24,7 +24,7 @@ type NotFill = {
 };
 
 export default function ImageComponent(props: Props) {
-  const placeholderImage = "/hero-bg.png";
+  const placeholderImage = "/placeholder.png";
 
   const [image, setImage] = React.useState(
     !!props.src ? props.src : placeholderImage,
