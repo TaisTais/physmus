@@ -1,9 +1,7 @@
 import { MainCategoriesT } from "../types/main-categories"
+import fetchData from "./fetchData"
 
 export async function getMainCategories(): Promise<MainCategoriesT> {
-  const headers = {
-    "Content-Type": "application/json"
-  }
   const query = /* GraphGL */ `
     query GetMainCategories {
       mainCategory {
@@ -32,27 +30,11 @@ export async function getMainCategories(): Promise<MainCategoriesT> {
             }
           }
         }
-      }
+      
     }
   `
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
-    headers,
-    method: "POST",
-    body: JSON.stringify({
-      query
-    }),
-    next: {
-      tags: ["strapi"]
-    }
-  })
 
-  if (!res.ok) {
-    const err = await res.text()
-    console.log(err)
-    throw new Error('Failed to fetch data "Main Categories"')
-  }
-
-  const json = (await res.json()) as {
+  const json = await fetchData<{
     data: {
       mainCategory: {
         data: {
@@ -60,8 +42,11 @@ export async function getMainCategories(): Promise<MainCategoriesT> {
         }
       }
     }
-  }
-
+  }>({
+    query,
+    error: 'Failed to fetch data "Main Categories"',
+  })
+  
   const data = MainCategoriesT.parse(json.data.mainCategory.data.attributes);
   return data
 }

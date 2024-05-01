@@ -4,7 +4,6 @@ import ErrorHandler from "./errors/ErrorHandler";
 import Link from "next/link";
 import ImageComponent from "./ImageComponent";
 
-
 export default async function MainCategories(){
 
   const [ mainCategories ] = await Promise.allSettled([ getMainCategories() ])
