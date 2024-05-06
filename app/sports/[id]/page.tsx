@@ -1,6 +1,6 @@
 import Markdown from '@/components/Markdown';
 import ErrorHandler from '@/components/errors/ErrorHandler';
-import { getSportById } from '@/lib/queries/main';
+import { getSportById } from '@/lib/queries/sports';
 import React from 'react'
 import SportsmansList from './SportsmansList';
 

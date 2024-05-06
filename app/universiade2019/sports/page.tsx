@@ -1,5 +1,5 @@
 import ErrorHandler from '@/components/errors/ErrorHandler';
-import { getSportsCategories } from '@/lib/queries/main';
+import { getSportsCategories } from '@/lib/queries/sports';
 import { getColor } from '@/lib/utils';
 import React from 'react'
 import SportsArray from './SportsArray';

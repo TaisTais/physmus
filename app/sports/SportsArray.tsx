@@ -1,5 +1,5 @@
 import ErrorHandler from '@/components/errors/ErrorHandler';
-import { getSports } from '@/lib/queries/main';
+import { getSports } from '@/lib/queries/sports';
 import { cn, getColor } from '@/lib/utils'
 import Link from 'next/link';
 import React from 'react'

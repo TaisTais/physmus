@@ -1,6 +1,6 @@
 import ImageComponent from '@/components/ImageComponent';
 import ErrorHandler from '@/components/errors/ErrorHandler';
-import { getSportsmanById } from '@/lib/queries/main'
+import { getSportsmanById } from '@/lib/queries/sports'
 import React from 'react'
 
 export default async function Sportsman({
