@@ -18,11 +18,6 @@ export const ImagesArrayT = z.object({
 })
 export type ImagesArrayT = z.infer<typeof ImagesArrayT> 
 
-export const FactsRecordsUniversiadeT = z.object({
-  text: z.string(),
-})
-export type FactsRecordsUniversiadeT = z.infer<typeof FactsRecordsUniversiadeT> 
-
 // ********************************* SPORTSMAN ********************************* //
 export const SportsmanUniversiadeEnum = z.enum(["Pobediteli_i_prizery", "Uchastniki"]);
 export type SportsmanUniversiadeEnum = z.infer<typeof SportsmanUniversiadeEnum>;
