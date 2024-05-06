@@ -1,57 +1,6 @@
 import { notFound } from "next/navigation"
-import { AboutUniversiadeT, FactsRecordsUniversiadeT, SportCategoriesT, SportT, SportsT, SportsmanT, SportsmansArrayT } from "../types/main"
+import { FactsRecordsUniversiadeT, SportCategoriesT, SportT, SportsT, SportsmanT, SportsmansArrayT } from "../types/main"
 
-export const getAboutUniversiade = async (): Promise<AboutUniversiadeT> => {
-  const headers = { "Content-Type": "application/json" };
-  const query = /* GraphGL */ `
-  query AboutUniversiade {
-    aboutUniversiade {
-      data {
-        attributes {
-          text
-        }
-      }
-    }
-  }
-  `;
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
-    headers,
-    method: "POST",
-    body: JSON.stringify({
-      query,
-    }),
-    next: { 
-      tags: ["strapi"],
-      revalidate: 60
-    },
-  });
-
-  if (!res.ok) {
-    // Log the error to an error reporting service
-    const err = await res.text();
-    console.log(err);
-    // Throw an error
-    throw new Error("Failed to fetch data 'About Universiade'");
-  }
-
-  const json = await res.json() as {
-    data: {
-      aboutUniversiade: { 
-        data: { 
-          attributes: AboutUniversiadeT 
-        }
-      }
-    }
-  };
-
-  if (json.data.aboutUniversiade.data === null) {
-    notFound()
-  }
-
-  const data = AboutUniversiadeT.parse(json.data.aboutUniversiade.data.attributes);
-
-  return data;
-};
 
 
 export const getFactsRecordsUniversiade = async (): Promise<FactsRecordsUniversiadeT> => {

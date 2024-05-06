@@ -24,10 +24,6 @@ export const MainDescriptionT = z.object({
 })
 export type MainDescriptionT = z.infer<typeof MainDescriptionT> 
 
-export const AboutUniversiadeT = z.object({
-  text: z.string(),
-})
-export type AboutUniversiadeT = z.infer<typeof AboutUniversiadeT> 
 
 export const FactsRecordsUniversiadeT = z.object({
   text: z.string(),
