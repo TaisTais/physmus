@@ -1,4 +1,4 @@
-import { getMainCategories } from "@/lib/queries/main-categories";
+import { getMainCategories } from "@/lib/queries/getMainCategories";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/hero-cards";
 import ErrorHandler from "./errors/ErrorHandler";
 import Link from "next/link";

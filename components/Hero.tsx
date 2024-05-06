@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getMainDescription } from "@/lib/queries/main";
+import { getMainDescription } from "@/lib/queries/getMainDescription";
 import ErrorHandler from "@/components/errors/ErrorHandler";
 import { Separator } from "./ui/separator";
 
