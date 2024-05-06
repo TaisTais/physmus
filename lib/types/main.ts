@@ -18,13 +18,6 @@ export const ImagesArrayT = z.object({
 })
 export type ImagesArrayT = z.infer<typeof ImagesArrayT> 
 
-export const MainDescriptionT = z.object({
-  description: z.string(),
-  icons: ImagesArrayT
-})
-export type MainDescriptionT = z.infer<typeof MainDescriptionT> 
-
-
 export const FactsRecordsUniversiadeT = z.object({
   text: z.string(),
 })

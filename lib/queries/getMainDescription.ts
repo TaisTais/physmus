@@ -1,4 +1,4 @@
-import { MainDescriptionT } from "../types/main"
+import { MainDescriptionT } from "../types/main-description"
 import fetchData from "./fetchData"
 
 export async function getMainDescription(): Promise<MainDescriptionT> {
