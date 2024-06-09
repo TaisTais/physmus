@@ -30,7 +30,7 @@ export async function getMainCategories(): Promise<MainCategoriesT> {
             }
           }
         }
-      
+      }
     }
   `
 
