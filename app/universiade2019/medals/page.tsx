@@ -1,11 +1,16 @@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import React from 'react'
 import { allData } from './data'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export default function Medals() {
 
     return (
         <div className='sm:w-4/5 container my-16'>
+            <Breadcrumbs data={[
+              {title: "Универсиада", slug: "universiade2019"}, 
+              {title: "Медальный зачет", slug: "medals" }
+            ]}/>
             <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
                 <h1 className='font-semibold lg:text-xl text-base'>Медальный зачет</h1>
             </div>

@@ -1,3 +1,4 @@
+import Breadcrumbs from '@/components/Breadcrumbs';
 import ImageComponent from '@/components/ImageComponent';
 import ErrorHandler from '@/components/errors/ErrorHandler';
 import { getSportsmanById } from '@/lib/queries/sportsman';
@@ -25,6 +26,7 @@ export default async function Sportsman({
 
     return (
         <div className='sm:w-4/5 container my-16'>
+            <Breadcrumbs data={[{ title: "Спортсмены", slug: "sportsmans" }, { title: dataResult.value.attributes.fio, slug: dataResult.value.id }]} />
             <div className='flex lg:flex-row flex-col items-center gap-8 w-full lg:mb-10 mb-6'>
                 <ImageComponent 
                     src={firstImage}

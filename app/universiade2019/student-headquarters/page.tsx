@@ -1,3 +1,4 @@
+import Breadcrumbs from '@/components/Breadcrumbs'
 import ImageComponent from '@/components/ImageComponent'
 import Link from 'next/link'
 import React from 'react'
@@ -33,6 +34,10 @@ export default function StudentHeadquarters() {
 
     return (
         <div className='sm:w-4/5 container my-16'>
+            <Breadcrumbs data={[
+                {title: "Универсиада", slug: "universiade2019"}, 
+                {title: "Студенческий штаб", slug: "student-headquarters" }
+            ]}/>
             <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
                 <h1 className='font-semibold lg:text-xl text-base'>Студенческий штаб</h1>
             </div>

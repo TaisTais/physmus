@@ -1,3 +1,4 @@
+import Breadcrumbs from '@/components/Breadcrumbs';
 import Markdown from '@/components/Markdown';
 import ErrorHandler from '@/components/errors/ErrorHandler';
 import { getAboutUniversiade } from '@/lib/queries/universiade/getAboutUniversiade';
@@ -21,6 +22,10 @@ export default async function AboutUniversiade() {
 
   return (
     <div className='sm:w-4/5 container my-16'>
+      <Breadcrumbs data={[
+        {title: "Универсиада", slug: "universiade2019"}, 
+        {title: "Об универсиаде", slug: "about" }
+      ]}/>
       <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
         <h1 className='font-semibold lg:text-xl text-base'>Об универсиаде</h1>
       </div>
