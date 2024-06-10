@@ -34,7 +34,7 @@ export default async function Sportsman({
                     className='aspect-square object-cover rounded-2xl'
                 />
                 <div className='flex flex-col'>
-                    <p className='text-sm text-primary-foreground'>Спортсмен{sport ? ", " + sport.attributes.name : ""}</p>
+                    <p className='text-sm text-primary-foreground'>Спортсмен{sport ? ", " + sport.attributes.title : ""}</p>
                     <h1 className='font-bold lg:text-3xl sm:text-2xl text-xl mt-2 mb-3'>{dataResult.value.attributes.fio}</h1>
                 </div>
             </div>
