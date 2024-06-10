@@ -23,6 +23,14 @@ export const SportsmanT = z.object({
         })
       }).nullable()
     }),
+    uni_sport: z.object({
+      data: z.object({
+        id: z.string(),
+        attributes: z.object({
+          title: z.string()
+        })
+      }).nullable()
+    }),
     variety_sport: z.string().nullable(),
     universiade2019: SportsmanUniversiadeEnum.nullable()
   })

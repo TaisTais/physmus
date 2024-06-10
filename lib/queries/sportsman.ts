@@ -7,13 +7,15 @@ export async function getSportsmans({
   per,
   search = "",
   universiade,
-  sportId
+  sportId,
+  uniSportId
 }: {
   page: number,
   per: number,
   search?: string,
   universiade?: boolean,
   sportId?: string,
+  uniSportId?: string
 }): Promise<SportsmansArrayT> {
   const query = /* GraphGL */ `
   query Sportsmans {
@@ -29,6 +31,12 @@ export async function getSportsmans({
           ${sportId 
             ? `{sport: { 
                 id: {eqi: "${sportId}"} 
+              }}`
+            : ""
+          }
+          ${uniSportId 
+            ? `{uni_sport: { 
+                id: {eqi: "${uniSportId}"} 
               }}`
             : ""
           }
@@ -54,6 +62,14 @@ export async function getSportsmans({
             description
           }
           sport {
+            data {
+              id
+              attributes {
+                title
+              }
+            }
+          }
+          uni_sport {
             data {
               id
               attributes {
@@ -104,6 +120,14 @@ export const getSportsmanById = async (id: string): Promise<SportsmanT> => {
             description
           }
           sport {
+            data {
+              id
+              attributes {
+                title
+              }
+            }
+          }
+          uni_sport {
             data {
               id
               attributes {

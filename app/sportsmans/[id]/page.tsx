@@ -21,6 +21,7 @@ export default async function Sportsman({
 
     const firstImage = dataResult.value.attributes.images.data.length > 0 ? dataResult.value.attributes.images.data[0].attributes.url : undefined
     const sport = dataResult.value.attributes.sport.data
+    const uni_sport = dataResult.value.attributes.uni_sport.data
 
     return (
         <div className='sm:w-4/5 container my-16'>
@@ -34,7 +35,7 @@ export default async function Sportsman({
                     className='aspect-square object-cover rounded-2xl'
                 />
                 <div className='flex flex-col'>
-                    <p className='text-sm text-primary-foreground'>Спортсмен{sport ? ", " + sport.attributes.title : ""}</p>
+                    <p className='text-sm text-primary-foreground'>Спортсмен{sport && ", " + sport.attributes.title} {uni_sport && ", " + uni_sport.attributes.title}</p>
                     <h1 className='font-bold lg:text-3xl sm:text-2xl text-xl mt-2 mb-3'>{dataResult.value.attributes.fio}</h1>
                 </div>
             </div>

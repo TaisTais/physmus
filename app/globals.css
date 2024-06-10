@@ -23,12 +23,12 @@
     --destructive-foreground: 60 9.1% 97.8%;
     --border: 20 5.9% 90%;
     --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+    --ring: 229 69% 89%;
     --radius: 0.3rem;
 
   /*hover*/
-    --hover: 229, 69%, 89%;
-    --hover-foreground: 245, 36%, 35%;
+    --hover: 229 69% 89%;
+    --hover-foreground: 245 36% 35%;
     --focus: 0 0% 100%;
 
   /*SFU colors from brandbook*/
