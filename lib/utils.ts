@@ -19,6 +19,10 @@ export function getShortDescription(
   } else return array.join(" ");
 }
 
+export function uniqArray<T>(arr: T[]) {
+  return Array.from(new Set(arr));
+}
+
 export function getIndex(num: number) {
   if (num < 10) return num
 

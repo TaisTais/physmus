@@ -23,7 +23,6 @@ export default async function Content({
           page: Number(page), 
           per: Number(per),
           search,
-          universiade: true
         })
     ]);
     if (dataResult.status === "rejected") return (

@@ -1,9 +1,14 @@
+import Breadcrumbs from '@/components/Breadcrumbs'
 import Link from 'next/link'
 import React from 'react'
 
 export default function Volunteers() {
     return (
         <div className='sm:w-4/5 container my-16'>
+            <Breadcrumbs data={[
+                {title: "Универсиада", slug: "universiade2019"}, 
+                {title: "Волонтеры", slug: "volunteers" },
+            ]}/>
             <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
                 <h1 className='font-semibold lg:text-xl text-base'>Волонтеры</h1>
             </div>

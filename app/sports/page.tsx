@@ -2,6 +2,7 @@ import ErrorHandler from '@/components/errors/ErrorHandler';
 import { getSportsCategories } from '@/lib/queries/sports';
 import React from 'react'
 import SportsArray from './SportsArray';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export default async function Sports() {
 
@@ -19,6 +20,8 @@ export default async function Sports() {
 
     return (
         <div className='sm:w-4/5 container my-16'>
+            <Breadcrumbs data={[{ title: "Виды спорта", slug: "sports" }]} />
+
             <h1 className='font-bold lg:text-2xl text-lg'>Виды спорта</h1>
             <div className='my-16'>
                 {dataResult.value.data.map((category) => (

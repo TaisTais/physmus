@@ -2,6 +2,7 @@ import Markdown from '@/components/Markdown'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import React from 'react'
 import { data } from './data'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export default function SitesHeritage() {
 
@@ -19,8 +20,12 @@ export default function SitesHeritage() {
 
     return (
         <div className='sm:w-4/5 container my-16'>
+            <Breadcrumbs data={[
+              {title: "Универсиада", slug: "universiade2019"}, 
+              {title: "Объекты и наследие", slug: "sites-heritage" }
+            ]}/>
             <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
-                <h1 className='font-semibold lg:text-xl text-base'>Болельщики</h1>
+                <h1 className='font-semibold lg:text-xl text-base'>Объекты и наследие</h1>
             </div>
             <div className='mt-16'>
                 <Markdown data={text} moreButton={false}/>

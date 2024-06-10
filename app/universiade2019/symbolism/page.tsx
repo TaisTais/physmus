@@ -2,10 +2,15 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export default function Symbolism() {
     return (
         <div className='sm:w-4/5 container my-16'>
+            <Breadcrumbs data={[
+                {title: "Универсиада", slug: "universiade2019"}, 
+                {title: "Символика", slug: "symbolism" },
+            ]}/>
             <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
                 <h1 className='font-semibold lg:text-xl text-base'>Символика</h1>
             </div>

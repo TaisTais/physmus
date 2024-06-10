@@ -1,3 +1,4 @@
+import Breadcrumbs from '@/components/Breadcrumbs'
 import Markdown from '@/components/Markdown'
 import React from 'react'
 
@@ -29,6 +30,10 @@ export default function Schedule() {
 
     return (
         <div className='sm:w-4/5 container my-16'>
+            <Breadcrumbs data={[
+              {title: "Универсиада", slug: "universiade2019"}, 
+              {title: "Расписание соревнований", slug: "schedule" }
+            ]}/>
             <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
                 <h1 className='font-semibold lg:text-xl text-base'>Расписание соревнований</h1>
             </div>

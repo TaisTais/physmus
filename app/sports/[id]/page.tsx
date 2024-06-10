@@ -3,6 +3,7 @@ import ErrorHandler from '@/components/errors/ErrorHandler';
 import { getSportById } from '@/lib/queries/sports';
 import React from 'react'
 import SportsmansList from './SportsmansList';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export default async function Sport({
     params: { id },
@@ -26,6 +27,8 @@ export default async function Sport({
 
   return (
     <div className='sm:w-4/5 container my-16'>
+        <Breadcrumbs data={[{ title: "Виды спорта", slug: "sports" }, { title: dataResult.value.attributes.title, slug: dataResult.value.id }]} />
+        
         <div className='flex flex-col'>
             <p className='text-sm text-primary-foreground'>{dataResult.value.attributes.category.data?.attributes.title}</p>
             <h1 className='font-bold lg:text-3xl sm:text-2xl text-xl mt-2 mb-3'>{dataResult.value.attributes.title}</h1>
