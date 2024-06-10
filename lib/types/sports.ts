@@ -10,7 +10,16 @@ export const SportCategoriesT = z.object({
   data: z.object({
     id: z.string(),
     attributes: z.object({
-      name: z.string()
+      title: z.string(),
+      color: z.string().nullable(),
+      sports: z.object({
+        data: z.object({
+          id: z.string(),
+          attributes: z.object({
+            title: z.string()
+          })
+        }).array()
+      })
     })
   }).array()
 })
@@ -19,12 +28,12 @@ export type SportCategoriesT = z.infer<typeof SportCategoriesT>
 export const SportT = z.object({
   id: z.string(),
   attributes: z.object({
-    name: z.string(),
+    title: z.string(),
     category: z.object({
       data: z.object({
         id: z.string(),
         attributes: z.object({
-          name: z.string()
+          title: z.string()
         })
       }).nullable()
     }),
@@ -43,7 +52,7 @@ export const SportsT = z.object({
   data: z.object({
     id: z.string(),
     attributes: z.object({
-      name: z.string()
+      title: z.string()
     })
   }).array()
 })

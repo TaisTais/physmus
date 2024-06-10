@@ -57,7 +57,7 @@ export async function getSportsmans({
             data {
               id
               attributes {
-                name
+                title
               }
             }
           }
@@ -107,7 +107,7 @@ export const getSportsmanById = async (id: string): Promise<SportsmanT> => {
             data {
               id
               attributes {
-                name
+                title
               }
             }
           }

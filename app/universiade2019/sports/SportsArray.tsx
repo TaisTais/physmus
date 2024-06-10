@@ -38,7 +38,7 @@ export default async function SportsArray({
                 <Link
                     href={`/sports/${sport.id}`}
                     key={sport.id}
-                    className='py-6 px-10 text-background font-medium rounded-2xl hover:scale-105 transition-all duration-200'
+                    className='py-6 px-10 text-background font-medium rounded-2xl hover:scale-105 transition-all duration-300'
                     style={{backgroundColor: `hsl(var(${getColor(Number(categoryIndx))}))`}}
                 >
                     {sport.attributes.name}

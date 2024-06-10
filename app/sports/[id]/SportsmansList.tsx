@@ -59,7 +59,7 @@ export default async function SportsmansList({
                                 />
                                 {sportsman.attributes.fio}
                             </Link>
-                            <h2 className='font-medium lg:text-sm text-xs text-primary-foreground mt-1'>{sportsman.attributes.sport.data?.attributes.name}</h2>
+                            <h2 className='font-medium lg:text-sm text-xs text-primary-foreground mt-1'>{sportsman.attributes.sport.data?.attributes.title}</h2>
                             <h3 className='lg:text-sm text-xs'>{sportsman.attributes.rank}</h3>
                         </div>
                     )}

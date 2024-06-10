@@ -1,46 +1,38 @@
-import ErrorHandler from '@/components/errors/ErrorHandler';
-import { getSports } from '@/lib/queries/sports';
-import { cn, getColor } from '@/lib/utils'
+import { cn } from '@/lib/utils'
 import Link from 'next/link';
 import React from 'react'
 
-export default async function SportsArray({
-    categoryId,
-    categoryIndx,
+export default function SportsArray({
+    data,
+    color,
     className
 }: {
-    categoryId: string,
-    categoryIndx: number,
+    data: {
+        id: string;
+        attributes: {
+            title: string;
+        };
+    }[];
+    color: string | null;
     className?: string
 }) {
-
-    const [ dataResult ] = await Promise.allSettled([
-        getSports({
-            categoryId
-        })
-    ]);
-    if (dataResult.status === "rejected") return (
-        <ErrorHandler
-            error={dataResult.reason as unknown}
-            place="Виды спорта"
-            notFound
-            goBack={false}
-        />
-    );
 
     return (
         <div className={cn(
             "grid grid-cols-1 sm:grid-cols-2 gap-6",
             className
         )}>
-            {dataResult.value.data.map(sport => (
+            {data.map(sport => (
                 <Link
-                    href={`/sports/${sport.id}`}
                     key={sport.id}
-                    className='py-6 px-10 text-background font-medium rounded-2xl hover:scale-105 transition-all duration-200'
-                    style={{backgroundColor: `hsl(var(${getColor(Number(categoryIndx))}))`}}
+                    href={`/sports/${sport.id}`}
+                    className={cn(
+                        'py-6 px-10 text-background font-medium rounded-2xl shadow-md',
+                        'opacity-85 hover:opacity-100 hover:shadow-lg hover:scale-105 transition-all duration-300'
+                    )}
+                    style={{backgroundColor: color ?? undefined}}
                 >
-                    {sport.attributes.name}
+                    <span className=' opacity-100'>{sport.attributes.title}</span>
                 </Link>
             ))}
         </div>

@@ -12,7 +12,16 @@ export async function getSportsCategories(): Promise<SportCategoriesT> {
         data {
           id
           attributes {
-            name
+            title
+            color
+            sports {
+              data {
+                id
+                attributes {
+                  title
+                }
+              }
+            }
           }
         }
       }
@@ -39,10 +48,8 @@ export async function getSportsCategories(): Promise<SportCategoriesT> {
 
 export async function getSports({
   categoryId,
-  universiade
 }: {
   categoryId?: string,
-  universiade?: boolean
 }): Promise<SportsT> {
   const query = /* GraphGL */ `
   query Sports {
@@ -53,7 +60,6 @@ export async function getSports({
             ? `{category: { id: {eqi: "${categoryId}" } }},`
             : ""
           }
-          ${universiade ? `{universiade2019: {eqi: true}},` : ""}
         ]
       }
     ) {
@@ -63,7 +69,7 @@ export async function getSports({
       data {
         id
         attributes {
-          name
+          title
         }
       }
     }
@@ -95,11 +101,11 @@ export const getSportById = async (id: string): Promise<SportT> => {
       data {
         id
         attributes {
-          name
+          title
           category {
             data {
               id
-              attributes { name }
+              attributes { title }
             }
           }
           images {
