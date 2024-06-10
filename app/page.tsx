@@ -1,5 +1,5 @@
-import Hero from "@/components/Hero";
-import MainCategories from "@/components/MainCategories";
+import Hero from "./(main-page)/Hero";
+import MainCategories from "./(main-page)/MainCategories";
 import ErrorHandler from "@/components/errors/ErrorHandler";
 import { getMainPage } from "@/lib/queries/getMainPage";
 

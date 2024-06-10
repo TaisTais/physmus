@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Separator } from "./ui/separator";
+import { Separator } from "../../components/ui/separator";
 
 export default function Hero({
   description,
