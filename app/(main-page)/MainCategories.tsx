@@ -1,6 +1,6 @@
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/hero-cards";
 import Link from "next/link";
-import ImageComponent from "./ImageComponent";
+import ImageComponent from "../../components/ImageComponent";
 
 export default function MainCategories({
   categories
