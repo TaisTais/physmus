@@ -1,8 +1,8 @@
 import Markdown from '@/components/Markdown';
 import ErrorHandler from '@/components/errors/ErrorHandler';
-import { getSportById } from '@/lib/queries/sports';
 import React from 'react'
 import SportsmansList from './SportsmansList';
+import { getUniSportById } from '@/lib/queries/universiade/uni-sports';
 
 export default async function Sport({
     params: { id },
@@ -13,7 +13,7 @@ export default async function Sport({
 }) {
 
     const [ dataResult ] = await Promise.allSettled([
-        getSportById(id)
+        getUniSportById(id)
     ]);
     if (dataResult.status === "rejected") return (
         <ErrorHandler

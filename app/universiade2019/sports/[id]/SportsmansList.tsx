@@ -25,7 +25,7 @@ export default async function SportsmansList({
           per: Number(per),
           search,
           universiade: true,
-          sportId
+          uniSportId: sportId
         })
     ]);
     if (dataResult.status === "rejected") return (
@@ -59,7 +59,9 @@ export default async function SportsmansList({
                                 />
                                 {sportsman.attributes.fio}
                             </Link>
-                            <h2 className='font-medium lg:text-sm text-xs text-primary-foreground mt-1'>{sportsman.attributes.sport.data?.attributes.title}</h2>
+                            <h2 className='font-medium lg:text-sm text-xs text-primary-foreground mt-1'>
+                                {sportsman.attributes.uni_sport.data?.attributes.title}
+                            </h2>
                             <h3 className='lg:text-sm text-xs'>{sportsman.attributes.rank}</h3>
                         </div>
                     )}

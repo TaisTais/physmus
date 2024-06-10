@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation"
-import { SportCategoriesT, SportT, SportsT } from "../types/sports"
-import fetchData from "./fetchData"
+import { SportCategoriesT, SportT, SportsT } from "../../types/sports"
+import fetchData from "../fetchData"
 
-export async function getSportsCategories(): Promise<SportCategoriesT> {
+export async function getUniSportsCategories(): Promise<SportCategoriesT> {
   const query = /* GraphGL */ `
-    query SportCategories {
-      sportCategories {
+    query UniSportCategories {
+      uniSportCategories {
         meta {
           pagination { total }
         }
@@ -30,30 +30,30 @@ export async function getSportsCategories(): Promise<SportCategoriesT> {
 
   const json = await fetchData<{
     data: {
-      sportCategories: SportCategoriesT
+        uniSportCategories: SportCategoriesT
     }
   }>({
     query,
-    error: 'Failed to fetch data "SportCategories"',
+    error: 'Failed to fetch data "UniSportCategories"',
   })
   
-  if ((json.data.sportCategories.meta.pagination.total === 0) || (json.data.sportCategories.data.length === 0)) {
+  if ((json.data.uniSportCategories.meta.pagination.total === 0) || (json.data.uniSportCategories.data.length === 0)) {
     notFound()
   }
   
-  const data = SportCategoriesT.parse(json.data.sportCategories);
+  const data = SportCategoriesT.parse(json.data.uniSportCategories);
 
   return data
 }
 
-export async function getSports({
+export async function getUniSports({
   categoryId,
 }: {
   categoryId?: string,
 }): Promise<SportsT> {
   const query = /* GraphGL */ `
-  query Sports {
-    sports(
+  query UniSports {
+    uniSports(
       filters: {
         and: [
           ${categoryId !== undefined 
@@ -78,26 +78,26 @@ export async function getSports({
 
   const json = await fetchData<{
     data: {
-      sports: SportsT
+        uniSports: SportsT
     }
   }>({
     query,
-    error: 'Failed to fetch data "Sports"',
+    error: 'Failed to fetch data "UniSports"',
   })
   
-  if ((json.data.sports.meta.pagination.total === 0) || (json.data.sports.data.length === 0)) {
+  if ((json.data.uniSports.meta.pagination.total === 0) || (json.data.uniSports.data.length === 0)) {
     notFound()
   }
 
-  const data = SportsT.parse(json.data.sports);
+  const data = SportsT.parse(json.data.uniSports);
 
   return data
 }
 
-export const getSportById = async (id: string): Promise<SportT> => {
+export const getUniSportById = async (id: string): Promise<SportT> => {
   const query = /* GraphGL */ `
-  query Sport {
-    sport(id: "${id}") {
+  query UniSport {
+    uniSport(id: "${id}") {
       data {
         id
         attributes {
@@ -120,18 +120,18 @@ export const getSportById = async (id: string): Promise<SportT> => {
 
   const json = await fetchData<{
     data: {
-      sport: { data: SportT }
+        uniSport: { data: SportT }
     }
   }>({
     query,
-    error: 'Failed to fetch data "Sport By ID"',
+    error: 'Failed to fetch data "UniSport By ID"',
   })
   
-  if (json.data.sport.data === null) {
+  if (json.data.uniSport.data === null) {
     notFound()
   }
 
-  const data = SportT.parse(json.data.sport.data);
+  const data = SportT.parse(json.data.uniSport.data);
 
   return data;
 };

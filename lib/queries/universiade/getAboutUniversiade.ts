@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import { AboutUniversiadeT } from "../types/about-universiade"
-import fetchData from "./fetchData"
+import { AboutUniversiadeT } from "../../types/about-universiade"
+import fetchData from "../fetchData"
 
 export const getAboutUniversiade = async (): Promise<AboutUniversiadeT> => {
   const query = /* GraphGL */ `

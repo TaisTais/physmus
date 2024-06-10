@@ -20,7 +20,7 @@ export default function ImgTextOn(props: Props) {
       href={props.url}
       target={props.target}
       className={cn(
-        "bg-background ring-ring ring-offset-background flex min-h-full w-full overflow-hidden rounded-xl transition-all duration-200 hover:-translate-y-2 hover:scale-[1.03] hover:ring-4 hover:ring-offset-2",
+        "bg-background ring-ring ring-offset-background flex min-h-full w-full overflow-hidden rounded-xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] hover:ring-4 hover:ring-offset-2",
         props.className,
       )}
     >

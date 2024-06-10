@@ -11,24 +11,24 @@
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 230, 50%, 93%;
-    --primary-foreground: 245, 25%, 53%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
+    --primary: 230 50% 93%;
+    --primary-foreground: 245 25% 53%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 60 4.8% 95.9%;
     --muted-foreground: 25 5.3% 44.7%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 60 9.1% 97.8%;
     --border: 20 5.9% 90%;
     --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+    --ring: 229 69% 89%;
     --radius: 0.3rem;
 
   /*hover*/
-    --hover: 229, 69%, 89%;
-    --hover-foreground: 245, 36%, 35%;
+    --hover: 229 69% 89%;
+    --hover-foreground: 245 36% 35%;
     --focus: 0 0% 100%;
 
   /*SFU colors from brandbook*/

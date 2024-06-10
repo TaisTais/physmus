@@ -19,7 +19,15 @@ export const SportsmanT = z.object({
       data: z.object({
         id: z.string(),
         attributes: z.object({
-          name: z.string()
+          title: z.string()
+        })
+      }).nullable()
+    }),
+    uni_sport: z.object({
+      data: z.object({
+        id: z.string(),
+        attributes: z.object({
+          title: z.string()
         })
       }).nullable()
     }),
