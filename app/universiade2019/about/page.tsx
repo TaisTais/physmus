@@ -1,6 +1,6 @@
 import Markdown from '@/components/Markdown';
 import ErrorHandler from '@/components/errors/ErrorHandler';
-import { getAboutUniversiade } from '@/lib/queries/sports';
+import { getAboutUniversiade } from '@/lib/queries/getAboutUniversiade';
 import React from 'react'
 
 export default async function AboutUniversiade() {

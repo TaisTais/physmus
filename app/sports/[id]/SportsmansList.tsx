@@ -1,6 +1,6 @@
 import ImageComponent from "@/components/ImageComponent"
 import ErrorHandler from "@/components/errors/ErrorHandler"
-import { getSportsmans } from "@/lib/queries/sports"
+import { getSportsmans } from "@/lib/queries/sportsman"
 import Link from "next/link"
 
 export default async function SportsmansList({

@@ -1,18 +1,19 @@
 import Image from "next/image";
-import { getMainDescription } from "@/lib/queries/getMainDescription";
-import ErrorHandler from "@/components/errors/ErrorHandler";
 import { Separator } from "./ui/separator";
 
-export default async function Hero() {
-  
-  const [ mainDescription ] = await Promise.allSettled([ getMainDescription() ])
-  if (mainDescription.status === "rejected") return (
-    <ErrorHandler
-      error={mainDescription.reason as unknown}
-      place="Описание"
-      notFound={false}
-    />
-  )
+export default function Hero({
+  description,
+  icons
+}: {
+  description: string;
+  icons: {
+    data: {
+      attributes: {
+        url: string;
+      };
+    }[];
+  };
+}) {
 
   return (
     <>
@@ -22,10 +23,10 @@ export default async function Hero() {
             <h1 className="2xl:text-5xl xl:text-4xl sm:text-3xl text-2xl font-bold !leading-snug text-accent-sfu drop-shadow-sm">Виртуальный музей спорта СФУ</h1>
             <Separator className="lg:my-6 my-3 bg-accent-sfu h-[2px] w-3/5 lg:mx-0 mx-auto" />
             <p className="lg:text-base text-sm text-foreground lg:w-2/3">
-              {mainDescription.value.description}
+              {description}
             </p>
             <div className="flex flex-row gap-6 my-12 lg:justify-start justify-center">
-              {mainDescription.value.icons.data.map((item, index) => (
+              {icons.data.map((item, index) => (
                 <Image 
                   key={index} 
                   src={item.attributes.url} 

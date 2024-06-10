@@ -17,3 +17,10 @@ export const ImagesArrayT = z.object({
   }).array()
 })
 export type ImagesArrayT = z.infer<typeof ImagesArrayT>
+
+export const TextBlockT = z.object({
+  title: z.string().nullable(),
+  text: z.string(),
+  images: ImagesArrayT
+})
+export type TextBlockT = z.infer<typeof TextBlockT>
