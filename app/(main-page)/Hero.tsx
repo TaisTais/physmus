@@ -5,7 +5,7 @@ export default function Hero({
   description,
   icons
 }: {
-  description: string;
+  description: string | null;
   icons: {
     data: {
       attributes: {
