@@ -13,9 +13,12 @@ export default function TextBlock({
   data,
   className
 }: {
-  data: TextBlockT,
+  data: TextBlockT | null,
   className?: string,
 }) {
+
+  if (!data) return null;
+
   return (
     <div className={cn("w-full", className)}>
       {data.title && (
