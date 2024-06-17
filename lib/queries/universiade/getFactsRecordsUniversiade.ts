@@ -37,7 +37,7 @@ export const getFactsRecordsUniversiade = async (): Promise<FactsRecordsUniversi
   `
   const json = await fetchData<{
     data: {
-      unifactRecord: {
+      uniFactRecord: {
         data: {
           attributes: FactsRecordsUniversiadeT
         }
@@ -48,11 +48,11 @@ export const getFactsRecordsUniversiade = async (): Promise<FactsRecordsUniversi
     error: 'Failed to fetch data "Facts and Records Universiade"',
   })
   
-  if (json.data.unifactRecord.data === null) {
+  if (json.data.uniFactRecord.data === null) {
     notFound()
   }
   
-  const data = FactsRecordsUniversiadeT.parse(json.data.unifactRecord.data.attributes);
+  const data = FactsRecordsUniversiadeT.parse(json.data.uniFactRecord.data.attributes);
 
   return data;
 };

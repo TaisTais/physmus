@@ -16,7 +16,7 @@ export default async function FactsRecords() {
           goBack={false}
         />
       );
-
+    console.log(dataResult.value.data)  
     return (
         <div className='sm:w-4/5 container my-16'>
             <Breadcrumbs data={[
