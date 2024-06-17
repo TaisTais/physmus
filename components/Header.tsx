@@ -1,16 +1,59 @@
 "use client"
-import React from 'react';
+
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { NavigationMenuList, NavigationMenu, NavigationMenuLink, navigationMenuTriggerStyle } from './ui/navigation-menu'
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 import { Menu } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 export default function Header() {
 
+  const [shadow, setShadow] = useState(false)
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const stickyHeader = useRef<HTMLDivElement>(null)
+
+  const handleScroll = () => {
+    const position = window.scrollY;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [])
+
+
+  useLayoutEffect(() => {
+    const fixedHeader = () => {
+      if (scrollPosition > 22) {
+        setShadow(true)
+      } else {
+        setShadow(false)
+      }
+    }
+
+    window.addEventListener('scroll', fixedHeader)
+
+    return () => {
+      window.removeEventListener('scroll', fixedHeader);
+    };
+  }, [scrollPosition])
+
   return (
-    <div className="bg-primary py-2 fixed w-full z-[1000] shadow">
+    <div 
+      ref={stickyHeader} 
+      className={cn(
+        "bg-primary py-2 fixed w-full z-[1000] shadow transition-all duration-300",
+        shadow ? "shadow-black/10" : " shadow-transparent"
+      )}
+    >
       <div className='container w-4/5 flex justify-between items-center gap-12'>
         <Link 
           href='/' 
