@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useRouter } from "next/navigation";
-import { CircleAlert, Repeat, Undo2 } from "lucide-react";
+import { AlertCircle, Repeat, Undo2 } from "lucide-react";
 import type { ZodIssue } from "zod";
 import { useToast } from "../ui/use-toast";
 import { ToastAction } from "@radix-ui/react-toast";
@@ -59,7 +59,7 @@ export default function ErrorToast({
   return (
     <div className="mx-auto my-10 flex flex-col items-center gap-10 text-center">
       <div className="flex flex-col items-center gap-4 text-center">
-        <CircleAlert size={36} />
+        <AlertCircle size={36} />
     
         <h2 className="font-Cera text-3xl font-bold uppercase">
           Ошибка

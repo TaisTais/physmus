@@ -5,33 +5,54 @@ import fetchData from "../fetchData"
 export const getFactsRecordsUniversiade = async (): Promise<FactsRecordsUniversiadeT> => {
   const query = /* GraphGL */ `
   query FactsRecords {
-    factsRecords {
+    uniFactRecord {
       data {
-        attributes {
-          text
+    	  attributes {
+          record {
+            images {
+              data {
+                attributes{
+                  url
+                }
+              }
+            }
+            title
+            text
+          }
+          fact {
+            images {
+              data {
+                attributes{
+                  url
+                }
+              }
+            }
+            title
+            text
+          }
         }
-      }
+  	  }
     }
   }
   `
   const json = await fetchData<{
     data: {
-      factsRecords: {
+      uniFactRecord: {
         data: {
           attributes: FactsRecordsUniversiadeT
         }
       }
-    }
-  }>({
+  }
+}>({
     query,
     error: 'Failed to fetch data "Facts and Records Universiade"',
   })
   
-  if (json.data.factsRecords.data === null) {
+  if (json.data.uniFactRecord.data === null) {
     notFound()
   }
   
-  const data = FactsRecordsUniversiadeT.parse(json.data.factsRecords.data.attributes);
+  const data = FactsRecordsUniversiadeT.parse(json.data.uniFactRecord.data.attributes);
 
   return data;
 };
