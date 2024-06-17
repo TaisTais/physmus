@@ -15,7 +15,7 @@ RUN yarn global add pnpm
 
 COPY . ./
 COPY public ./public
-COPY next.config.js .
+COPY next.config.mjs .
 COPY tsconfig.json .
 COPY tailwind.config.ts postcss.config.js ./
 
@@ -54,7 +54,7 @@ ENV NODE_ENV production
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-COPY --from=builder /app/next.config.js .
+COPY --from=builder /app/next.config.mjs .
 COPY --from=builder /app/package.json .
 
 # Automatically leverage output traces to reduce image size
