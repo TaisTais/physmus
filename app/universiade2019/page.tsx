@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import SectionsBlock from "./SectionsBlock";
 // import { Separator } from "@/components/ui/separator";
 // import SectionsBlock from "./SectionsBlock";
 
@@ -33,6 +34,9 @@ export default function Universiade2019() {
         height={62}
         className="object-contain w-full z-[2]"
       />
+      <div className="lg:my-28 my-14 w-4/5 mx-auto">
+          <SectionsBlock />
+      </div>
     </div>
     
   )
