@@ -31,37 +31,40 @@ export default async function SportsmansList({
     if (dataResult.status === "rejected") return (
         <ErrorHandler
           error={dataResult.reason as unknown}
-          place="Спортсмены" 
+          place="Наша гордость" 
           notFound={false}
         />
     );
 
     return (
         <div className={className}>
-            <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-accent-sfu pb-2'>
-                <h1 className='font-semibold lg:text-xl text-base'>
-                    Спортсмены
-                </h1>
+            <div className='w-full max-w-none prose flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
+                <h3 className="">
+                    Наша гордость
+                </h3>
             </div>
             <div className='grid xl:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-6 gap-8 mt-6'>
                 {dataResult.value.data.map(sportsman => {
                     const firstImage = sportsman.attributes.images.data.length > 0 ? sportsman.attributes.images.data[0].attributes.url : undefined
                     return (
-                        <div key={sportsman.id} className='text-center'>
-                            <Link href={`/sportsmans/${sportsman.id}`} className='font-semibold lg:text-base text-sm hover:text-accent-sfu transition-all'>
-                                <ImageComponent 
-                                    src={firstImage}
-                                    alt="Фото"
-                                    fill={false}
-                                    width={150}
-                                    height={150}
-                                    className='mx-auto aspect-square object-cover rounded-2xl mb-2'
-                                />
-                                {sportsman.attributes.fio}
-                            </Link>
-                            <h2 className='font-medium lg:text-sm text-xs text-primary-foreground mt-1'>{sportsman.attributes.sport.data?.attributes.title}</h2>
-                            <h3 className='lg:text-sm text-xs'>{sportsman.attributes.rank}</h3>
-                        </div>
+                        <Link 
+                            key={sportsman.id}
+                            href={`/sportsmans/${sportsman.id}`} 
+                            className='lg:text-base text-sm text-center rounded-3xl bg-primary shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300'
+                        >
+                            <ImageComponent 
+                                src={firstImage}
+                                alt="Фото"
+                                fill={false}
+                                width={150}
+                                height={150}
+                                className='w-full md:aspect-[5/6] aspect-square mx-auto object-cover rounded-t-3xl'
+                            />
+                            <div className='p-3'>
+                                <h2 className='font-medium mb-0.5'>{sportsman.attributes.fio}</h2>
+                                <h3 className='text-xs'>{sportsman.attributes.rank}</h3>
+                            </div>
+                        </Link>
                     )}
                 )}
             </div>

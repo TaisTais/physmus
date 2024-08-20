@@ -10,18 +10,22 @@ export const SportsmanT = z.object({
     fio: z.string(),
     rank: z.string().nullable(),
     images: ImagesArrayT,
+    info: z.string().nullable(),
     additional_info: z.string().nullable(),
-    achievements: z.object({
-      year: z.string().nullable(),
-      description: z.string()
-    }).array(),
-    sport: z.object({
+    sports: z.object({
       data: z.object({
         id: z.string(),
         attributes: z.object({
-          title: z.string()
+          title: z.string(),
+          category:  z.object({
+            data: z.object({
+              attributes: z.object({
+                color: z.string().nullable(),
+              })
+            }).nullable()
+          })
         })
-      }).nullable()
+      }).array()
     }),
     uni_sport: z.object({
       data: z.object({
@@ -31,7 +35,6 @@ export const SportsmanT = z.object({
         })
       }).nullable()
     }),
-    variety_sport: z.string().nullable(),
     universiade2019: SportsmanUniversiadeEnum.nullable()
   })
 })

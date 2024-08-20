@@ -29,7 +29,7 @@ export async function getSportsmans({
           {fio: { containsi: "${search}" }},
           ${universiade ? `{universiade2019: { not: null }},` : ""}
           ${sportId 
-            ? `{sport: { 
+            ? `{sports: { 
                 id: {eqi: "${sportId}"} 
               }}`
             : ""
@@ -56,16 +56,20 @@ export async function getSportsmans({
           images {
             data { attributes { url } }
           }
+          info
           additional_info
-          achievements {
-            year
-            description
-          }
-          sport {
+          sports {
             data {
               id
               attributes {
                 title
+                category {
+                  data {
+                    attributes {
+                      color
+                    }
+                  }
+                }
               }
             }
           }
@@ -77,7 +81,6 @@ export async function getSportsmans({
               }
             }
           }
-          variety_sport
           universiade2019
         }
       }
@@ -114,16 +117,20 @@ export const getSportsmanById = async (id: string): Promise<SportsmanT> => {
           images {
             data { attributes { url } }
           }
+          info
           additional_info
-          achievements {
-            year
-            description
-          }
-          sport {
+          sports {
             data {
               id
               attributes {
                 title
+                category {
+                  data {
+                    attributes {
+                      color
+                    }
+                  }
+                }
               }
             }
           }
@@ -135,7 +142,6 @@ export const getSportsmanById = async (id: string): Promise<SportsmanT> => {
               }
             }
           }
-          variety_sport
           universiade2019
         }
       }

@@ -14,7 +14,7 @@ import ImageComponent from './ImageComponent'
 export default function Markdown({
   data,
   moreButton,
-  className
+  className,
 }: {
   data?: string | null;
   moreButton?: boolean;
@@ -67,12 +67,12 @@ export default function Markdown({
   return (
     <article 
       className={cn(
-        "prose prose-p:my-0 prose-ul:my-0 prose-li:my-0 prose-headings:text-foreground prose-blockquote:text-muted-foreground prose-strong:text-foreground prose-a:text-primary max-w-none w-full",
+        "prose prose-p:my-0 prose-ul:my-0 prose-li:my-0 prose-headings:mb-0 prose-headings:pb-2 prose-headings:border-b-2 prose-headings:border-foreground prose-headings:text-foreground prose-blockquote:text-muted-foreground prose-strong:text-foreground prose-a:text-primary max-w-none w-full",
         className
       )}
     >
       <ReactMarkdown 
-        className="!text-foreground whitespace-pre-wrap mt-3 transition-all duration-300 ease-in-out max-h-fit"
+        className="!text-foreground whitespace-pre-wrap transition-all duration-300 ease-in-out max-h-fit"
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw]}
         components={MarkdownComponents}

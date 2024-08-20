@@ -57,10 +57,10 @@ export default function Header() {
       <div className='container w-4/5 flex justify-between items-center gap-12'>
         <Link 
           href='/' 
-          className="rounded-full py-0 hover:bg-hover text-primary-foreground transition-all"
+          className="rounded-full py-3 px-1 hover:bg-hover text-primary-foreground transition-all"
         >
           <Image 
-            src={"/logos/logo-ifksit-header-small.svg"}
+            src={"/logos/logo.png"}
             alt='Logo' 
             width={40} 
             height={20}

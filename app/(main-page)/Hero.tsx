@@ -16,7 +16,7 @@ export default function Hero({
 
   return (
     <>
-      <div className="lg:mb-32 mb-16 relative lg:min-h-[95vh] sm:min-h-[80vh] min-h-[95vh] flex items-center justify-center bg-primary">
+      <div className="relative lg:min-h-[95vh] sm:min-h-[80vh] min-h-[95vh] flex items-center justify-center">
         <div className="sm:w-4/5 container flex lg:flex-row flex-col h-auto py-10 relative"> 
           <div className="flex flex-col lg:gap-8 gap-3 lg:max-w-[40%] lg:mt-16 mt-6 z-20 lg:text-left text-center">
             <h1 className="2xl:text-5xl xl:text-4xl sm:text-3xl text-2xl font-bold !leading-snug text-accent-sfu">Виртуальный музей спорта СФУ</h1>
@@ -37,7 +37,7 @@ export default function Hero({
             </div>
           </div>
           <Image 
-            src={"/hero.png"} 
+            src={"/hero-2.png"} 
             alt='students'
             width={1000}
             height={1000}

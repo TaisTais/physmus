@@ -1,7 +1,10 @@
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ImageComponent from '@/components/ImageComponent';
+import Markdown from '@/components/Markdown';
 import ErrorHandler from '@/components/errors/ErrorHandler';
 import { getSportsmanById } from '@/lib/queries/sportsman';
+import { cn } from '@/lib/utils';
+import Link from 'next/link';
 import React from 'react'
 
 export default async function Sportsman({
@@ -21,40 +24,47 @@ export default async function Sportsman({
     );
 
     const firstImage = dataResult.value.attributes.images.data.length > 0 ? dataResult.value.attributes.images.data[0].attributes.url : undefined
-    const sport = dataResult.value.attributes.sport.data
+    const sports = dataResult.value.attributes.sports.data
     const uni_sport = dataResult.value.attributes.uni_sport.data
 
     return (
         <div className='sm:w-4/5 container my-16'>
-            <Breadcrumbs data={[{ title: "Спортсмены", slug: "sportsmans" }, { title: dataResult.value.attributes.fio, slug: dataResult.value.id }]} />
-            <div className='flex lg:flex-row flex-col items-center gap-8 w-full lg:mb-10 mb-6'>
+            <Breadcrumbs data={[{ title: "Наша гордость", slug: "sportsmans" }, { title: dataResult.value.attributes.fio, slug: dataResult.value.id }]} />
+            <div className='flex md:flex-row flex-col gap-8 w-full md:h-80 md:mb-10 mb-6'>
                 <ImageComponent 
                     src={firstImage}
                     alt="Фото"
                     fill={false}
-                    width={200}
-                    height={200}
-                    className='aspect-square object-cover rounded-2xl'
+                    width={215}
+                    height={320}
+                    className='md:aspect-[2/3] aspect-square mx-auto object-cover rounded-3xl'
                 />
-                <div className='flex flex-col'>
-                    <p className='text-sm text-primary-foreground'>Спортсмен{sport && ", " + sport.attributes.title} {uni_sport && ", " + uni_sport.attributes.title}</p>
-                    <h1 className='font-bold lg:text-3xl sm:text-2xl text-xl mt-2 mb-3'>{dataResult.value.attributes.fio}</h1>
+                <div className='w-full h-full bg-primary flex flex-col gap-3 lg:p-12 p-6 rounded-3xl'>
+                    <h1 className='font-semibold lg:text-3xl sm:text-2xl text-xl '>{dataResult.value.attributes.fio}</h1>
+                    <p className='font-medium'>{dataResult.value.attributes.rank}</p>
+                    <div className='w-full'>
+                      <Markdown data={dataResult.value.attributes.info}  className='prose-sm'/>
+                    </div>
+                    <div className='flex flex-wrap gap-x-3 gap-y-2 text-sm mt-3'>
+                        {sports.map(sport => (
+                            <Link
+                                key={sport.id}
+                                href={`/sports/${sport.id}`}
+                                className={cn(
+                                    'py-1 px-3 rounded-2xl shadow text-background',
+                                    'opacity-90 hover:opacity-100 hover:shadow-md hover:scale-105 transition-all duration-300'
+                                )}
+                                style={{backgroundColor: sport.attributes.category.data?.attributes.color ?? undefined}}
+                            >
+                                {sport.attributes.title}
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </div>
 
-            <p className='py-2 px-6 rounded-full bg-light-peach text-sm w-fit lg:mx-0 mx-auto'>{dataResult.value.attributes.rank}</p>
-
-            <div className='lg:py-10 lg:px-14 p-6 rounded-2xl bg-light-peach mt-12'>
-                <p className='font-medium lg:mb-8 mb-6'>Достижения:</p>
-                <ul className='flex flex-col gap-4'>
-                    {dataResult.value.attributes.achievements.map((achievement, index) => (
-                        <li key={index} className='flex gap-5 items-center'>
-                            <span className='font-semibold lg:text-lg text-sm lg:min-w-10 min-w-8'>{achievement.year ? achievement.year : "____"}</span>
-                            <p className='lg:text-sm text-xs'>{achievement.description}</p>
-                        </li>
-                    ))}
-                </ul>
-                <ul></ul>
+            <div className='mt-12'>
+                <Markdown data={dataResult.value.attributes.additional_info}  className='prose-sm'/>
             </div>
         </div>
     )

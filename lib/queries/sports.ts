@@ -14,6 +14,7 @@ export async function getSportsCategories(): Promise<SportCategoriesT> {
           attributes {
             title
             color
+            darkColor
             sports {
               data {
                 id
@@ -112,6 +113,14 @@ export const getSportById = async (id: string): Promise<SportT> => {
             data {attributes { url }}
           }
           description
+          history
+          historyImages {
+            data { attributes { url } }
+          }
+          timeline {
+            title
+            description
+          }
         }
       }
     }

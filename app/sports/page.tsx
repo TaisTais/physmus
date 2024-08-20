@@ -30,7 +30,11 @@ export default async function Sports() {
                             className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 pb-2 mb-4'
                             style={{borderColor: category.attributes.color ?? undefined}}
                         >
-                            <h1 className='font-semibold lg:text-xl text-base'>{category.attributes.title}</h1>
+                            <h1 
+                                className='font-semibold lg:text-xl text-base'
+                            >
+                                    {category.attributes.title}
+                            </h1>
                         </div>
                         <SportsArray data={category.attributes.sports.data} color={category.attributes.color} />
                     </div>

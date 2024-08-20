@@ -72,6 +72,7 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        tertriary: "hsl(var(--tertriary))",
       },
       borderRadius: {
         lg: "var(--radius)",
