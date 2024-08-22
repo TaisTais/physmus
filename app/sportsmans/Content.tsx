@@ -1,8 +1,11 @@
 import ImageComponent from '@/components/ImageComponent'
+import PaginationControls from '@/components/PaginationControls'
 import ErrorHandler from '@/components/errors/ErrorHandler'
 import { getSportsmans } from '@/lib/queries/sportsman'
 import Link from 'next/link'
 import React from 'react'
+
+const DEFAULT_PAGE_SIZE = 35
 
 export default async function Content({
     searchParams,
@@ -12,10 +15,8 @@ export default async function Content({
     className?: string
 }) {
 
-    const defaultPageSize = 35
-
     const page = searchParams['page'] ?? '1'
-    const per = searchParams['per'] ?? defaultPageSize
+    const per = searchParams['per'] ?? DEFAULT_PAGE_SIZE
     const search = searchParams['search'] as string | undefined
 
     const [ dataResult ] = await Promise.allSettled([
@@ -49,8 +50,8 @@ export default async function Content({
                                 src={firstImage}
                                 alt="Фото"
                                 fill={false}
-                                width={150}
-                                height={150}
+                                width={600}
+                                height={600}
                                 className='w-full md:aspect-[5/6] aspect-square mx-auto object-cover rounded-t-3xl'
                             />
                             <div className='p-3'>
@@ -61,6 +62,13 @@ export default async function Content({
                     )}
                 )}
             </div>
+            <PaginationControls
+                length={dataResult.value.meta.pagination.total}
+                defaultPageSize={DEFAULT_PAGE_SIZE}
+                pageParam='page'
+                perParam='per'
+                showMore={false}
+            />
         </div>
     )
 }

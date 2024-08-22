@@ -35,7 +35,7 @@ export default function RootLayout({
       <body className={montserrat.className}>
         <div className="flex flex-col min-h-screen">
           <Header/>
-          <main className="pt-14 flex-1">{children}</main>
+          <main className="py-14 flex-1">{children}</main>
           <Toaster />
           <Footer/>
         </div>

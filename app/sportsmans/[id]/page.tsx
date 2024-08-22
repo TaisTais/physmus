@@ -25,7 +25,7 @@ export default async function Sportsman({
 
     const firstImage = dataResult.value.attributes.images.data.length > 0 ? dataResult.value.attributes.images.data[0].attributes.url : undefined
     const sports = dataResult.value.attributes.sports.data
-    const uni_sport = dataResult.value.attributes.uni_sport.data
+    // const uni_sport = dataResult.value.attributes.uni_sport.data
 
     return (
         <div className='sm:w-4/5 container my-16'>

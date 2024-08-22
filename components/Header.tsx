@@ -69,10 +69,11 @@ export default function Header() {
 
         {/* Desktop */}
         <NavigationMenu className='w-full justify-end hidden lg:flex'>
-          <NavigationMenuList className='flex flex-row xl:gap-x-12 gap-x-3 flex-wrap'>
-            <NavMenuItem name='Главная' href='/' />
+          <NavigationMenuList className='flex flex-row xl:gap-x-6 gap-x-3 flex-wrap'>
+            <NavMenuItem name='Экспонаты' href='/exhibits' /> 
             <NavMenuItem name='Универсиада' href='/universiade2019' />
             <NavMenuItem name='Виды спорта' href='/sports' />
+            <NavMenuItem name='Наша гордость' href='/sportsmans' />
             <NavMenuItem name='ГТО' href='/gto' />
           </NavigationMenuList>
         </NavigationMenu>
@@ -85,9 +86,10 @@ export default function Header() {
           <SheetContent className='mt-14'>
             <NavigationMenu className='w-full mt-12'>
               <NavigationMenuList className='w-full flex flex-col gap-y-8'>
-                <NavMenuItem name='Главная' href='/' />
+                <NavMenuItem name='Экспонаты' href='/exhibits' />
                 <NavMenuItem name='Универсиада' href='/universiade2019' />
                 <NavMenuItem name='Виды спорта' href='/sports' />
+                <NavMenuItem name='Наша гордость' href='/sportsmans' />
                 <NavMenuItem name='ГТО' href='/gto' />
               </NavigationMenuList>
             </NavigationMenu>
