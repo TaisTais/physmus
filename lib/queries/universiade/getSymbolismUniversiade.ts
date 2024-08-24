@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { SymbolismUniversiadeT } from "../../types/symbolism-universiade"
+import { SymbolismUniversiadeT } from "../../types/universiade/symbolism-universiade"
 import fetchData from "../fetchData"
 
 
@@ -55,7 +55,7 @@ export const getSymbolismUniversiade = async (): Promise<SymbolismUniversiadeT> 
     }
   }>({
     query,
-    error: 'Failed to fetch data "Universiade Symbolysm"',
+    error: 'Failed to fetch data "Universiade Symbolism"',
   })
   
   if (json.data.universiadaSimbolysm.data === null) {

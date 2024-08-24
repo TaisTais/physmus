@@ -23,13 +23,6 @@ export async function getMainPage(): Promise<MainPageT> {
               data { attributes { url } }
             }
           }
-          about {
-            title
-            text
-            images {
-              data { attributes { url } }
-            }
-          }
         }
       }
     }

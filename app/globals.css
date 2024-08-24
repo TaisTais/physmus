@@ -60,7 +60,6 @@
   }
 }
 
-.pink-gradient {
-  background: rgb(221,142,196);
-  background: linear-gradient(145deg, rgba(221,142,196,1) 10%, rgba(221,142,196,0.8) 30%, rgba(221,142,196,0.4) 50%, rgba(255,255,255,0) 100%);
+.bg-gradient {
+  background: linear-gradient(45deg, rgb(227, 28, 134, 0.2), rgba(0, 123, 194,0.2) 60%);
 }

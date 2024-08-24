@@ -1,22 +1,22 @@
-import Markdown from '@/components/Markdown'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import React from 'react'
-import { data } from './data'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import { getSitesHeritageUniversiade } from '@/lib/queries/universiade/getSitesHeritageUniversiade'
+import ErrorHandler from '@/components/errors/ErrorHandler'
 
-export default function SitesHeritage() {
+export default async function SitesHeritage() {
 
-    const text = `
-## **Культурные и общественные объекты:**
-- Общественный центр СФУ (конгресс-холл);
-- Медицинский центр в Деревне Зимней универсиады 2019 (после Универсиады данный центр осуществляет поликлиническое обслуживание студентов и сотрудников Сибирского федерального университета, помимо этого, в здании центра размещен ряд научно-исследовательских лабораторий по биомедицинской тематике. Мощность центра – 400 посещений в смену. Высококвалифицированную помощь оказывают с использованием современного оборудования силами врачебного коллектива Федерального медико-биологического агентства. К центру прикреплены более 23 тысяч студентов СФУ).    
-
-## **Жилые комплексы:**
-- комплекс общежитий для студентов «Перья» – резиденция волонтеров и вспомогательного персонала (используются в данный момент как студенческие общежития);
-- Деревня Зимней универсиады 2019 разместится в кампусе Сибирского федерального университета общей площадью 25,4 га. В ней располагались делегации стран-участниц и более 5 000 волонтеров данного спортивного мероприятия. Многофункциональный сервис-холл Деревни вмещал в себя фитнес-зал, лаундж-зону, почтовое отделение, сувенирную лавочку, мини-кофейню, салон красоты и многое другое. Для спортсменов Деревни проводился Фестиваль компьютерных игр «Let’s play». Активное участие принимали спортсмены из России, Израиля, Франции, Канады, а также сборная команда организаторов Зимней универсиады 2019.
-
-## **Спортивные объекты:**
-`
+    const [ dataResult ] = await Promise.allSettled([
+        getSitesHeritageUniversiade()
+      ]);
+      if (dataResult.status === "rejected") return (
+        <ErrorHandler
+          error={dataResult.reason as unknown}
+          place="Объекты и Наследие" 
+          notFound
+          goBack={false}
+        />
+      );
 
     return (
         <div className='sm:w-4/5 container my-16'>
@@ -24,12 +24,38 @@ export default function SitesHeritage() {
               {title: "Универсиада", slug: "universiade2019"}, 
               {title: "Объекты и наследие", slug: "sites-heritage" }
             ]}/>
-            <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
-                <h1 className='font-semibold lg:text-xl text-base'>Объекты и наследие</h1>
+            <div className='flex flex-col mb-24'>
+                <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
+                    <h1 className='font-semibold lg:text-xl text-base'>Культурные объекты и наследие</h1>
+                </div>
+                <div className='flex flex-col mt-8 px-12 py-10 bg-gradient gap-4 rounded-2xl'>
+                    <h2 className='font-bold lg:text-4xl text-3xl text-accent-pink'>{dataResult.value.culture[0].title}</h2>
+                    <p className='font-semibold text-accent-sky'>{dataResult.value.culture[0].address}</p>
+                    <p className=''>{dataResult.value.culture[0].text}</p>
+                </div>
+                <div className='flex flex-col mt-8 px-12 py-10 bg-gradient gap-4 rounded-2xl'>
+                    <h2 className='font-bold lg:text-4xl text-3xl text-accent-pink'>{dataResult.value.culture[1].title}</h2>
+                    <p className='font-semibold text-accent-sky'>{dataResult.value.culture[1].address}</p>
+                    <p className=''>{dataResult.value.culture[1].text}</p>
+                </div>
             </div>
-            <div className='mt-16'>
-                <Markdown data={text} moreButton={false}/>
+            
+            <div className='flex flex-col mb-24'>
+                <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
+                    <h1 className='font-semibold lg:text-xl text-base'>Жилые комплексы</h1>
+                </div>
+                <div className='flex flex-col mt-8 px-12 py-10 bg-gradient gap-4 rounded-2xl'>
+                    <h2 className='font-bold lg:text-4xl text-3xl text-accent-pink'>{dataResult.value.housing[0].title}</h2>
+                    <p className='font-semibold text-accent-sky'>{dataResult.value.housing[0].address}</p>
+                    <p className=''>{dataResult.value.housing[0].text}</p>
+                </div>
+                <div className='flex flex-col mt-8 px-12 py-10 bg-gradient gap-4 rounded-2xl'>
+                    <h2 className='font-bold lg:text-4xl text-3xl text-accent-pink'>{dataResult.value.housing[1].title}</h2>
+                    <p className='font-semibold text-accent-sky'>{dataResult.value.housing[1].address}</p>
+                    <p className=''>{dataResult.value.housing[1].text}</p>
+                </div>
             </div>
+            
             <Table>
                 <TableHeader>
                     <TableRow>
@@ -38,10 +64,10 @@ export default function SitesHeritage() {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {data.map(item => (
-                        <TableRow key={item.name}>
-                            <TableCell>{item.name}</TableCell>
-                            <TableCell>{item.types}</TableCell>
+                    {dataResult.value.sportComplex.map(item => (
+                        <TableRow key={item.complex}>
+                            <TableCell>{item.complex}</TableCell>
+                            <TableCell>{item.sport}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

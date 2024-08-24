@@ -44,15 +44,6 @@ const config = {
           pink: "hsl(var(--accent-pink))",
           sky: "hsl(var(--accent-sky))",
         },
-        light: {
-          orange: "hsl(var(--light-orange))",
-          lime: "hsl(var(--light-lime))",
-          blue: "hsl(var(--light-blue))",
-          yellow: "hsl(var(--light-yellow))",
-          green: "hsl(var(--light-green))",
-          pink: "hsl(var(--light-pink))",
-          sky: "hsl(var(--light-sky))",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",

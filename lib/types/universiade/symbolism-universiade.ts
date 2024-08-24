@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { TextBlockT } from "./main"
+import { TextBlockT } from "../main"
 
 export const SymbolismUniversiadeT = z.object ({
   title: z.string(),
