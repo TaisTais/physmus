@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
-import { SitesHeritageUniversiadeT } from "../../types/sites-heritage-universiade"
+import { SymbolismUniversiadeT } from "../../types/symbolism-universiade"
 import fetchData from "../fetchData"
 
 
-export const getSitesHeritageUniversiade = async (): Promise<SitesHeritageUniversiadeT> => {
+export const getSymbolismUniversiade = async (): Promise<SymbolismUniversiadeT> => {
   const query = /* GraphGL */ `
-  query AboutUniversiade {
+  query SimbolysmUniversiade {
     universiadaSimbolysm {
       data {
         attributes {
@@ -49,7 +49,7 @@ export const getSitesHeritageUniversiade = async (): Promise<SitesHeritageUniver
     data: {
       universiadaSimbolysm: {
         data: {
-          attributes: SitesHeritageUniversiadeT
+          attributes: SymbolismUniversiadeT
         } | null
       }
     }
@@ -62,6 +62,6 @@ export const getSitesHeritageUniversiade = async (): Promise<SitesHeritageUniver
     notFound()
   }
 
-  const data = SitesHeritageUniversiadeT.parse(json.data.universiadaSimbolysm.data.attributes);
+  const data = SymbolismUniversiadeT.parse(json.data.universiadaSimbolysm.data.attributes);
   return data;
 }

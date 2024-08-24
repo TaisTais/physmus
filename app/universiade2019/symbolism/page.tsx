@@ -3,13 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import Breadcrumbs from '@/components/Breadcrumbs'
-import { getSitesHeritageUniversiade } from '@/lib/queries/universiade/getSitesHeritageUniversiade'
 import ErrorHandler from '@/components/errors/ErrorHandler'
+import { getSymbolismUniversiade } from '@/lib/queries/universiade/getSitesHeritageUniversiade'
 
 export default async function Symbolism() {
     
   const [ dataResult ] = await Promise.allSettled([
-      getSitesHeritageUniversiade()
+      getSymbolismUniversiade()
     ]);
     if (dataResult.status === "rejected") return (
       <ErrorHandler

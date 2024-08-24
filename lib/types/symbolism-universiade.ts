@@ -1,7 +1,7 @@
 import { z } from "zod"
 import { TextBlockT } from "./main"
 
-export const SitesHeritageUniversiadeT = z.object ({
+export const SymbolismUniversiadeT = z.object ({
   title: z.string(),
   symbols: z.object({
     data: z.object({
@@ -15,4 +15,4 @@ export const SitesHeritageUniversiadeT = z.object ({
   mascot: z.lazy(() => TextBlockT),
 })
   
-export type SitesHeritageUniversiadeT = z.infer<typeof SitesHeritageUniversiadeT>
+export type SymbolismUniversiadeT = z.infer<typeof SymbolismUniversiadeT>
