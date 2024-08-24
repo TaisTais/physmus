@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ErrorHandler from '@/components/errors/ErrorHandler'
-import { getSymbolismUniversiade } from '@/lib/queries/universiade/getSitesHeritageUniversiade'
+import { getSymbolismUniversiade } from '@/lib/queries/universiade/getSymbolismUniversiade'
 
 export default async function Symbolism() {
     
