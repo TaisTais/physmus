@@ -18,7 +18,7 @@ export default function Hero({
     <>
       <div className="relative lg:min-h-[95vh] sm:min-h-[80vh] min-h-[95vh] flex items-center justify-center">
         <div className="sm:w-4/5 container flex lg:flex-row flex-col h-auto py-10 relative"> 
-          <div className="flex flex-col lg:gap-8 gap-3 lg:max-w-[60%] mt-16 z-20 lg:text-left text-center">
+          <div className="flex flex-col lg:gap-8 gap-3 lg:max-w-[50%] mt-16 z-20 lg:text-left text-center">
             <h1 className="2xl:text-5xl xl:text-4xl sm:text-3xl text-2xl font-bold !leading-tight text-accent-orange">Виртуальный музей спорта СФУ</h1>
             <p className="lg:text-base text-sm text-foreground lg:w-2/3">
               {description}
