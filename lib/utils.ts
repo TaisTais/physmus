@@ -55,7 +55,7 @@ export function getColor(index: number) {
     "--accent-green",
     "--accent-yellow",
     "--accent-lime",
-    "--accent-sfu",
+    "--accent-orange",
     "--light-sky",
     "--light-pink",
     "--light-green"

@@ -12,7 +12,7 @@ export type ImageT = z.infer<typeof ImageT>
 export const ImagesArrayT = z.object({
   data: z.object({
     attributes: z.object({
-      url: z.string()
+      url: z.string(),
     })
   }).array()
 })

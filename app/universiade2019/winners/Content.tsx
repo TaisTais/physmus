@@ -42,7 +42,7 @@ export default async function Content({
                     const firstImage = sportsman.attributes.images.data.length > 0 ? sportsman.attributes.images.data[0].attributes.url : undefined
                     return (
                         <div key={sportsman.id} className='text-center'>
-                            <Link href={`/sportsmans/${sportsman.id}`} className='font-semibold lg:text-base text-sm hover:text-accent-sfu transition-all'>
+                            <Link href={`/sportsmans/${sportsman.id}`} className='font-semibold lg:text-base text-sm hover:text-accent-orange transition-all'>
                                 <ImageComponent 
                                     src={firstImage}
                                     alt="Фото"

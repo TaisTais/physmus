@@ -48,7 +48,7 @@ export default function StudentHeadquarters() {
                         <Link 
                             href={'/5. Положение о студенческом штабе Зимней универсиады 2019.pdf'} 
                             target='__blank'
-                            className='mx-1 underline text-primary-foreground hover:text-accent-sfu transition-all'
+                            className='mx-1 underline text-primary-foreground hover:text-accent-orange transition-all'
                         > 
                             Положение «О студенческом штабе Зимней универсиады»
                         </Link> 

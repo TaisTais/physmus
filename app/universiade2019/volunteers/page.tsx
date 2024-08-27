@@ -19,7 +19,7 @@ export default function Volunteers() {
                     <Link 
                         href={"/7. Программа Волонтеры 2019.pdf"} 
                         target='__blank' 
-                        className='mx-1 underline text-primary-foreground hover:text-accent-sfu transition-all'
+                        className='mx-1 underline text-primary-foreground hover:text-accent-orange transition-all'
                     >программа волонтеров 2019</Link>.
                 </p>
                 <p className='mt-6'>
@@ -27,7 +27,7 @@ export default function Volunteers() {
                     <Link 
                         href={"/8. Положение о Волонтерском центре СФУ.pdf"} 
                         target='__blank' 
-                        className='mx-1 underline text-primary-foreground hover:text-accent-sfu transition-all'
+                        className='mx-1 underline text-primary-foreground hover:text-accent-orange transition-all'
                     >Волонтерский центр СФУ</Link>.
                 </p>
             </div>

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { FactsRecordsUniversiadeT } from "../../types/facts-records-universiade"
+import { FactsRecordsUniversiadeT } from "../../types/universiade/facts-records-universiade"
 import fetchData from "../fetchData"
 
 export const getFactsRecordsUniversiade = async (): Promise<FactsRecordsUniversiadeT> => {

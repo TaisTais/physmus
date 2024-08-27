@@ -38,7 +38,7 @@ export default async function SportsmansList({
 
     return (
         <div className={className}>
-            <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-accent-sfu pb-2'>
+            <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-accent-orange pb-2'>
                 <h1 className='font-semibold lg:text-xl text-base'>
                     Спортсмены
                 </h1>
@@ -48,7 +48,7 @@ export default async function SportsmansList({
                     const firstImage = sportsman.attributes.images.data.length > 0 ? sportsman.attributes.images.data[0].attributes.url : undefined
                     return (
                         <div key={sportsman.id} className='text-center'>
-                            <Link href={`/sportsmans/${sportsman.id}`} className='font-semibold lg:text-base text-sm hover:text-accent-sfu transition-all'>
+                            <Link href={`/sportsmans/${sportsman.id}`} className='font-semibold lg:text-base text-sm hover:text-accent-orange transition-all'>
                                 <ImageComponent 
                                     src={firstImage}
                                     alt="Фото"
