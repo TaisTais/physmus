@@ -21,7 +21,7 @@
     --destructive-foreground: 60 9.1% 97.8%;
     --hover: 215, 40%, 82%;
     --focus: 215, 40%, 82%;
-    --tertiary: 224, 22%, 55%;
+    --tertriary: 224, 22%, 55%;
     --radius: 0.3rem;
 
     /*hover*/
@@ -48,7 +48,7 @@
     --popover: 243 21% 20%;
     --primary: 243 21% 20%; 
     --secondary: 224, 22%, 55%;
-    --tertiary: 215, 40%, 82%;
+    --tertriary: 215, 40%, 82%;
     --muted: 25 5.3% 44.7%;
     --muted-foreground: 60 4.8% 95.9%;
     --destructive: 0 84.2% 60.2%;

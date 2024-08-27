@@ -33,7 +33,7 @@ export default async function Symbolism() {
           <div className='flex flex-col items-center gap-24 mt-4'>
             <div className="flex flex-row gap-36 my-12 lg:justify-start justify-center">
               <div className='flex flex-col items-start gap-4'>
-                <p className='font-medium lg:text-lg text-base'>{dataResult.value.symbols.data[0].attributes.alternativeText}</p>
+                {/* <p className='font-medium lg:text-lg text-base'>{dataResult.value.symbols.data[0].attributes.alternativeText}</p> */}
                 <Image 
                 src={dataResult.value.symbols.data[0].attributes.url} 
                 alt=''
@@ -43,7 +43,7 @@ export default async function Symbolism() {
                 />
               </div>
               <div className='flex flex-col items-start gap-4'>
-                <p className='font-medium lg:text-lg text-base'>{dataResult.value.symbols.data[1].attributes.alternativeText}</p>
+                {/* <p className='font-medium lg:text-lg text-base'>{dataResult.value.symbols.data[1].attributes.alternativeText}</p> */}
                 <Image 
                     src={dataResult.value.symbols.data[1].attributes.url} 
                     alt=''
@@ -56,7 +56,7 @@ export default async function Symbolism() {
             
             <div className="flex flex-col gap-24">
               <div className='flex flex-col items-start gap-4'>
-                <p className='font-medium lg:text-lg text-base'>{dataResult.value.symbols.data[2].attributes.alternativeText}</p>
+                {/* <p className='font-medium lg:text-lg text-base'>{dataResult.value.symbols.data[2].attributes.alternativeText}</p> */}
                 <Image 
                     src={dataResult.value.symbols.data[2].attributes.url} 
                     alt=''
@@ -66,7 +66,7 @@ export default async function Symbolism() {
                 />
               </div>
               <div className="flex flex-col items-start gap-4">
-                <p className='font-medium lg:text-lg text-base'>{dataResult.value.symbols.data[3].attributes.alternativeText}</p>
+                {/* <p className='font-medium lg:text-lg text-base'>{dataResult.value.symbols.data[3].attributes.alternativeText}</p> */}
                 <Image 
                     src={dataResult.value.symbols.data[3].attributes.url} 
                     alt=''

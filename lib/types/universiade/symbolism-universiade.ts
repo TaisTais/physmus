@@ -7,7 +7,6 @@ export const SymbolismUniversiadeT = z.object ({
     data: z.object({
       attributes: z.object({
         url: z.string(),
-        alternativeText: z.string()
       })
     }).array()
   }),

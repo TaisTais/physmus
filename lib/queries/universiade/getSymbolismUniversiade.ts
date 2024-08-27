@@ -14,7 +14,6 @@ export const getSymbolismUniversiade = async (): Promise<SymbolismUniversiadeT> 
             data {
               attributes {
                 url
-                alternativeText
               }
             }
           }
