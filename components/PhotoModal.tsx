@@ -47,10 +47,10 @@ export default function PhotoModal({
       <DialogTrigger>
         <Maximize className="h-6 w-6 cursor-pointer transition-all hover:scale-125" />
       </DialogTrigger>
-      <DialogContent className="bg-accent h-[80vh] max-w-[95vw] overflow-hidden p-0 sm:max-w-[95vw] !rounded-3xl">
+      <DialogContent className="bg-primary h-[80vh] max-w-[95vw] overflow-hidden p-0 sm:max-w-[95vw] !rounded-3xl">
         <div
           ref={sliderRef}
-          className="keen-slider bg-accent h-full w-full cursor-grab rounded-md"
+          className="keen-slider bg-primary h-full w-full cursor-grab rounded-md"
         >
           {data.map((image, index) => (
             <div
@@ -109,11 +109,11 @@ export default function PhotoModal({
                 </div>
               </div>
               <ArrowLeft
-                className="text-foreground bg-accent absolute bottom-6 left-2 h-8 w-8 cursor-pointer rounded-md bg-opacity-20 transition-all hover:scale-125 md:top-1/2 md:translate-y-1/2"
+                className="text-foreground bg-primary absolute bottom-6 left-2 h-8 w-8 cursor-pointer rounded-md bg-opacity-20 transition-all hover:scale-125 md:top-1/2 md:translate-y-1/2"
                 onClick={() => instanceRef.current?.prev()}
               />
               <ArrowRight
-                className="text-foreground bg-accent absolute bottom-6 right-2 h-8 w-8 cursor-pointer rounded-md bg-opacity-20 transition-all hover:scale-125 md:top-1/2 md:translate-y-1/2"
+                className="text-foreground bg-primary absolute bottom-6 right-2 h-8 w-8 cursor-pointer rounded-md bg-opacity-20 transition-all hover:scale-125 md:top-1/2 md:translate-y-1/2"
                 onClick={() => instanceRef.current?.next()}
               />
             </>

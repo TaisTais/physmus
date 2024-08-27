@@ -32,7 +32,7 @@ export default function PhotoZoom({
           onLoad={() => setLoading(false)}
         />
       </DialogTrigger>
-      <DialogContent className="bg-accent h-[80vh] max-w-[95vw] overflow-hidden p-0 sm:max-w-[95vw] !rounded-3xl">
+      <DialogContent className="bg-primary h-[80vh] max-w-[95vw] overflow-hidden p-0 sm:max-w-[95vw] !rounded-3xl">
         <TransformWrapper>
           <TransformComponent
             contentStyle={{

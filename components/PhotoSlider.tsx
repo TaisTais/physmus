@@ -45,7 +45,7 @@ export default function PhotoSlider({
     <div className="w-full">
       <div
         ref={sliderRef}
-        className="keen-slider bg-accent aspect-square max-h-96 cursor-grab rounded-3xl md:aspect-video 2xl:aspect-[2/1.2] 2xl:max-h-[500px]"
+        className="keen-slider bg-primary aspect-square max-h-96 cursor-grab rounded-3xl md:aspect-video 2xl:aspect-[2/1.2] 2xl:max-h-[500px]"
       >
         {data.map((image, index) => (
           <div key={index} className="keen-slider__slide zoom-out__slide">
