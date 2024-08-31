@@ -5,6 +5,9 @@ import { Button } from '@/components/ui/button'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ErrorHandler from '@/components/errors/ErrorHandler'
 import { getSymbolismUniversiade } from '@/lib/queries/universiade/getSymbolismUniversiade'
+import { CarouselItem } from '@/components/ui/carousel'
+import ImageComponent from '@/components/ImageComponent'
+import CarouselComp from '@/components/content/CarouselComp'
 
 export default async function Symbolism() {
     
@@ -30,10 +33,44 @@ export default async function Symbolism() {
           <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
               <h1 className='font-semibold lg:text-xl text-base'>{dataResult.value.title}</h1>
           </div>
+          {dataResult.value.items.length > 0 && (
+              <CarouselComp classNameContainer="w-full">
+                {dataResult.value.items.map((item, indx) => (
+                  <CarouselItem key={indx} className="basis-1/3 flex flex-col items-center justify-center gap-1">
+                    <p className='font-medium lg:text-lg text-base'>{item.title}</p>
+                    <ImageComponent 
+                      src={item.image.data?.attributes.url} 
+                      alt=''
+                      fill={false}
+                      width={300}
+                      height={300}
+                      className="xl:w-[300px] xl:h-[300px] lg:w-20 lg:h-20 w-24 h-24"
+                    />
+                  </CarouselItem>
+                ))}
+                </CarouselComp>
+          )}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/*           
           <div className='flex flex-col items-center gap-24 mt-4'>
             <div className="flex flex-row gap-36 my-12 lg:justify-start justify-center">
               <div className='flex flex-col items-start gap-4'>
-                {/* <p className='font-medium lg:text-lg text-base'>{dataResult.value.symbols.data[0].attributes.alternativeText}</p> */}
                 <Image 
                 src={dataResult.value.symbols.data[0].attributes.url} 
                 alt=''
@@ -43,7 +80,6 @@ export default async function Symbolism() {
                 />
               </div>
               <div className='flex flex-col items-start gap-4'>
-                {/* <p className='font-medium lg:text-lg text-base'>{dataResult.value.symbols.data[1].attributes.alternativeText}</p> */}
                 <Image 
                     src={dataResult.value.symbols.data[1].attributes.url} 
                     alt=''
@@ -52,11 +88,10 @@ export default async function Symbolism() {
                     className="object-contain xl:w-[200px] xl:h-[300px] lg:w-20 lg:h-20 w-24 h-24"
                 />
               </div>
-           
+            </div>
             
             <div className="flex flex-col gap-24">
               <div className='flex flex-col items-start gap-4'>
-                {/* <p className='font-medium lg:text-lg text-base'>{dataResult.value.symbols.data[2].attributes.alternativeText}</p> */}
                 <Image 
                     src={dataResult.value.symbols.data[2].attributes.url} 
                     alt=''
@@ -66,7 +101,6 @@ export default async function Symbolism() {
                 />
               </div>
               <div className="flex flex-col items-start gap-4">
-                {/* <p className='font-medium lg:text-lg text-base'>{dataResult.value.symbols.data[3].attributes.alternativeText}</p> */}
                 <Image 
                     src={dataResult.value.symbols.data[3].attributes.url} 
                     alt=''
@@ -76,7 +110,7 @@ export default async function Symbolism() {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
             
             <div className='flex flex-row justify-between'>
                 <div className='flex flex-col gap-2'>
@@ -114,6 +148,5 @@ export default async function Symbolism() {
                 />
             </div>
           </div>
-      </div>
     )
 }

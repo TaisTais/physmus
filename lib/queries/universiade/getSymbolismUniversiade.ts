@@ -10,10 +10,11 @@ export const getSymbolismUniversiade = async (): Promise<SymbolismUniversiadeT> 
       data {
         attributes {
           title
-          symbols {
-            data {
-              attributes {
-                url
+          items {
+            title
+            image {
+              data {
+                attributes { url }
               }
             }
           }
