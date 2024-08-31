@@ -50,68 +50,7 @@ export default async function Symbolism() {
                 ))}
                 </CarouselComp>
           )}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/*           
-          <div className='flex flex-col items-center gap-24 mt-4'>
-            <div className="flex flex-row gap-36 my-12 lg:justify-start justify-center">
-              <div className='flex flex-col items-start gap-4'>
-                <Image 
-                src={dataResult.value.symbols.data[0].attributes.url} 
-                alt=''
-                width={300}
-                height={300}
-                className="object-contain xl:w-[300px] xl:h-[300px] lg:w-20 lg:h-20 w-24 h-24"
-                />
-              </div>
-              <div className='flex flex-col items-start gap-4'>
-                <Image 
-                    src={dataResult.value.symbols.data[1].attributes.url} 
-                    alt=''
-                    width={200}
-                    height={300}
-                    className="object-contain xl:w-[200px] xl:h-[300px] lg:w-20 lg:h-20 w-24 h-24"
-                />
-              </div>
-            </div>
-            
-            <div className="flex flex-col gap-24">
-              <div className='flex flex-col items-start gap-4'>
-                <Image 
-                    src={dataResult.value.symbols.data[2].attributes.url} 
-                    alt=''
-                    width={200}
-                    height={200}
-                    className="object-contain xl:w-[200px] xl:h-[100px] lg:w-20 lg:h-20 w-24 h-24"
-                />
-              </div>
-              <div className="flex flex-col items-start gap-4">
-                <Image 
-                    src={dataResult.value.symbols.data[3].attributes.url} 
-                    alt=''
-                    width={350}
-                    height={60}
-                    className="object-contain xl:w-[350px] xl:h-[60px] lg:w-20 lg:h-20 w-24 h-24"
-                />
-              </div>
-            </div>
-          </div> */}
-            
+          
             <div className='flex flex-row justify-between'>
                 <div className='flex flex-col gap-2'>
                     <h1 className='font-semibold lg:text-lg text-sm text-left mb-3'>{dataResult.value.brandbook.title}</h1>
