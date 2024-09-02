@@ -21,7 +21,7 @@ export const getSymbolismUniversiade = async (): Promise<SymbolismUniversiadeT> 
           brandbook {
             title
             text
-            images {
+            image {
               data {
                 attributes {
                   url
@@ -32,7 +32,7 @@ export const getSymbolismUniversiade = async (): Promise<SymbolismUniversiadeT> 
           mascot {
             title
             text
-            images {
+            image {
               data {
                 attributes {
                   url
