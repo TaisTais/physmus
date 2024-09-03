@@ -49,14 +49,9 @@ const config = {
           pink: "hsl(var(--accent-pink))",
           sky: "hsl(var(--accent-sky))",
         },
-        light: {
-          peach: "hsl(var(--light-peach))",
-          lime: "hsl(var(--light-lime))",
-          blue: "hsl(var(--light-blue))",
-          yellow: "hsl(var(--light-yellow))",
-          green: "hsl(var(--light-green))",
-          pink: "hsl(var(--light-pink))",
-          sky: "hsl(var(--light-sky))",
+        gradient: {
+          pink: "hsl(var(--gradient-pink))",
+          sky: "hsl(var(--gradient-sky))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -67,7 +62,6 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
         tertriary: "hsl(var(--tertriary))",
-        unigradient: "hsl(var(--unigradient))",
       },
       borderRadius: {
         lg: "var(--radius)",
