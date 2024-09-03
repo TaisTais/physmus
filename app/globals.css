@@ -12,9 +12,9 @@
     --popover: 208, 70%, 91%;
     --popover-foreground: 245, 25%, 53%;
     --primary: 208, 70%, 91%; 
-    --primary-foreground: 245, 25%, 53%;
+    --primary-foreground: 243, 21%, 20%;
     --secondary: 215, 40%, 82%;
-    --secondary-foreground: 222.2, 47.4%, 11.2%;
+    --secondary-foreground: 243, 21%, 20%;
     --muted: 40, 5%, 95%;
     --muted-foreground: 20, 5%, 45%;
     --destructive: 0, 84.2%, 60.2%;
@@ -24,7 +24,7 @@
 
     /*hover*/
     --hover: 216, 40%, 70%;
-    --hover-foreground: 245, 36%, 25%;
+    --hover-foreground: 243, 21%, 20%;
     --focus: 0, 0%, 100%;
 
     --accent-orange: 13, 86%, 48%;
@@ -34,7 +34,8 @@
     --accent-green: 74, 53%, 36%;
     --accent-pink: 328, 78%, 50%;
     --accent-sky: 202, 100%, 38%;
-    --uni-gradient: linear-gradient(45deg, rgb(227, 28, 134, 0.2), rgba(0, 123, 194,0.2) 60%);
+    --gradient-pink: 328, 78%, 90%;
+    --gradient-sky: 202, 100%, 88%;
   }
 
   .dark {
@@ -68,7 +69,8 @@
     --accent-green: 74, 53%, 36%;
     --accent-pink: 328, 78%, 50%;
     --accent-sky: 202, 100%, 38%;
-    --unigradient: linear-gradient(45deg, rgb(227, 28, 134, 0.2), rgba(0, 123, 194,0.2) 60%);
+    --gradient-pink: 328, 78%, 30%;
+    --gradient-sky: 202, 100%, 28%;
   }
 }
 
