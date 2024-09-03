@@ -4,30 +4,28 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 243 21% 20%;
+    --background: 0, 0%, 100%;
+    --foreground: 243, 21%, 20%;
     --input: 215, 40%, 82%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 209 69% 91%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 209 69% 91%; 
-    --primary-foreground: 245 25% 53%;
+    --card: 0, 0%, 100%;
+    --card-foreground: 243, 21%, 20%;
+    --popover: 208, 70%, 91%;
+    --popover-foreground: 245, 25%, 53%;
+    --primary: 208, 70%, 91%; 
+    --primary-foreground: 245, 25%, 53%;
     --secondary: 215, 40%, 82%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 60 4.8% 95.9%;
-    --muted-foreground: 25 5.3% 44.7%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 60 9.1% 97.8%;
-    --hover: 215, 40%, 82%;
-    --focus: 215, 40%, 82%;
+    --secondary-foreground: 222.2, 47.4%, 11.2%;
+    --muted: 40, 5%, 95%;
+    --muted-foreground: 20, 5%, 45%;
+    --destructive: 0, 84.2%, 60.2%;
+    --destructive-foreground: 60, 9.1%, 97.8%;
     --tertriary: 224, 22%, 55%;
     --radius: 0.3rem;
 
     /*hover*/
-    --hover: 216 60% 80%;
-    --hover-foreground: 245 36% 35%;
-    --focus: 0 0% 100%;
+    --hover: 216, 40%, 70%;
+    --hover-foreground: 245, 36%, 25%;
+    --focus: 0, 0%, 100%;
 
     --accent-orange: 13, 86%, 48%;
     --accent-lime: 66, 82%, 43%;
@@ -36,24 +34,33 @@
     --accent-green: 74, 53%, 36%;
     --accent-pink: 328, 78%, 50%;
     --accent-sky: 202, 100%, 38%;
+    --uni-gradient: linear-gradient(45deg, rgb(227, 28, 134, 0.2), rgba(0, 123, 194,0.2) 60%);
   }
 
   .dark {
     --background: 252, 29%, 14%;
-    --foreground: 209 69% 91%;
+    --foreground: 208, 70%, 91%;
     --input: 224, 22%, 55%;
-    --radius: 0.3rem;
-    --hover: 215, 40%, 82%;
-    --focus: 215, 40%, 82%;
-    --popover: 243 21% 20%;
-    --primary: 243 21% 20%; 
+    --card: 252, 29%, 14%;
+    --card-foreground: 208, 70%, 91%;
+    --popover: 243, 21%, 20%;
+    --popover-foreground: 245, 25%, 53%;
+    --primary: 243, 21%, 20%; 
+    --primary-foreground: 208, 70%, 91%;
     --secondary: 224, 22%, 55%;
-    --tertriary: 215, 40%, 82%;
-    --muted: 25 5.3% 44.7%;
-    --muted-foreground: 60 4.8% 95.9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 60 9.1% 97.8%;
-
+    --secondary-foreground: 208, 70%, 91%;
+    --muted: 20, 5%, 30%;
+    --muted-foreground: 40, 5%, 81%;
+    --destructive: 0, 84.2%, 45.2%;
+    --destructive-foreground: 60, 9.1%, 87.8%;
+    --tertriary: 215, 30%, 72%;
+    --radius: 0.3rem;
+    
+      /*hover*/
+    --hover: 215, 30%, 72%;
+    --hover-foreground: 208, 70%, 95%;
+    --focus: 252, 29%, 14%;
+    
     --accent-orange: 13, 86%, 48%;
     --accent-lime: 66, 82%, 43%;
     --accent-blue: 205, 63%, 62%;
@@ -61,6 +68,7 @@
     --accent-green: 74, 53%, 36%;
     --accent-pink: 328, 78%, 50%;
     --accent-sky: 202, 100%, 38%;
+    --unigradient: linear-gradient(45deg, rgb(227, 28, 134, 0.2), rgba(0, 123, 194,0.2) 60%);
   }
 }
 
@@ -68,8 +76,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-.bg-gradient {
-  background: linear-gradient(45deg, rgb(227, 28, 134, 0.2), rgba(0, 123, 194,0.2) 60%);
 }
