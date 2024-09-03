@@ -52,8 +52,8 @@ export default async function Symbolism() {
         )}
       </div>
       
-      <div className='bg-gradient-to-r from-accent-sky to-accent-pink'>
-        <div className='flex flex-row justify-between items-center sm:w-4/5 container mb-24'>
+      <div className='bg-gradient-to-r from-gradient-sky to-gradient-pink py-8 mb-24'>
+        <div className='flex flex-row justify-between items-center sm:w-4/5 container'>
           <div className='flex flex-col gap-2'>
               <h1 className='font-semibold lg:text-lg text-sm text-left mb-3'>{dataResult.value.brandbook.title}</h1>
               <p className='text-left mb-3 lg:w-4/5 lg:text-sm text-xs'>{dataResult.value.brandbook.text}</p>
