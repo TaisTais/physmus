@@ -1,27 +1,43 @@
 import Breadcrumbs from '@/components/Breadcrumbs'
+import ErrorHandler from '@/components/errors/ErrorHandler';
+import Markdown from '@/components/Markdown';
+import { getGeographyOfParticipants } from '@/lib/queries/universiade/getGeographyOfParticipants';
 import React from 'react'
 
-export default function GeographyParticipants() {
-    return (
-        <div className='sm:w-4/5 container my-16'>
-            <Breadcrumbs data={[
-              {title: "Универсиада", slug: "universiade2019"}, 
-              {title: "География участников", slug: "geography-participants" }
-            ]}/>
-            <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
-                <h1 className='font-semibold lg:text-xl text-base'>География участников</h1>
+export default async function GeographyParticipants() {
+  
+  const [ dataResult ] = await Promise.allSettled([
+    getGeographyOfParticipants()
+  ]);
+  if (dataResult.status === "rejected") return (
+    <ErrorHandler
+      error={dataResult.reason as unknown}
+      place="География участников" 
+      notFound
+      goBack={false}
+    />
+  );
+    
+  return (
+    <div className='sm:w-4/5 container my-16'>
+      <Breadcrumbs data={[
+        {title: "Универсиада", slug: "universiade2019"}, 
+        {title: "География участников", slug: "geography-participants" }
+      ]}/>
+      <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
+          <h1 className='font-semibold lg:text-xl text-base'>{dataResult.value.title}</h1>
+      </div>
+      <div className='flex flex-col mt-8 gap-4'>
+        <Markdown data={dataResult.value.info.text}/>
+        <div className='px-8 py-8 gap-20 bg-gradient-to-r from-gradient-sky to-gradient-pink w-full sm:columns-2 md:columns-3 lg:columns-4 2xl:columns-6 rounded-2xl'>
+          {dataResult.value.info.countries.map((counry, index) => 
+            <div key={index} className='w-44'>
+              <p>{counry.name}</p>
             </div>
-            <div className='mt-16'>
-                <p>
-                    Универсиады (летняя и зимняя) проводятся каждые два года. В соответствии с установленными правилами к участию в соревнованиях допускаются студенты в возрасте от 17 до 25 лет и выпускники, получившие академическую степень или диплом в год, предшествующий соревнованиям.
-                </p>
-                <p className='mt-6'>
-                    Подтвердили свое участие в Зимней универсиаде 2019 – Австралия, Армения, Австрия, Бельгия, Болгария, Бразилия, Беларусь, Великобритания, Венгрия, Германия, Италия, Испания, Канада, Китай, Республика Корея, Казахстан, Литва, Латвия, Мексика, Монголия, Македония, Норвегия, Нидерланды, Новая Зеландия, Польша, Россия, Румыния, США, Словакия, Словения, Сербия, Тайвань, Украина, Финляндия, Франция, Хорватия, Чешская республика, Швейцария, Швеция, Эстония, Япония и др.
-                </p>
-                <p className='mt-6'>
-                    Впервые во Всемирной зимней универсиаде участвовали спортсмены из Непала, Объединенных Арабских Эмиратов и Филиппин. Среди самых многочисленных делегаций – Россия (296 человек), Казахстан (95 человек) и Канада (91 человек).
-                </p>
-            </div>
+          )}
         </div>
-    )
+          <p>{dataResult.value.info.additionalText}</p>
+      </div>
+    </div>
+  )
 }
