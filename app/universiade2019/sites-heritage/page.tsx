@@ -64,9 +64,9 @@ export default async function SitesHeritage() {
             </TableHeader>
             <TableBody>
                 {dataResult.value.sport.sportComplex.map(item => (
-                    <TableRow key={item.complex}>
-                        <TableCell>{item.complex}</TableCell>
-                        <TableCell>{item.sport}</TableCell>
+                    <TableRow key={item.key}>
+                        <TableCell>{item.key}</TableCell>
+                        <TableCell>{item.value}</TableCell>
                     </TableRow>
                 ))}
             </TableBody>

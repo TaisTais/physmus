@@ -20,8 +20,8 @@ export const SitesHeritageUniversiadeT = z.object ({
   sport: z.object({
     title: z.string(),
     sportComplex: z.object({
-      complex: z.string(),
-      sport: z.string()
+      key: z.string(),
+      value: z.string()
     }).array()
   })
 })

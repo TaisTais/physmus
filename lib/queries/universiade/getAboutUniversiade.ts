@@ -5,19 +5,17 @@ import fetchData from "../fetchData"
 export const getAboutUniversiade = async (): Promise<AboutUniversiadeT> => {
   const query = /* GraphGL */ `
   query AboutUniversiade {
-    aboutUniversiade{
+    aboutUniversiade {
       data {
         attributes {
           title
           description
           figures {
-            data {
-              attributes {
-                url
-              }
-            }
+            key
+            value
           }
           universiadeInfo
+          chronology
         }
       }
     }

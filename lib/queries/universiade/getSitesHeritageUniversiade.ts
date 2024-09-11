@@ -28,8 +28,8 @@ export const getSitesHeritageUniversiade = async (): Promise<SitesHeritageUniver
           sport {
             title
             sportComplex {
-              complex
-              sport
+              key
+              value
             }
           }
         }
