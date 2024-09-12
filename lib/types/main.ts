@@ -24,3 +24,16 @@ export const TextBlockT = z.object({
   images: ImagesArrayT
 })
 export type TextBlockT = z.infer<typeof TextBlockT>
+
+export const UniTextBlockT = z.object({
+  title: z.string().nullable(),
+  text: z.string(),
+  image: z.object({
+    data: z.object({
+      attributes: z.object({
+        url: z.string()
+      })
+    })
+  })
+})
+export type UniTextBlockT = z.infer<typeof UniTextBlockT>

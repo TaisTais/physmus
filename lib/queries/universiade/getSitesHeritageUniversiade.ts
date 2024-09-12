@@ -11,17 +11,26 @@ export const getSitesHeritageUniversiade = async (): Promise<SitesHeritageUniver
         attributes {
           culture {
             title
-            text
-            address
+            objects {
+              title
+              address
+              text
+            }
           }
           housing {
             title
-            text
-            address
+            objects {
+              title
+              address
+              text
+            }
           }
-          sportComplex {
-            complex
-            sport
+          sport {
+            title
+            sportComplex {
+              key
+              value
+            }
           }
         }
       }
@@ -38,7 +47,7 @@ export const getSitesHeritageUniversiade = async (): Promise<SitesHeritageUniver
     }
   }>({
     query,
-    error: 'Failed to fetch data "Universiade Symbolysm"',
+    error: 'Failed to fetch data "Universiade Sites and Heritage"',
   })
   
   if (json.data.siteAndHeritageUniversiade.data === null) {

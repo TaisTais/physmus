@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -12,80 +11,86 @@ import CarouselComp from '@/components/content/CarouselComp'
 export default async function Symbolism() {
     
   const [ dataResult ] = await Promise.allSettled([
-      getSymbolismUniversiade()
-    ]);
-    if (dataResult.status === "rejected") return (
-      <ErrorHandler
-        error={dataResult.reason as unknown}
-        place="Символика" 
-        notFound
-        goBack={false}
-      />
-    );
+    getSymbolismUniversiade()
+  ]);
+  if (dataResult.status === "rejected") return (
+    <ErrorHandler
+      error={dataResult.reason as unknown}
+      place="Символика" 
+      notFound
+      goBack={false}
+    />
+  );
     
     
-    return (
-      <div className='sm:w-4/5 container my-16'>
-          <Breadcrumbs data={[
-              {title: "Универсиада", slug: "universiade2019"}, 
-              {title: "Символика", slug: "symbolism" },
-          ]}/>
-          <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
-              <h1 className='font-semibold lg:text-xl text-base'>{dataResult.value.title}</h1>
-          </div>
-          {dataResult.value.items.length > 0 && (
-              <CarouselComp classNameContainer="w-full">
-                {dataResult.value.items.map((item, indx) => (
-                  <CarouselItem key={indx} className="basis-1/3 flex flex-col items-center justify-center gap-1">
-                    <p className='font-medium lg:text-lg text-base'>{item.title}</p>
-                    <ImageComponent 
-                      src={item.image.data?.attributes.url} 
-                      alt=''
-                      fill={false}
-                      width={300}
-                      height={300}
-                      className="xl:w-[300px] xl:h-[300px] lg:w-20 lg:h-20 w-24 h-24"
-                    />
-                  </CarouselItem>
-                ))}
-                </CarouselComp>
-          )}
-          
-            <div className='flex flex-row justify-between'>
-                <div className='flex flex-col gap-2'>
-                    <h1 className='font-semibold lg:text-lg text-sm text-left mb-3'>{dataResult.value.brandbook.title}</h1>
-                    <p className='text-left mb-3 lg:w-4/5 lg:text-sm text-xs'>{dataResult.value.brandbook.text}</p>
-                </div>
-                <div className='flex flex-col gap-2 items-center'>
-                    <Link href={"/2. Руководство по применению элементов фир. стиля ЗУ 2019.pdf"} target='__blank' className='w-full'>
-                        <Image 
-                            src={dataResult.value.brandbook.images.data[0].attributes.url}
-                            alt="Брендбук универсиады"
-                            width={816}
-                            height={400}
-                            className='max-w-3xl w-full shadow'
-                        />
-                    </Link>
-                    <Link href={"/2. Руководство по применению элементов фир. стиля ЗУ 2019.pdf"} target='__blank' className='w-fit mt-3'>
-                        <Button className='bg-primary-foreground'>Открыть</Button>
-                    </Link>
-                </div>
-            </div>
-
-            <div className='flex flex-row justify-between items-center'>
-              <div className='flex flex-col gap-2'>
-                <h1 className='font-semibold lg:text-lg text-sm text-left mb-3'>{dataResult.value.mascot.title}</h1>
-                <p className='text-left mb-3 lg:w-4/5 lg:text-sm text-xs'>{dataResult.value.mascot.text}</p>
-              </div>
-                <Image 
-                    src={dataResult.value.mascot.images.data[0].attributes.url}
-                    alt="Брендбук универсиады"
-                    width={850}
-                    height={350}
-                    quality={100}
-                    className='mx-auto object-contain max-w-[850px] w-full shadow'
+  return (
+    <div className='my-16'>
+      <div className='sm:w-4/5 container'>
+        <Breadcrumbs data={[
+          {title: "Универсиада", slug: "universiade2019"}, 
+          {title: "Символика", slug: "symbolism" },
+        ]}/>
+        <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
+            <h1 className='font-semibold lg:text-xl text-base'>{dataResult.value.title}</h1>
+        </div>
+        {dataResult.value.items.length > 0 && (
+          <CarouselComp classNameContainer="w-full mt-10 mb-24">
+            {dataResult.value.items.map((item, indx) => (
+              <CarouselItem key={indx} className="basis-1/3 flex flex-col items-center justify-start gap-1">
+                <p className='font-medium lg:text-lg text-base'>{item.title}</p>
+                <ImageComponent 
+                  src={item.image.data.attributes.url} 
+                  alt=''
+                  fill={false}
+                  width={500}
+                  height={500}
+                  className="xl:w-auto xl:h-44 lg:w-20 lg:h-auto w-24 h-auto mt-6"
                 />
-            </div>
+              </CarouselItem>
+            ))}
+          </CarouselComp>
+        )}
+      </div>
+      
+      <div className='bg-gradient-to-r from-gradient-sky to-gradient-pink py-8 mb-24'>
+        <div className='flex flex-row justify-between items-center sm:w-4/5 container'>
+          <div className='flex flex-col gap-2'>
+              <h1 className='font-semibold lg:text-lg text-sm text-left mb-3'>{dataResult.value.brandbook.title}</h1>
+              <p className='text-left mb-3 lg:w-4/5 lg:text-sm text-xs'>{dataResult.value.brandbook.text}</p>
           </div>
-    )
+          <div className='flex flex-col gap-2 items-center'>
+            <Link href={"/2. Руководство по применению элементов фир. стиля ЗУ 2019.pdf"} target='__blank' className='w-full'>
+              <ImageComponent 
+                  src={dataResult.value.brandbook.image.data?.attributes.url}
+                  alt="Брендбук универсиады"
+                  fill={false}
+                  width={700}
+                  height={400}
+                  className='w-3xl'
+              />
+            </Link>
+            <Link href={"/2. Руководство по применению элементов фир. стиля ЗУ 2019.pdf"} target='__blank' className='w-fit mt-3'>
+                <Button className='bg-primary'>Открыть</Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+      
+      <div className='flex flex-row justify-between items-center sm:w-4/5 container'>
+        <div className='flex flex-col gap-2'>
+          <h1 className='font-semibold lg:text-lg text-sm text-left mb-3'>{dataResult.value.mascot.title}</h1>
+          <p className='text-left mb-3 lg:w-4/5 lg:text-sm text-xs'>{dataResult.value.mascot.text}</p>
+        </div>
+        <ImageComponent 
+            src={dataResult.value.mascot.image.data?.attributes.url}
+            alt="Брендбук универсиады"
+            fill={false}
+            width={850}
+            height={350}
+            quality={100}
+            className='mx-auto object-contain max-w-[850px] w-full shadow'
+        />
+      </div>
+    </div>
+  )
 }
