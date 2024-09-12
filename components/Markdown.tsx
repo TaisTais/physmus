@@ -46,7 +46,7 @@ export default function Markdown({
           console.log(image)
       
           return (
-            <div className="lg:max-w-lg max-w-xs mx-auto">
+            <div className="lg:max-w-lg max-w-xs mx-auto rounded-md overflow-hidden">
                 <ImageComponent
                   src={image.properties.src}
                   fill={false}
@@ -77,7 +77,7 @@ export default function Markdown({
         rehypePlugins={[rehypeRaw]}
         components={MarkdownComponents}
       >
-        {moreButton !== undefined && moreButton === false
+        {(moreButton === undefined || moreButton === false)
             ? data 
             : more ? data : getShortDescription(data, maxLength)
         }
