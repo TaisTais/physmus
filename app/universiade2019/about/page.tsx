@@ -1,7 +1,9 @@
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ErrorHandler from '@/components/errors/ErrorHandler';
+import NumberTicker from '@/components/magicui/number-ticker';
 import { getAboutUniversiade } from '@/lib/queries/universiade/getAboutUniversiade';
 import React from 'react'
+import Markdown from '@/components/Markdown';
 
 export default async function AboutUniversiade() {
 
@@ -27,21 +29,26 @@ export default async function AboutUniversiade() {
         <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
           <h1 className='font-semibold lg:text-xl text-base'>{dataResult.value.title}</h1>
         </div>
-        <p className='mt-6'>
+        <p className='mt-6 leading-relaxed'>
           {dataResult.value.description}
         </p>
       </div>
-      <div className='bg-gradient-to-r from-gradient-sky to-gradient-pink py-8 mb-24'>
-        {dataResult.value.figures.map((figure, index) =>
-        <div key={index}>
-
+      <div className='bg-gradient-to-r from-gradient-sky to-gradient-pink py-8 my-10'>
+        <div className='sm:w-4/5 container flex flex-row items-start justify-between'>
+          {dataResult.value.figures.map((figure, index) =>
+          <div key={index} className='items-center'>
+            <NumberTicker value={Number(figure.key)} className='text-5xl font-bold text-accent-pink mb-1'></NumberTicker>
+            <p className='text-base font-medium text-accent-sky w-36 leading-snug'>{figure.value}</p>
+          </div>
+          )}
         </div>
-        )}
       </div>
-        <p className='mt-6'>{dataResult.value.universiadeInfo}</p>
-
-      
-      
+      <div className='sm:w-4/5 container leading-relaxed'>
+        <Markdown data={dataResult.value.universiadeInfo} moreButton={false} className=''/>
+      </div>
+      <div className='sm:w-4/5 container leading-relaxed mt-20'>
+        <Markdown data={dataResult.value.chronology} moreButton={false} className=''/>
+      </div>
     </div>
   )
 }
