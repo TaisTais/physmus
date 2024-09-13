@@ -36,7 +36,7 @@ export default async function GeographyParticipants() {
             </div>
           )}
         </div>
-          <p>{dataResult.value.info.additionalText}</p>
+        <p className='text-base mt-6 !leading-relaxed'>{dataResult.value.info.additionalText}</p>
       </div>
     </div>
   )

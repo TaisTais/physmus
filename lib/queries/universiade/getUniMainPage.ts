@@ -43,7 +43,7 @@ export const getUniMainPage = async (): Promise<MainPageUniversiadeT> => {
     }
   }>({
     query,
-    error: 'Failed to fetch data "About Universiade"',
+    error: 'Failed to fetch data "Universiade main page"',
   })
   
   if (json.data.universiade.data === null) {
