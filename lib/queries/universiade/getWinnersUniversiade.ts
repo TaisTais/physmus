@@ -15,24 +15,6 @@ export const getWinnersUniversiade = async (): Promise<WinnersUniversiadeT> => {
             object
           }
           text
-          winnersTable {
-            title
-            people {
-              name
-              status
-              sport
-              achievements
-            }
-          }
-          participantsTable {
-            title
-            people {
-              name
-              status
-              sport
-              achievements
-            }
-          }
         }
       }
     }
