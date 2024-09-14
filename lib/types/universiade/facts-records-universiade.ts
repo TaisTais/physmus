@@ -1,13 +1,18 @@
 import { z } from "zod"
-import { TextBlockT } from "../main"
+import { ImageT } from "../main"
 
 export const FactsRecordsUniversiadeT = z.object({
-  data: z.object({
-    attributes: z.object({
-      record: z.lazy(() => TextBlockT),
-      fact: z.lazy(() => TextBlockT)
-    })
-  })
-  
+  title: z.string().nullable(),
+  facts: z.object({
+    image: ImageT,
+    title: z.string().nullable(),
+    text: z.string().nullable()
+  }).array(),
+  records: z.object({
+    image: ImageT,
+    title: z.string().nullable(),
+    text: z.string().nullable()
+  }).array()
 })
+
 export type FactsRecordsUniversiadeT = z.infer<typeof FactsRecordsUniversiadeT> 
