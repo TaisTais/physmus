@@ -9,17 +9,6 @@ export const getFactsRecordsUniversiade = async (): Promise<FactsRecordsUniversi
       data {
         attributes {
           title
-          facts {
-            image {
-              data {
-                attributes {
-                  url
-                }
-              }
-            }
-            title
-            text
-          }
           records {
             image {
               data {
