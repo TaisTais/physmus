@@ -8,6 +8,11 @@ export const sections = [
         title: "Символика",
         src: "/universiade-sections/symbolism.png",
         url: "symbolism"
+    }, 
+    {
+        title: "Галерея",
+        src: "/universiade-sections/gallery.png",
+        url: "gallery"
     },
     {
         title: "Объекты и наследие",
