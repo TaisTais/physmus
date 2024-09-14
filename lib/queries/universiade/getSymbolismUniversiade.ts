@@ -40,6 +40,13 @@ export const getSymbolismUniversiade = async (): Promise<SymbolismUniversiadeT> 
               }
             }
           }
+          brandbookDoc {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
         }
       }
     }
