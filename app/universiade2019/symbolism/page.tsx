@@ -44,7 +44,7 @@ export default async function Symbolism() {
                   fill={false}
                   width={500}
                   height={500}
-                  className="xl:w-auto xl:h-44 lg:w-20 lg:h-auto w-24 h-auto mt-6"
+                  className="h-auto w-full max-h-44 object-contain mt-6"
                 />
               </CarouselItem>
             ))}
@@ -69,7 +69,7 @@ export default async function Symbolism() {
                   className='w-3xl'
               />
             </Link>
-            <Link href={dataResult.value.brandbookDoc.data.attributes.url} target='__blank' className='w-fit mt-3'>
+            <Link href={dataResult.value.brandbook.brandbookDoc.data.attributes.url} target='__blank' className='w-fit mt-3'>
                 <Button className='bg-primary'>Открыть</Button>
             </Link>
           </div>

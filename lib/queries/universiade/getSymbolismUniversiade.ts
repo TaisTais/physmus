@@ -28,6 +28,13 @@ export const getSymbolismUniversiade = async (): Promise<SymbolismUniversiadeT> 
                 }
               }
             }
+            brandbookDoc {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
           }
           mascot {
             title
@@ -37,13 +44,6 @@ export const getSymbolismUniversiade = async (): Promise<SymbolismUniversiadeT> 
                 attributes {
                   url
                 }
-              }
-            }
-          }
-          brandbookDoc {
-            data {
-              attributes {
-                url
               }
             }
           }

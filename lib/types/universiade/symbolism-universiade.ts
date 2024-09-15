@@ -13,15 +13,25 @@ export const SymbolismUniversiadeT = z.object ({
       })
     }),
   }).array(),
-  brandbook: z.lazy(() => UniTextBlockT),
-  mascot: z.lazy(() => UniTextBlockT),
-  brandbookDoc: z.object({
-    data: z.object({
-      attributes: z.object({
-        url: z.string()
+  brandbook: z.object({
+    title: z.string().nullable(),
+    text: z.string().nullable(),
+    image: z.object({
+      data: z.object({
+        attributes: z.object({
+          url: z.string()
+        })
+      }).nullable()
+    }),
+    brandbookDoc: z.object({
+      data: z.object({
+        attributes: z.object({
+          url: z.string()
+        })
       })
     })
-  })
+  }),
+  mascot: z.lazy(() => UniTextBlockT),
 })
   
 export type SymbolismUniversiadeT = z.infer<typeof SymbolismUniversiadeT>

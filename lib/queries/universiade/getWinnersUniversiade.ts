@@ -17,45 +17,77 @@ export const getWinnersUniversiade = async (): Promise<WinnersUniversiadeT> => {
           text
           winners {
             data {
+              id
               attributes {
                 fio
-                sports {
-                  data {
-                    attributes {
-                      title
-                    }
-                  }
+                rank
+                images {
+                  data { attributes { url } }
                 }
                 info
+                additional_info
+                sports {
+                  data {
+                    id
+                    attributes {
+                      title
+                      category {
+                        data {
+                          attributes {
+                            color
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
                 uni_sport {
                   data {
+                    id
                     attributes {
                       title
                     }
                   }
                 }
+                universiade2019
               }
             }
           }
           participants {
             data {
+              id
               attributes {
                 fio
-                sports {
-                  data {
-                    attributes {
-                      title
-                    }
-                  }
+                rank
+                images {
+                  data { attributes { url } }
                 }
                 info
+                additional_info
+                sports {
+                  data {
+                    id
+                    attributes {
+                      title
+                      category {
+                        data {
+                          attributes {
+                            color
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
                 uni_sport {
                   data {
+                    id
                     attributes {
                       title
                     }
                   }
                 }
+                universiade2019
               }
             }
           }
