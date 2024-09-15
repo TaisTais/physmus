@@ -69,7 +69,7 @@ export default async function Symbolism() {
                   className='w-3xl'
               />
             </Link>
-            <Link href={"/2. Руководство по применению элементов фир. стиля ЗУ 2019.pdf"} target='__blank' className='w-fit mt-3'>
+            <Link href={dataResult.value.brandbookDoc.data.attributes.url} target='__blank' className='w-fit mt-3'>
                 <Button className='bg-primary'>Открыть</Button>
             </Link>
           </div>

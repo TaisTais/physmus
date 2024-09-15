@@ -1,7 +1,7 @@
 import ErrorHandler from '@/components/errors/ErrorHandler';
 import React from 'react'
 import SportsArray from './SportsArray';
-import { getUniSportsCategories } from '@/lib/queries/universiade/uni-sports';
+import { getUniSportsCategories } from '@/lib/queries/universiade/getUniSports';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export default async function Sports() {

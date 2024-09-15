@@ -11,8 +11,8 @@ export const getAboutUniversiade = async (): Promise<AboutUniversiadeT> => {
           title
           description
           figures {
-            key
-            value
+            number
+            object
           }
           universiadeInfo
           chronology
