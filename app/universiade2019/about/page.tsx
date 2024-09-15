@@ -37,8 +37,8 @@ export default async function AboutUniversiade() {
         <div className='sm:w-4/5 container flex flex-row items-start justify-between'>
           {dataResult.value.figures.map((figure, index) =>
           <div key={index} className='items-center'>
-            <NumberTicker value={Number(figure.key)} className='text-5xl font-bold text-accent-pink mb-1'></NumberTicker>
-            <p className='text-base font-medium text-accent-sky w-36 leading-snug'>{figure.value}</p>
+            <NumberTicker value={figure.number} className='text-5xl font-bold text-accent-pink mb-1'></NumberTicker>
+            <p className='text-base font-medium text-accent-sky w-36 leading-snug'>{figure.object}</p>
           </div>
           )}
         </div>

@@ -4,25 +4,15 @@ import fetchData from "../fetchData"
 
 export const getFactsRecordsUniversiade = async (): Promise<FactsRecordsUniversiadeT> => {
   const query = /* GraphGL */ `
-  query FactsRecords {
+  query uniFactsRecords {
     uniFactRecord {
       data {
-    	  attributes {
-          record {
-            images {
+        attributes {
+          title
+          records {
+            image {
               data {
-                attributes{
-                  url
-                }
-              }
-            }
-            title
-            text
-          }
-          fact {
-            images {
-              data {
-                attributes{
+                attributes {
                   url
                 }
               }
@@ -31,7 +21,7 @@ export const getFactsRecordsUniversiade = async (): Promise<FactsRecordsUniversi
             text
           }
         }
-  	  }
+      }
     }
   }
   `

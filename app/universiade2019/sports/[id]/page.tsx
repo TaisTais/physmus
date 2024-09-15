@@ -2,7 +2,7 @@ import Markdown from '@/components/Markdown';
 import ErrorHandler from '@/components/errors/ErrorHandler';
 import React from 'react'
 import SportsmansList from './SportsmansList';
-import { getUniSportById } from '@/lib/queries/universiade/uni-sports';
+import { getUniSportById } from '@/lib/queries/universiade/getUniSports';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export default async function Sport({

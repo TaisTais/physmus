@@ -15,6 +15,13 @@ export const SymbolismUniversiadeT = z.object ({
   }).array(),
   brandbook: z.lazy(() => UniTextBlockT),
   mascot: z.lazy(() => UniTextBlockT),
+  brandbookDoc: z.object({
+    data: z.object({
+      attributes: z.object({
+        url: z.string()
+      })
+    })
+  })
 })
   
 export type SymbolismUniversiadeT = z.infer<typeof SymbolismUniversiadeT>

@@ -40,7 +40,7 @@ export default async function SitesHeritage() {
         
         <div>
           <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
-            <h1 className='font-semibold lg:text-xl text-base'>{dataResult.value.housing.title}</h1>
+            <h2 className='font-semibold lg:text-xl text-base'>{dataResult.value.housing.title}</h2>
           </div>
           {dataResult.value.housing.objects.map((object,index) =>
             <div key={index} className='flex flex-col mt-8 px-12 bg-gradient-to-r from-gradient-sky to-gradient-pink py-8 gap-4 rounded-2xl'>
@@ -53,7 +53,7 @@ export default async function SitesHeritage() {
         
         <div>
           <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
-            <h1 className='font-semibold lg:text-xl text-base'>{dataResult.value.sport.title}</h1>
+            <h2 className='font-semibold lg:text-xl text-base'>{dataResult.value.sport.title}</h2>
           </div>
           <Table className='mt-8'>
             <TableHeader>
