@@ -7,8 +7,16 @@ export async function getMainPage(): Promise<MainPageT> {
     mainPage {
       data {
         attributes {
+          title
           description
           icons {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+          mainImages {
             data {
               attributes {
                 url
@@ -23,6 +31,7 @@ export async function getMainPage(): Promise<MainPageT> {
               data { attributes { url } }
             }
           }
+          text
         }
       }
     }

@@ -20,7 +20,7 @@ export default function MainCategories({
 }) {
   return (
     <div className="sm:w-4/5 container">
-      <div className="flex flex-col gap-5 mb-32">
+      <div className="flex flex-col gap-5 mb-24">
         {categories.map((category, indx) => (
           <CategoriesCard 
             key={indx}
