@@ -15,6 +15,50 @@ export const getWinnersUniversiade = async (): Promise<WinnersUniversiadeT> => {
             object
           }
           text
+          winners {
+            data {
+              attributes {
+                fio
+                sports {
+                  data {
+                    attributes {
+                      title
+                    }
+                  }
+                }
+                info
+                uni_sport {
+                  data {
+                    attributes {
+                      title
+                    }
+                  }
+                }
+              }
+            }
+          }
+          participants {
+            data {
+              attributes {
+                fio
+                sports {
+                  data {
+                    attributes {
+                      title
+                    }
+                  }
+                }
+                info
+                uni_sport {
+                  data {
+                    attributes {
+                      title
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
