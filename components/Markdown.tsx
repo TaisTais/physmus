@@ -28,38 +28,23 @@ export default function Markdown({
   if (!!!data || data.length <= 1) return null;
 
   const MarkdownComponents: object = {
+    img: (props: {src: string, alt: string}) => {
+      console.log(props)
+      return (
+        <span className='mb-[2em]'>
+          <ImageComponent 
+            src={props.src} 
+            alt={props.alt} 
+            fill={false}
+            width={1336}
+            height={1070}
+            className="object-contain lg:w-2/3 w-full h-auto mx-auto mb-1 overflow-hidden rounded-3xl"
+          />
+          <span className='block w-full mx-auto text-center italic'>{props.alt}</span>
+        </span>
+      )
+    },
     p: (paragraph: { children?: boolean; node?: any}) => {
-        const { node } = paragraph
-      
-        if (node.children[0].tagName === "img") {
-          const image = node.children[0]
-          const metastring = image.properties.alt
-          const alt = metastring?.replace(/ *\{[^)]*\} */g, "")
-          const metaWidth = metastring.match(/{([^}]+)x/)
-          const metaHeight = metastring.match(/x([^}]+)}/)
-          const width = metaWidth ? metaWidth[1] : "768"
-          const height = metaHeight ? metaHeight[1] : "432"
-          const isPriority = metastring?.toLowerCase().match('{priority}')
-          const hasCaption = metastring?.toLowerCase().includes('{caption:')
-          const caption = metastring?.match(/{caption: (.*?)}/)?.pop()
-
-          console.log(image)
-      
-          return (
-            <div className="lg:max-w-lg max-w-xs mx-auto rounded-md overflow-hidden">
-                <ImageComponent
-                  src={image.properties.src}
-                  fill={false}
-                  width={width <= 768 ? width : 450}
-                  height={height <= 432 ? height : 450}
-                  className="aspect-[5/4] object-contain w-full overflow-hidden rounded-md"
-                  alt={alt}
-                  priority={isPriority}
-                />
-                {hasCaption ? <div className="caption" aria-label={caption}>{caption}</div> : null}
-            </div>
-          )
-        }
         return <p>{paragraph.children}</p>
     },
   }
