@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation"
-import { SportCategoriesT, SportT, SportsT } from "../../types/sports"
 import fetchData from "../fetchData"
+import { UniSportCategoriesT, UniSportsT, UniSportT } from "@/lib/types/universiade/uni-sports"
 
-export async function getUniSportsCategories(): Promise<SportCategoriesT> {
+export async function getUniSportsCategories(): Promise<UniSportCategoriesT> {
   const query = /* GraphGL */ `
     query UniSportCategories {
       uniSportCategories {
@@ -30,7 +30,7 @@ export async function getUniSportsCategories(): Promise<SportCategoriesT> {
 
   const json = await fetchData<{
     data: {
-        uniSportCategories: SportCategoriesT
+        uniSportCategories: UniSportCategoriesT
     }
   }>({
     query,
@@ -41,7 +41,7 @@ export async function getUniSportsCategories(): Promise<SportCategoriesT> {
     notFound()
   }
   
-  const data = SportCategoriesT.parse(json.data.uniSportCategories);
+  const data = UniSportCategoriesT.parse(json.data.uniSportCategories);
 
   return data
 }
@@ -50,7 +50,7 @@ export async function getUniSports({
   categoryId,
 }: {
   categoryId?: string,
-}): Promise<SportsT> {
+}): Promise<UniSportsT> {
   const query = /* GraphGL */ `
   query UniSports {
     uniSports(
@@ -78,7 +78,7 @@ export async function getUniSports({
 
   const json = await fetchData<{
     data: {
-        uniSports: SportsT
+        uniSports: UniSportsT
     }
   }>({
     query,
@@ -89,12 +89,12 @@ export async function getUniSports({
     notFound()
   }
 
-  const data = SportsT.parse(json.data.uniSports);
+  const data = UniSportsT.parse(json.data.uniSports);
 
   return data
 }
 
-export const getUniSportById = async (id: string): Promise<SportT> => {
+export const getUniSportById = async (id: string): Promise<UniSportT> => {
   const query = /* GraphGL */ `
   query UniSport {
     uniSport(id: "${id}") {
@@ -120,7 +120,7 @@ export const getUniSportById = async (id: string): Promise<SportT> => {
 
   const json = await fetchData<{
     data: {
-        uniSport: { data: SportT }
+        uniSport: { data: UniSportT }
     }
   }>({
     query,
@@ -131,7 +131,7 @@ export const getUniSportById = async (id: string): Promise<SportT> => {
     notFound()
   }
 
-  const data = SportT.parse(json.data.uniSport.data);
+  const data = UniSportT.parse(json.data.uniSport.data);
 
   return data;
 };
