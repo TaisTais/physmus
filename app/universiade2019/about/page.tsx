@@ -34,12 +34,12 @@ export default async function AboutUniversiade() {
         </p>
       </div>
       <div className='bg-gradient-to-r from-gradient-sky to-gradient-pink py-8 my-10'>
-        <div className='sm:w-4/5 container flex flex-row items-start justify-between'>
+        <div className='sm:w-4/5 container flex flex-row flex-wrap items-start justify-between'>
           {dataResult.value.figures.map((figure, index) =>
-          <div key={index} className='items-center'>
-            <NumberTicker value={figure.number} className='text-5xl font-bold text-accent-pink mb-1'></NumberTicker>
-            <p className='text-base font-medium text-accent-sky w-36 leading-snug'>{figure.object}</p>
-          </div>
+            <div key={index} className='items-center'>
+              <NumberTicker value={figure.number} className='text-5xl font-bold text-accent-pink mb-1'></NumberTicker>
+              <p className='text-base font-medium text-accent-sky w-36 leading-snug'>{figure.object}</p>
+            </div>
           )}
         </div>
       </div>
