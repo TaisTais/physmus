@@ -50,7 +50,7 @@ export default async function Volunteers() {
                 >
                     <FileText className='w-7 h-7' />
                     <p className='flex-1 link-underline link-underline-sm link-underline-primary font-bold py-1 transition-all duration-300'>
-                      {item.attributes.alt}
+                      {item.attributes.alternativeText}
                     </p>
                 </Link>
             </li>

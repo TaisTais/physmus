@@ -20,7 +20,7 @@ export const getVolunteersUniversiade = async (): Promise<VolunteersUniversiadeT
             data {
               attributes { 
                 url 
-                alt
+                alternativeText
               }
             }
           }

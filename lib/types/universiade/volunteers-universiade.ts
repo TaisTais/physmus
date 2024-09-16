@@ -13,7 +13,7 @@ export const VolunteersUniversiadeT = z.object({
     data: z.object({
       attributes: z.object({
         url: z.string(),
-        alt: z.string().nullable()
+        alternativeText: z.string().nullable()
       })
     }).array()
   })

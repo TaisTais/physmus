@@ -29,9 +29,9 @@ export default function Hero({
                   key={index} 
                   src={item.attributes.url} 
                   alt={""} 
-                  width={85} 
-                  height={85}
-                  className="object-contain xl:w-[80px] xl:h-[80px] lg:w-20 lg:h-20 w-16 h-16"
+                  width={95} 
+                  height={95}
+                  className="object-contain xl:w-[90px] xl:h-[90px] lg:w-20 lg:h-20 w-16 h-16"
                 />
               ))}
             </div>
