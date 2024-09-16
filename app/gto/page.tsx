@@ -21,7 +21,7 @@ export default async function Gto() {
 
     return (
         <div className='sm:w-4/5 container my-16'>
-            <Breadcrumbs data={[{ title: "ГТО", slug: "gto" }]} />
+            <Breadcrumbs data={[{ title: "Комплекс ГТО", slug: "gto" }]} />
 
             <h1 className='font-bold lg:text-2xl text-lg'>Комплекс ГТО</h1>
 

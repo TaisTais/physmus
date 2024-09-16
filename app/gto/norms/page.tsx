@@ -23,7 +23,7 @@ export default async function GtoNorms() {
     return (
         <div className='sm:w-4/5 container my-16'>
             <Breadcrumbs data={[
-                { title: "ГТО", slug: "gto" },
+                { title: "Комплекс ГТО", slug: "gto" },
                 { title: "Нормы комплекса ГТО", slug: "norms" }
             ]}/>
 

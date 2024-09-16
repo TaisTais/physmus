@@ -74,7 +74,7 @@ export default function Header() {
             <NavMenuItem name='Универсиада' href='/universiade2019' />
             <NavMenuItem name='Виды спорта' href='/sports' />
             <NavMenuItem name='Наша гордость' href='/sportsmans' />
-            <NavMenuItem name='ГТО' href='/gto' />
+            <NavMenuItem name='Комплекс ГТО' href='/gto' />
           </NavigationMenuList>
         </NavigationMenu>
 
@@ -90,7 +90,7 @@ export default function Header() {
                 <NavMenuItem name='Универсиада' href='/universiade2019' />
                 <NavMenuItem name='Виды спорта' href='/sports' />
                 <NavMenuItem name='Наша гордость' href='/sportsmans' />
-                <NavMenuItem name='ГТО' href='/gto' />
+                <NavMenuItem name='Комплекс ГТО' href='/gto' />
               </NavigationMenuList>
             </NavigationMenu>
           </SheetContent>

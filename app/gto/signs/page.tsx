@@ -21,7 +21,7 @@ export default async function GtoSigns() {
     return (
         <div className='sm:w-4/5 container my-16'>
             <Breadcrumbs data={[
-                { title: "ГТО", slug: "gto" },
+                { title: "Комплекс ГТО", slug: "gto" },
                 { title: "Знаки отличия комплекса ГТО", slug: "signs" }
             ]}/>
 
