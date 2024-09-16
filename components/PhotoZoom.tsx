@@ -2,7 +2,7 @@
 
 import React from "react";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
-import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 import ImageComponent from "./ImageComponent";
 import { cn } from "@/lib/utils";
 
@@ -17,14 +17,14 @@ export default function PhotoZoom({
 
   return (
     <Dialog>
-      <DialogTrigger className="max-h-fit w-full">
+      <DialogTrigger className="max-h-fit w-full cursor-pointer">
         <ImageComponent
           src={src}
           fill={false}
           width={600}
           height={600}
           className={cn(
-            "mx-auto max-h-[70vh] overflow-hidden rounded-md object-contain",
+            "mx-auto max-h-[70vh] overflow-hidden rounded-xl object-contain cursor-pointer",
             loading ? "" : "h-auto w-auto",
           )}
           alt={alt}
@@ -32,7 +32,10 @@ export default function PhotoZoom({
           onLoad={() => setLoading(false)}
         />
       </DialogTrigger>
-      <DialogContent className="bg-primary h-[80vh] max-w-[95vw] overflow-hidden p-0 sm:max-w-[95vw] !rounded-3xl">
+      <DialogContent className="bg-primary h-[80vh] max-w-[95vw] overflow-hidden p-0 sm:max-w-[95vw] !rounded-3xl gap-0">
+        <DialogHeader>
+          <DialogTitle className="px-4 text-center font-medium text-sm">{alt}</DialogTitle>
+        </DialogHeader>
         <TransformWrapper>
           <TransformComponent
             contentStyle={{
