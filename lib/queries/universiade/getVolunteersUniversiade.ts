@@ -16,6 +16,14 @@ export const getVolunteersUniversiade = async (): Promise<VolunteersUniversiadeT
           }
           description
           text
+          documents {
+            data {
+              attributes { 
+                url 
+                alt
+              }
+            }
+          }
         }
       }
     }

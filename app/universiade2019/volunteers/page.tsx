@@ -3,6 +3,8 @@ import ErrorHandler from '@/components/errors/ErrorHandler';
 import NumberTicker from '@/components/magicui/number-ticker';
 import Markdown from '@/components/Markdown';
 import { getVolunteersUniversiade } from '@/lib/queries/universiade/getVolunteersUniversiade';
+import { FileText } from 'lucide-react';
+import Link from 'next/link';
 import React from 'react'
 
 export default async function Volunteers() {
@@ -37,6 +39,23 @@ export default async function Volunteers() {
         <p className='px-10 py-10 bg-gradient-to-r from-gradient-sky to-gradient-pink w-full rounded-2xl text-base !leading-relaxed'>{dataResult.value.description}</p>
       </div>
       <Markdown data={dataResult.value.text} moreButton={false}/>
+
+      <ul className="flex flex-col gap-4">
+        {dataResult.value.documents.data.map((item, index) => (
+            <li key={index}>
+                <Link 
+                    href={item.attributes.url} 
+                    target='__blank' 
+                    className='flex items-center w-fit gap-2'
+                >
+                    <FileText className='w-7 h-7' />
+                    <p className='flex-1 link-underline link-underline-sm link-underline-primary font-bold py-1 transition-all duration-300'>
+                      {item.attributes.alt}
+                    </p>
+                </Link>
+            </li>
+        ))}
+      </ul>
     </div>
   )
 }

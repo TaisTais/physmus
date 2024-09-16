@@ -8,6 +8,14 @@ export const VolunteersUniversiadeT = z.object({
     lowerLine: z.string().nullable()
   }),
   description: z.string().nullable(),
-  text: z.string().nullable()
+  text: z.string().nullable(),
+  documents: z.object({
+    data: z.object({
+      attributes: z.object({
+        url: z.string(),
+        alt: z.string().nullable()
+      })
+    }).array()
+  })
 })
 export type VolunteersUniversiadeT = z.infer<typeof VolunteersUniversiadeT> 
