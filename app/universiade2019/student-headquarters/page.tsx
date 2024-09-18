@@ -34,16 +34,18 @@ export default async function StudentHeadquarters() {
         <div className='grid xl:grid-cols-2 grid-cols-1 gap-12'>
           {dataResult.value.headquarters.members.map((headquarter, index) => {
             return (
-              <div key={index} className='flex flex-row px-8 py-8 gap-8 bg-gradient-to-r from-gradient-sky to-gradient-pink rounded-2xl'>
-                <ImageComponent 
-                  src={headquarter.image.data?.attributes.url}
-                  alt="Фото"
-                  fill={false}
-                  width={100}
-                  height={100}
-                  className='mx-auto aspect-square object-cover rounded-2xl mb-2'
-                />
-                <div className='flex flex-col gap-2'>
+              <div key={index} className='flex flex-row px-8 py-8 lg:gap-8 gap-2 bg-gradient-to-r from-gradient-sky to-gradient-pink rounded-2xl'>
+                <div className='aspect-square'>
+                  <ImageComponent 
+                    src={headquarter.image.data?.attributes.url}
+                    alt="Фото"
+                    fill={false}
+                    width={100}
+                    height={100}
+                    className='mx-auto aspect-square object-cover rounded-2xl mb-2'
+                  />
+                </div>
+                <div className='flex flex-col gap-2 flex-1'>
                   <h3 className='text-sm font-semibold text-tertriary'>{headquarter.post}</h3>
                   <h2 className='text-lg font-bold text-primary-foreground'>{headquarter.name}</h2>
                   <h3 className='text-xs text-tertriary'>{headquarter.sfuPost}</h3>

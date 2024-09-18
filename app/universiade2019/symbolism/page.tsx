@@ -34,7 +34,7 @@ export default async function Symbolism() {
             <h1 className='font-semibold lg:text-xl text-base'>{dataResult.value.title}</h1>
         </div>
         {dataResult.value.items.length > 0 && (
-          <CarouselComp classNameContainer="w-full mt-10 mb-24">
+          <CarouselComp classNameContainer="sm:w-[85%] w-[90%] mx-auto mt-10 mb-24">
             {dataResult.value.items.map((item, indx) => (
               <CarouselItem key={indx} className="basis-1/3 flex flex-col items-center justify-start gap-1">
                 <p className='font-medium lg:text-lg text-base'>{item.title}</p>
@@ -53,7 +53,7 @@ export default async function Symbolism() {
       </div>
       
       <div className='bg-gradient-to-r from-gradient-sky to-gradient-pink py-8 mb-24'>
-        <div className='flex flex-row justify-between items-center sm:w-4/5 container'>
+        <div className='flex flex-row sm:flex-nowrap flex-wrap justify-between items-center sm:w-4/5 container'>
           <div className='flex flex-col gap-2'>
               <h1 className='font-semibold lg:text-lg text-sm text-left mb-3'>{dataResult.value.brandbook.title}</h1>
               <p className='text-left mb-3 lg:w-4/5 lg:text-sm text-xs'>{dataResult.value.brandbook.text}</p>
@@ -76,7 +76,7 @@ export default async function Symbolism() {
         </div>
       </div>
       
-      <div className='flex flex-row justify-between items-center sm:w-4/5 container'>
+      <div className='flex flex-row md:flex-nowrap flex-wrap justify-between items-center sm:w-4/5 container'>
         <div className='flex flex-col gap-2'>
           <h1 className='font-semibold lg:text-lg text-sm text-left mb-3'>{dataResult.value.mascot.title}</h1>
           <p className='text-left mb-3 lg:w-4/5 lg:text-sm text-xs'>{dataResult.value.mascot.text}</p>

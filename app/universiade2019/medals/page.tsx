@@ -54,52 +54,56 @@ export default async function Medals() {
         </Table>
       </div>
       
-      <div className='flex flex-col mb-16'>
+      <div className='flex flex-col mb-16 overflow-auto'>
         <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
-          <h2 className='font-semibold lg:text-xl text-base'>{dataResult.value.title}</h2>
+          <h1 className='font-semibold lg:text-xl text-base'>{dataResult.value.title}</h1>
         </div>
-        <div className='grid grid-cols-7 text-sm font-medium text-muted-foreground border-b-2 pb-3 border-muted mt-10 mb-4'>
-          <div>№</div>
-          <div>Вид спорта</div>
-          <div className='pl-6'>Страна</div>
-          <div className='text-center'>Золото</div>
-          <div className='text-center'>Серебро</div>
-          <div className='text-center'>Бронза</div>
-          <div className='text-center'>Всего</div>
-        </div>
-        {dataResult.value.countriesWithSports.map((sport, index) => {
-          return(
-            <div key={index} className='grid grid-cols-7 text-sm border-b-2 pb-3 border-muted mb-4'>
-              <div className='font-medium'>{index + 1}</div>
-              <div>{sport.sport}</div>
-              <div>
-                {sport.countries.map((country) => (
-                  <div key={country.country} className='mb-1 pl-6'>{country.country}</div>
-                ))}
-              </div>
-              <div className='text-center'>
-                {sport.countries.map((country) => (
-                  <div key={country.country} className='mb-1'>{country.gold}</div>
-                ))}
-              </div>
-              <div className='text-center'>
-                {sport.countries.map((country) => (
-                  <div key={country.country} className='mb-1'>{country.silver}</div>
-                ))}
-              </div>
-              <div className='text-center'>
-                {sport.countries.map((country) => (
-                  <div key={country.country} className='mb-1'>{country.bronze}</div>
-                ))}
-              </div>
-              <div className='text-center'>
-                {sport.countries.map((country) => (
-                  <div key={country.country} className='mb-1 font-medium'>{country.gold + country.silver + country.bronze}</div>
-                ))}
-              </div>
-            </div>
-          )
-        })}
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="w-[50px]">№</TableHead>
+              <TableHead>Вид спорта</TableHead>
+              <TableHead>Страна</TableHead>
+              <TableHead className='text-center'>Золото</TableHead>
+              <TableHead className='text-center'>Серебро</TableHead>
+              <TableHead className='text-center'>Бронза</TableHead>
+              <TableHead className='text-center'>Всего</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {dataResult.value.countriesWithSports.map((sport, index) => (
+              <TableRow key={index}>
+                <TableCell className="font-medium">{index + 1}</TableCell>
+                <TableCell>{sport.sport}</TableCell>
+                <TableCell>
+                  {sport.countries.map((country, indx) => (
+                    <p key={indx} className='mb-2'>{country.country}</p>
+                  ))}
+                </TableCell>
+                <TableCell className='text-center'>
+                  {sport.countries.map((country, indx) => (
+                    <p key={indx} className='mb-2'>{country.gold}</p>
+                  ))}
+                </TableCell>
+                <TableCell className='text-center'>
+                  {sport.countries.map((country, indx) => (
+                    <p key={indx} className='mb-2'>{country.silver}</p>
+                  ))}
+                </TableCell>
+                <TableCell className='text-center'>
+                  {sport.countries.map((country, indx) => (
+                    <p key={indx} className='mb-2'>{country.bronze}</p>
+                  ))}
+                </TableCell>
+                <TableCell className='text-center font-medium'>
+                  {sport.countries.map((country, indx) => (
+                    <p key={indx} className='mb-2'>{country.gold + country.silver + country.bronze}</p>
+                  ))}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </div>
     </div>
   )

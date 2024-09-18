@@ -52,7 +52,7 @@ export default async function Sport({
             }}
             className="md:w-full w-5/6 mx-auto"
           >
-            <CarouselContent>
+            <CarouselContent className='items-center'>
               {dataResult.value.attributes.images.data.map((photo, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                   <ImageComponent 
@@ -61,7 +61,7 @@ export default async function Sport({
                     fill={false}
                     width={460}
                     height={310}
-                    className='w-full aspect-[3/2] mx-auto object-cover rounded-3xl'
+                    className='w-full h-auto mx-auto object-contain rounded-3xl'
                   />
                 </CarouselItem>
               ))}
@@ -88,7 +88,7 @@ export default async function Sport({
             }}
             className="md:w-full w-5/6 mx-auto"
           >
-            <CarouselContent>
+            <CarouselContent className='items-center'>
               {dataResult.value.attributes.historyImages.data.map((photo, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                   <ImageComponent 
@@ -97,7 +97,7 @@ export default async function Sport({
                     fill={false}
                     width={460}
                     height={310}
-                    className='w-full aspect-[3/2] mx-auto object-cover rounded-3xl'
+                    className='w-full h-auto mx-auto object-contain rounded-3xl'
                   />
                 </CarouselItem>
               ))}

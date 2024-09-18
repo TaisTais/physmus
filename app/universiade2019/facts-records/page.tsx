@@ -32,12 +32,12 @@ export default async function FactsRecords() {
       <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
         <h1 className='font-semibold lg:text-xl text-base'>{dataResult.value.title}</h1>
       </div>
-      <div className='columns-2 gap-8'>
+      <div className='grid lg:grid-cols-2 grid-cols-1 gap-8'>
         {dataResult.value.records.map((record, index) => {
           return(
             <Popover key={index}>
               <PopoverTrigger>
-                <div className='flex flex-row px-10 py-8 gap-9 bg-gradient-to-r from-gradient-sky to-gradient-pink rounded-2xl mt-8 items-center'>
+                <div className='flex flex-row lg:px-10 px-6 lg:py-8 py-6 lg:gap-9 gap-4 bg-gradient-to-r from-gradient-sky to-gradient-pink rounded-2xl mt-8 items-center'>
                 <ImageComponent 
                     src={record.image.data?.attributes.url}
                     alt="Фото"
@@ -49,7 +49,7 @@ export default async function FactsRecords() {
                 <p className='text-xl font-semibold text-left text-tertriary'>{record.title}</p>
                 </div>
               </PopoverTrigger>
-              <PopoverContent>{record.text}</PopoverContent>
+              <PopoverContent className="w-[--radix-popover-trigger-width] max-h-[--radix-popover-content-available-height]">{record.text}</PopoverContent>
             </Popover>
           )
         })}

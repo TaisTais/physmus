@@ -47,7 +47,7 @@ export default async function GtoDocs() {
                                 )}
                             >
                                 <File className=''/>
-                                <span className=' opacity-100'>{item.title}</span>
+                                <span className='flex-1 opacity-100'>{item.title}</span>
                             </Link>
                         ) : null}
                         </>

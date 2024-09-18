@@ -30,9 +30,9 @@ export default async function Schedule() {
       </div>
       <div className='mt-10'>
         {dataResult.value.competitions.map((comp, index) => 
-        <div key={index} className='mb-6 py-8 px-12 bg-gradient-to-r from-gradient-sky to-gradient-pink w-full rounded-2xl'>
+        <div key={index} className='mb-6 py-8 lg:px-12 px-8 bg-gradient-to-r from-gradient-sky to-gradient-pink w-full rounded-2xl'>
           <h2 className='text-xl font-semibold text-primary-foreground mb-4'>{comp.title}</h2>
-          <div className='flex flex-row gap-16'>
+          <div className='flex flex-row lg:gap-16 sm:gap-8 gap-3'>
             <div className='flex flex-row gap-2 items-center'>
               <Image
                 src='/icons/calendar.png' 
@@ -41,7 +41,7 @@ export default async function Schedule() {
                 height={25}
                 className="w-5 h-5"
               />
-              <p>{comp.date}</p>
+              <p className='lg:text-base text-sm'>{comp.date}</p>
             </div>
             <div className='flex flex-row gap-1.5'>
               <Image
@@ -51,7 +51,7 @@ export default async function Schedule() {
                 height={25}
                 className="w-5 h-5 items-center"
               />
-              <p>{comp.address}</p>
+              <p className='lg:text-base text-sm'>{comp.address}</p>
             </div>
           </div>
         </div>

@@ -30,7 +30,7 @@ export default async function Volunteers() {
       <div className='flex lg:flex-row flex-col justify-between gap-6 border-b-2 border-foreground pb-2'>
         <h1 className='font-semibold lg:text-xl text-base'>{dataResult.value.title}</h1>
       </div>
-      <div className='flex flex-row justify-between items-center gap-14 my-16 mb-20'>
+      <div className='flex flex-row lg:flex-nowrap flex-wrap lg:justify-between justify-center items-center gap-14 my-16 mb-20'>
         <div>
           <p className="2xl:text-3xl xl:text-2xl sm:text-2xl text-1xl font-bold text-accent-sky tracking-normal !leading-none">{dataResult.value.amount.upperLine}</p>
           <NumberTicker value={dataResult.value.amount.number} className="2xl:text-8xl xl:text-7xl sm:text-6xl text-5xl font-extrabold tracking-normal !leading-none text-accent-pink w-auto"></NumberTicker>

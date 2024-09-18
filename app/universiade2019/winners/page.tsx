@@ -39,7 +39,7 @@ export default async function Winners({
         <div className='mt-8'>{dataResult.value.description}</div>
       </div>
       <div className='bg-gradient-to-r from-gradient-sky to-gradient-pink py-8 my-10'>
-        <div className='sm:w-4/5 container flex flex-row items-start justify-between'>
+        <div className='sm:w-4/5 container flex flex-row flex-wrap items-start justify-between gap-2'>
           {dataResult.value.figures.map((figure, index) =>
             <div key={index} className='items-center'>
               <NumberTicker value={figure.number} className='text-5xl font-bold text-accent-pink mb-1'></NumberTicker>
@@ -51,7 +51,7 @@ export default async function Winners({
       <div className='sm:w-4/5 container'>
         <Markdown data={dataResult.value.text} moreButton={false}/>
         <div className='mt-12'>
-          <h1 className='font-semibold lg:text-xl text-base mb-2'>Победители</h1>
+          <h1 className='font-semibold lg:text-xl text-base mb-2'>Победители и призеры</h1>
           <div className='grid xl:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-6 gap-8'>
             {dataResult.value.winners.data.map(sportsman => {
               const firstImage = sportsman.attributes.images.data.length > 0 ? sportsman.attributes.images.data[0].attributes.url : undefined
