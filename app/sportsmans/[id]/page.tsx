@@ -30,16 +30,16 @@ export default async function Sportsman({
     return (
         <div className='sm:w-4/5 container my-16'>
             <Breadcrumbs data={[{ title: "Наша гордость", slug: "sportsmans" }, { title: dataResult.value.attributes.fio, slug: dataResult.value.id }]} />
-            <div className='flex md:flex-row flex-col gap-8 w-full md:h-80 md:mb-10 mb-6'>
+            <div className='flex md:flex-row flex-col gap-8 w-full h-fit md:mb-10 mb-6'>
                 <ImageComponent 
                     src={firstImage}
                     alt="Фото"
                     fill={false}
                     width={215}
                     height={320}
-                    className='md:aspect-[2/3] aspect-square mx-auto object-cover rounded-3xl'
+                    className='md:aspect-[2/3] aspect-square mx-auto object-cover rounded-3xl max-h-80'
                 />
-                <div className='w-full h-full bg-primary flex flex-col gap-3 lg:p-12 p-6 rounded-3xl'>
+                <div className='w-full h-fit bg-primary flex flex-col gap-3 lg:p-12 p-6 rounded-3xl'>
                     <h1 className='font-semibold lg:text-3xl sm:text-2xl text-xl '>{dataResult.value.attributes.fio}</h1>
                     <p className='font-medium'>{dataResult.value.attributes.rank}</p>
                     <div className='w-full'>
