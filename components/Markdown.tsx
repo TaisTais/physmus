@@ -49,7 +49,7 @@ export default function Markdown({
   return (
     <article 
       className={cn(
-        "prose prose-p:my-0 prose-ul:my-0 prose-li:my-0 prose-headings:mb-0 prose-headings:pb-2 prose-headings:border-b-2 prose-headings:border-foreground prose-headings:text-foreground prose-blockquote:text-muted-foreground prose-strong:text-foreground prose-a:text-primary max-w-none w-full",
+        "prose prose-p:my-0 prose-ul:my-0 prose-li:my-0 prose-headings:mb-0 prose-headings:pb-2 prose-headings:border-b-2 prose-headings:border-foreground prose-headings:text-foreground prose-blockquote:text-muted-foreground prose-strong:text-foreground prose-a:text-primary-foreground max-w-none w-full",
         className
       )}
     >

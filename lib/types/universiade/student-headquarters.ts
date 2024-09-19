@@ -1,9 +1,10 @@
 import { z } from "zod"
-import { ImageT } from "../main"
+import { ImagesArrayT, ImageT } from "../main"
 
 export const StudentHeadquartersT = z.object({
   title: z.string().nullable(),
   text: z.string().nullable(),
+  documents: ImagesArrayT,
   headquarters: z.object({
     title: z.string().nullable(),
     members: z.object({

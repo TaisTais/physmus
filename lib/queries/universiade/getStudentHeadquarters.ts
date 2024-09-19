@@ -10,6 +10,13 @@ export const getStudentHeadquarters = async (): Promise<StudentHeadquartersT> =>
         attributes {
           title
           text
+          documents {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
           headquarters {
             title
             members {

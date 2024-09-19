@@ -19,6 +19,8 @@ export default async function StudentHeadquarters() {
     />
   );
 
+  console.log(dataResult.value.documents.data)
+
   return (
     <div className='sm:w-4/5 container my-16'>
       <Breadcrumbs data={[
